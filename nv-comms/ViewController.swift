@@ -75,7 +75,13 @@ class ViewController: UIViewController, UserFormDelegate {
         self.userFormView?.isHidden = true
     }
     
+    func presentViewController(imagePicker: UIImagePickerController) {
+        present(imagePicker, animated: true, completion: nil)
+    }
     
+    func dismissViewController() {
+        dismiss(animated: true, completion: nil)
+    }
 }
 
 extension ViewController: UITableViewDataSource {
@@ -88,7 +94,7 @@ extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as! UserViewCell
         cell.delegate = self
-      
+        
         let user = self.users[indexPath.row]
         cell.nameLabel?.text = user.value(forKeyPath: "name") as? String
         cell.emailLabel?.text = user.value(forKeyPath: "emailAddress") as? String
