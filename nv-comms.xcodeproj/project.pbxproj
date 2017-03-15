@@ -13,6 +13,7 @@
 		7A8C3F421E7804B900BA8936 /* nv_comms.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A8C3F401E7804B900BA8936 /* nv_comms.xcdatamodeld */; };
 		7A8C3F441E7804B900BA8936 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A8C3F431E7804B900BA8936 /* Assets.xcassets */; };
 		7A8C3F471E7804B900BA8936 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A8C3F451E7804B900BA8936 /* LaunchScreen.storyboard */; };
+		7A8C3F4F1E798A1300BA8936 /* UserFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8C3F4E1E798A1300BA8936 /* UserFormView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		7A8C3F431E7804B900BA8936 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A8C3F461E7804B900BA8936 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A8C3F481E7804B900BA8936 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A8C3F4E1E798A1300BA8936 /* UserFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserFormView.swift; path = ../UserFormView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				7A8C3F391E7804B900BA8936 /* AppDelegate.swift */,
 				7A8C3F3B1E7804B900BA8936 /* ViewController.swift */,
+				7A8C3F4E1E798A1300BA8936 /* UserFormView.swift */,
 				7A8C3F3D1E7804B900BA8936 /* Main.storyboard */,
 				7A8C3F431E7804B900BA8936 /* Assets.xcassets */,
 				7A8C3F451E7804B900BA8936 /* LaunchScreen.storyboard */,
@@ -142,6 +145,7 @@
 				7A8C3F3C1E7804B900BA8936 /* ViewController.swift in Sources */,
 				7A8C3F421E7804B900BA8936 /* nv_comms.xcdatamodeld in Sources */,
 				7A8C3F3A1E7804B900BA8936 /* AppDelegate.swift in Sources */,
+				7A8C3F4F1E798A1300BA8936 /* UserFormView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
