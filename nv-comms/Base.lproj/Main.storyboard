@@ -24,9 +24,9 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="68" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xM2-Q6-LKg">
                                 <rect key="frame" x="16" y="64" width="343" height="603"/>
-                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserCell" rowHeight="68" id="InU-wK-rr7" customClass="UserFormViewCell" customModule="nv_comms" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserCell" rowHeight="68" id="InU-wK-rr7" customClass="UserViewCell" customModule="nv_comms" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="343" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="InU-wK-rr7" id="SHs-7Y-IhL">
@@ -45,17 +45,26 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygW-vg-lHy">
+                                                    <rect key="frame" x="295" y="18" width="30" height="31.5"/>
+                                                    <state key="normal" title="X"/>
+                                                    <connections>
+                                                        <action selector="deleteUser:" destination="InU-wK-rr7" eventType="touchUpInside" id="LRy-Df-2Rc"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="310-gl-jcg" firstAttribute="leading" secondItem="SHs-7Y-IhL" secondAttribute="leadingMargin" id="5fC-eM-HZH"/>
                                                 <constraint firstItem="310-gl-jcg" firstAttribute="width" secondItem="qhf-bM-pCS" secondAttribute="width" id="7Ld-O5-KUY"/>
                                                 <constraint firstItem="qhf-bM-pCS" firstAttribute="top" secondItem="SHs-7Y-IhL" secondAttribute="topMargin" id="9lT-vO-ZCG"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ygW-vg-lHy" secondAttribute="trailing" constant="10" id="PyD-ga-gPF"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ygW-vg-lHy" secondAttribute="bottom" constant="10" id="bAE-HG-HcT"/>
                                                 <constraint firstItem="310-gl-jcg" firstAttribute="bottom" secondItem="SHs-7Y-IhL" secondAttribute="bottomMargin" id="bqG-YW-8NL"/>
                                                 <constraint firstItem="qhf-bM-pCS" firstAttribute="leading" secondItem="SHs-7Y-IhL" secondAttribute="leadingMargin" id="iQO-Cx-GQJ"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="qhf-bM-pCS" secondAttribute="trailing" id="tHM-35-Hb8"/>
+                                                <constraint firstItem="ygW-vg-lHy" firstAttribute="top" secondItem="SHs-7Y-IhL" secondAttribute="topMargin" constant="10" id="tpE-Sr-d4m"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <outlet property="emailLabel" destination="310-gl-jcg" id="UEn-5A-Qy4"/>
                                             <outlet property="nameLabel" destination="qhf-bM-pCS" id="L1s-ZV-Gh3"/>

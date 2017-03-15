@@ -9,7 +9,11 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController, UserFromDelegate {
+protocol UserViewCellDelegate {
+    func deleteUserFromMemory(cell: UITableViewCell)
+}
+
+class ViewController: UIViewController, UserFormDelegate {
     
     @IBOutlet weak var userTableView: UITableView!
     var users: [NSManagedObject] = []
@@ -25,15 +29,14 @@ class ViewController: UIViewController, UserFromDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.userFormView?.isHidden = true
-        self.fetchUsers()
-        self.userTableView.reloadData()
+        self.fetchAndReloadUsers()
     }
     
     @IBAction func addNewUser(_ sender: UIBarButtonItem) {
         self.userFormView?.isHidden = false
     }
     
-    fileprivate func fetchUsers() {
+    fileprivate func fetchAndReloadUsers() {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
@@ -46,6 +49,7 @@ class ViewController: UIViewController, UserFromDelegate {
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
+        self.userTableView.reloadData()
     }
     
     func saveUser(name: String, email: String) {
@@ -67,21 +71,8 @@ class ViewController: UIViewController, UserFromDelegate {
             print("Could not save. \(error), \(error.userInfo)")
         }
         
-        self.fetchUsers()
-        self.userTableView.reloadData()
+        self.fetchAndReloadUsers()
         self.userFormView?.isHidden = true
-    }
-    
-    func DeleteAllData(){
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let managedContext = appDelegate.persistentContainer.viewContext
-        let DelAllReqVar = NSBatchDeleteRequest(fetchRequest: NSFetchRequest<NSFetchRequestResult>(entityName: "Entity"))
-        do {
-            try managedContext.execute(DelAllReqVar)
-        }
-        catch {
-            print(error)
-        }
     }
     
     
@@ -95,7 +86,8 @@ extension ViewController: UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as! UserFormViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "UserCell", for: indexPath) as! UserViewCell
+        cell.delegate = self
       
         let user = self.users[indexPath.row]
         cell.nameLabel?.text = user.value(forKeyPath: "name") as? String
@@ -109,6 +101,31 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0
     }
+}
+
+extension ViewController: UserViewCellDelegate {
+    
+    func deleteUserFromMemory(cell: UITableViewCell) {
+        guard let index  = self.userTableView .indexPath(for: cell) else { return }
+        let row = index.row
+        let item = self.users[row]
+        
+        let context = item.managedObjectContext
+        context?.delete(item)
+        self.fetchAndReloadUsers()
+    }
+}
+
+class UserViewCell: UITableViewCell {
+    
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var emailLabel: UILabel!
+    var delegate: UserViewCellDelegate?
+    
+    @IBAction func deleteUser(_ sender: UIButton) {
+        self.delegate?.deleteUserFromMemory(cell: self)
+    }
+    
 }
 
 

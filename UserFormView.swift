@@ -9,13 +9,17 @@
 import Foundation
 import UIKit
 
+protocol UserFormDelegate {
+    func saveUser(name: String, email: String)
+}
+
 class UserFormView : UIView {
     
     @IBOutlet var userNameTextField: UITextField?
     @IBOutlet var emailTextField: UITextField?
     @IBOutlet var sumbmitButton: UIButton?
     
-    var delegate: UserFromDelegate?
+    var delegate: UserFormDelegate?
     
     func willMoveToSuperview(newSuperview: UIView) {
         super.willMove(toSuperview: newSuperview)
@@ -32,13 +36,4 @@ class UserFormView : UIView {
         self.delegate?.saveUser(name: userName, email: emailAddress)
     }
     
-}
-
-class UserFormViewCell: UITableViewCell {
-    @IBOutlet var nameLabel: UILabel!
-    @IBOutlet var emailLabel: UILabel!
-}
-
-protocol UserFromDelegate {
-    func saveUser(name: String, email: String)
 }
