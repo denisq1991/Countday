@@ -43,6 +43,16 @@ class ViewController: UIViewController {
         }
         self.itemTableView.reloadData()
     }
+    
+    func loadImageFromPath(path: String) -> UIImage? {
+        let tempDirectory = NSTemporaryDirectory()
+        let imagePath = ("\(tempDirectory)\(path).png")
+        let image = UIImage(contentsOfFile: imagePath)
+        if image == nil {
+            print("missing image at: \(imagePath)")
+        }
+        return image
+    }
 }
 
 extension ViewController: UITableViewDataSource {
@@ -57,8 +67,12 @@ extension ViewController: UITableViewDataSource {
         cell.delegate = self
         
         let item = self.items[indexPath.row]
-        cell.titleLabel?.text = item.value(forKeyPath: "title") as? String
+        guard let title = item.value(forKeyPath: "title") as? String else {
+            return UITableViewCell()
+        }
+        cell.titleLabel?.text = title
         cell.subtitleLabel?.text = item.value(forKeyPath: "subtitle") as? String
+        cell.imageView?.image = self.loadImageFromPath(path: title)
         return cell
     }
 }

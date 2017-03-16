@@ -12,11 +12,26 @@ import CoreData
 
 protocol ItemFormDelegate {
     func saveItem(title: String, subtitle: String, image: UIImage?)
+    func addNewImage()
+}
+
+func getDocumentsURL() -> NSURL {
+    let documentsURL = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+    return documentsURL as NSURL
+}
+
+func fileInDocumentsDirectory(filename: String) -> String {
+    
+    let fileURL = getDocumentsURL().appendingPathComponent(filename)
+    return fileURL!.path
 }
 
 class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     @IBOutlet weak var itemFormView: ItemFormView?
     var imagePicker: UIImagePickerController?
+    
+    // Define the specific path, image name
+    let imagePath:  String? = nil //fileInDocumentsDirectory(myImageName)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +52,8 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
         item.setValue(title, forKeyPath: "title")
         item.setValue(subtitle, forKeyPath: "subtitle")
         
+        self.saveImage(image: image, path:title )
+        
         do {
             try managedContext.save()
         } catch let error as NSError {
@@ -46,7 +63,21 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
         self.dismiss(animated: true)
     }
     
-    @IBAction func addNewImage(sender: Any) {
+    func saveImage (image: UIImage?, path: String ){
+        if (image != nil) {
+            let pngImageData = UIImagePNGRepresentation(image!)
+            let pathUrl = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("\(path).png")
+            print("Saving to \(pathUrl)")
+            do {
+                try pngImageData!.write(to: pathUrl, options: .atomic)
+            } catch let error as NSError {
+                print("Could not save. \(error), \(error.userInfo)")
+            }
+        }
+        
+    }
+    
+    func addNewImage() {
         guard let imagePicker = self.imagePicker else {
             return
         }
@@ -61,7 +92,7 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             guard let imageView = self.itemFormView?.imageView else {
-                NSLog("Invalid image view")
+                print("Invalid image view")
                 return
             }
             
@@ -87,12 +118,18 @@ class ItemFormView : UIView {
     
     @IBAction func didAddNewItem(sender: Any) {
         guard let title: String = self.titleTextField?.text,
-        let subtitle: String = self.subtitleTextField?.text else {
-            return
+            let subtitle: String = self.subtitleTextField?.text else {
+                return
         }
         
         let image: UIImage? = self.imageView?.image
         self.delegate?.saveItem(title: title, subtitle: subtitle, image: image)
     }
+    
+    @IBAction func addNewImage(sender: Any) {
+        self.delegate?.addNewImage()
+    }
+    
+    
 }
 
