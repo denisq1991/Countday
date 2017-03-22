@@ -72,7 +72,11 @@ extension ViewController: UITableViewDataSource {
         }
         cell.titleLabel?.text = title
         cell.subtitleLabel?.text = item.value(forKeyPath: "subtitle") as? String
-        cell.imageView?.image = self.loadImageFromPath(path: title)
+        cell.backgroundView = UIImageView.init(image: self.loadImageFromPath(path: title))
+        cell.backgroundView?.contentMode = .scaleAspectFill
+        cell.backgroundView?.alpha = 0.4
+    
+        //cell.imageView?.image = self.loadImageFromPath(path: title)
         return cell
     }
 }
