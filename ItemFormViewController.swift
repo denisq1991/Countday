@@ -109,21 +109,52 @@ class ItemFormView : UIView {
     @IBOutlet var titleTextField: UITextField?
     @IBOutlet var subtitleTextField: UITextField?
     @IBOutlet var imageView: UIImageView?
+    @IBOutlet var datePickerExpandView: UIView?
+    @IBOutlet var datePicker: UIDatePicker?
+    
+    @IBOutlet var datePickerViewHeight: NSLayoutConstraint?
     
     var delegate: ItemFormDelegate?
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.datePickerViewHeight?.constant = CGFloat(0)
+    }
     
     func willMoveToSuperview(newSuperview: UIView) {
         super.willMove(toSuperview: newSuperview)
     }
     
+    @IBAction func didSelectDatePicker() {
+        // toggle the constraints of the datePickerView
+        let collapsed = self.datePickerViewHeight?.constant == CGFloat(0)
+        if !collapsed {
+            self.datePickerViewHeight?.constant = CGFloat(0)
+        } else {
+            self.datePickerViewHeight?.constant = CGFloat(216)
+        }
+    }
+    
     @IBAction func didAddNewItem(sender: Any) {
         guard let title: String = self.titleTextField?.text,
+            let date: Date = self.datePicker?.date,
             let subtitle: String = self.subtitleTextField?.text else {
                 return
         }
         
+        // Get the days between both dates
+        // TODO: Handle negatives
+        let calendar = Calendar.current
+        let currentDate = Date()
+        let components = calendar.dateComponents(Set(arrayLiteral: .day, .hour), from: currentDate, to: date)
+        let days = components.day
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        let dateString = dateFormatter.string(from: date)
+        
         let image: UIImage? = self.imageView?.image
-        self.delegate?.saveItem(title: title, subtitle: subtitle, image: image)
+        self.delegate?.saveItem(title: title, subtitle: dateString, image: image)
     }
     
     @IBAction func addNewImage(sender: Any) {

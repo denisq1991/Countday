@@ -35,29 +35,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "nv-comms/ViewController.swift"
-            timestampString = "511896462.164085"
+            filePath = "ItemFormViewController.swift"
+            timestampString = "511986633.857796"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "nv-comms/ViewController.swift"
-            timestampString = "511371294.867403"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "loadImageFromPath(path:)"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
+            landmarkName = "didAddNewItem(sender:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
