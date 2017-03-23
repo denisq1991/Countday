@@ -70,8 +70,14 @@ extension ViewController: UITableViewDataSource {
         guard let title = item.value(forKeyPath: "title") as? String else {
             return UITableViewCell()
         }
+        
+        guard let countDownString = item.value(forKeyPath: "countDown") as? String else {
+            return UITableViewCell()
+        }
+        
         cell.titleLabel?.text = title
         cell.subtitleLabel?.text = item.value(forKeyPath: "subtitle") as? String
+        cell.countdownLabel?.text = countDownString
         cell.backgroundView = UIImageView.init(image: self.loadImageFromPath(path: title))
         cell.backgroundView?.contentMode = .scaleAspectFill
         cell.backgroundView?.alpha = 0.4
@@ -110,6 +116,7 @@ class ItemViewCell: UITableViewCell {
     
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var subtitleLabel: UILabel!
+    @IBOutlet var countdownLabel: UILabel!
     var delegate: ItemViewCellDelegate?
     
     @IBAction func deleteItem(_ sender: UIButton) {

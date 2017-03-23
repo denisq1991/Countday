@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AnG-tL-7xK">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AnG-tL-7xK">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -52,20 +52,33 @@
                                                         <action selector="deleteItem:" destination="InU-wK-rr7" eventType="touchUpInside" id="jfu-6j-Ez0"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psR-ac-2oW">
+                                                    <rect key="frame" x="265" y="14.5" width="40" height="26"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="26" id="EfC-T6-Qnm"/>
+                                                        <constraint firstAttribute="width" constant="40" id="uIk-eo-Igu"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="qhf-bM-pCS" firstAttribute="top" secondItem="SHs-7Y-IhL" secondAttribute="topMargin" id="9lT-vO-ZCG"/>
+                                                <constraint firstItem="psR-ac-2oW" firstAttribute="centerY" secondItem="SHs-7Y-IhL" secondAttribute="centerY" id="IO0-qh-4mT"/>
                                                 <constraint firstItem="310-gl-jcg" firstAttribute="top" secondItem="qhf-bM-pCS" secondAttribute="bottom" constant="10" id="N5S-lb-hzP"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="ygW-vg-lHy" secondAttribute="trailing" constant="10" id="PyD-ga-gPF"/>
                                                 <constraint firstItem="310-gl-jcg" firstAttribute="leading" secondItem="SHs-7Y-IhL" secondAttribute="leadingMargin" constant="20" id="VcZ-y3-ViH"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="ygW-vg-lHy" secondAttribute="bottom" constant="10" id="bAE-HG-HcT"/>
                                                 <constraint firstItem="qhf-bM-pCS" firstAttribute="leading" secondItem="SHs-7Y-IhL" secondAttribute="leadingMargin" constant="20" id="iQO-Cx-GQJ"/>
                                                 <constraint firstItem="310-gl-jcg" firstAttribute="trailing" secondItem="SHs-7Y-IhL" secondAttribute="trailingMargin" id="mx0-Xe-8Gh"/>
+                                                <constraint firstItem="ygW-vg-lHy" firstAttribute="leading" secondItem="psR-ac-2oW" secondAttribute="trailing" constant="22" id="pcY-ml-4yG"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="qhf-bM-pCS" secondAttribute="trailing" id="tHM-35-Hb8"/>
                                                 <constraint firstItem="ygW-vg-lHy" firstAttribute="top" secondItem="SHs-7Y-IhL" secondAttribute="topMargin" constant="10" id="tpE-Sr-d4m"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="countdownLabel" destination="psR-ac-2oW" id="ZNc-Zs-YXv"/>
                                             <outlet property="subtitleLabel" destination="310-gl-jcg" id="NqO-hZ-knN"/>
                                             <outlet property="titleLabel" destination="qhf-bM-pCS" id="cx8-yw-z0a"/>
                                         </connections>

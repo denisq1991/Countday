@@ -11,7 +11,7 @@ import UIKit
 import CoreData
 
 protocol ItemFormDelegate {
-    func saveItem(title: String, subtitle: String, image: UIImage?)
+    func saveItem(title: String, subtitle: String, image: UIImage?, countDown: String)
     func addNewImage()
 }
 
@@ -40,7 +40,7 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
         self.imagePicker = UIImagePickerController()
     }
     
-    func saveItem(title: String, subtitle: String, image: UIImage?) {
+    func saveItem(title: String, subtitle: String, image: UIImage?, countDown: String) {
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
@@ -51,6 +51,7 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
         let item = NSManagedObject(entity: entity, insertInto: managedContext)
         item.setValue(title, forKeyPath: "title")
         item.setValue(subtitle, forKeyPath: "subtitle")
+        item.setValue(countDown, forKey: "countDown")
         
         self.saveImage(image: image, path:title )
         
@@ -137,8 +138,7 @@ class ItemFormView : UIView {
     
     @IBAction func didAddNewItem(sender: Any) {
         guard let title: String = self.titleTextField?.text,
-            let date: Date = self.datePicker?.date,
-            let subtitle: String = self.subtitleTextField?.text else {
+            let date: Date = self.datePicker?.date else {
                 return
         }
         
@@ -147,14 +147,15 @@ class ItemFormView : UIView {
         let calendar = Calendar.current
         let currentDate = Date()
         let components = calendar.dateComponents(Set(arrayLiteral: .day, .hour), from: currentDate, to: date)
-        let days = components.day
+        
+        let days = String(describing: components.day!)
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"
         let dateString = dateFormatter.string(from: date)
         
         let image: UIImage? = self.imageView?.image
-        self.delegate?.saveItem(title: title, subtitle: dateString, image: image)
+        self.delegate?.saveItem(title: title, subtitle: dateString, image: image, countDown: days)
     }
     
     @IBAction func addNewImage(sender: Any) {
