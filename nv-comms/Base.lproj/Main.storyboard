@@ -26,7 +26,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="56" id="InU-wK-rr7" customClass="ItemViewCell" customModule="nv_comms" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="56" id="InU-wK-rr7" customClass="ItemViewCell" customModule="nv_comms" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="InU-wK-rr7" id="SHs-7Y-IhL">
@@ -47,7 +47,8 @@
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygW-vg-lHy">
                                                     <rect key="frame" x="327" y="18" width="30" height="19.5"/>
-                                                    <state key="normal" title="X"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                                    <state key="normal" title="×"/>
                                                     <connections>
                                                         <action selector="deleteItem:" destination="InU-wK-rr7" eventType="touchUpInside" id="jfu-6j-Ez0"/>
                                                     </connections>
@@ -147,14 +148,21 @@
                                             <action selector="didAddNewItemWithSender:" destination="Ypj-PG-o74" eventType="touchUpInside" id="NaB-6A-fSF"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BUy-6s-7Re" userLabel="Cancel">
+                                        <rect key="frame" x="241" y="597" width="48" height="30"/>
+                                        <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="didDismissForm" destination="W8y-7k-c0X" eventType="touchUpInside" id="4xQ-2L-GkE"/>
+                                        </connections>
+                                    </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lai-fL-fQ7" userLabel="Image Upload View">
                                         <rect key="frame" x="62" y="354" width="219" height="167"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gLq-PL-aYC">
-                                                <rect key="frame" x="52" y="8" width="115" height="124"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="219" height="167"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bv0-6t-IFl">
-                                                <rect key="frame" x="66" y="129" width="87" height="30"/>
+                                                <rect key="frame" x="66" y="125" width="87" height="30"/>
                                                 <state key="normal" title="+ Add Image"/>
                                                 <connections>
                                                     <action selector="addNewImageWithSender:" destination="Ypj-PG-o74" eventType="touchUpInside" id="4s2-JB-6Ez"/>
@@ -163,33 +171,44 @@
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="bv0-6t-IFl" firstAttribute="leading" secondItem="Lai-fL-fQ7" secondAttribute="leading" constant="66" id="Bt0-6Y-zns"/>
-                                            <constraint firstAttribute="trailing" secondItem="gLq-PL-aYC" secondAttribute="trailing" constant="52" id="ETM-RP-YMm"/>
-                                            <constraint firstAttribute="trailing" secondItem="bv0-6t-IFl" secondAttribute="trailing" constant="66" id="bTF-uv-Pre"/>
-                                            <constraint firstAttribute="bottom" secondItem="bv0-6t-IFl" secondAttribute="bottom" constant="8" id="pht-tf-OjU"/>
-                                            <constraint firstItem="bv0-6t-IFl" firstAttribute="top" secondItem="gLq-PL-aYC" secondAttribute="bottom" constant="-3" id="vp4-0J-qAO"/>
-                                            <constraint firstItem="gLq-PL-aYC" firstAttribute="leading" secondItem="Lai-fL-fQ7" secondAttribute="leading" constant="52" id="wPm-t8-mmE"/>
+                                            <constraint firstAttribute="bottom" secondItem="gLq-PL-aYC" secondAttribute="bottom" id="EDq-tA-PXB"/>
+                                            <constraint firstAttribute="trailing" secondItem="gLq-PL-aYC" secondAttribute="trailing" id="ETM-RP-YMm"/>
+                                            <constraint firstAttribute="trailing" secondItem="bv0-6t-IFl" secondAttribute="trailing" constant="66" id="ILk-gh-HNG"/>
+                                            <constraint firstAttribute="bottom" secondItem="bv0-6t-IFl" secondAttribute="bottom" constant="12" id="YJj-Vf-7su"/>
+                                            <constraint firstItem="bv0-6t-IFl" firstAttribute="leading" secondItem="Lai-fL-fQ7" secondAttribute="leading" constant="66" id="dE4-Im-B9m"/>
+                                            <constraint firstItem="gLq-PL-aYC" firstAttribute="leading" secondItem="Lai-fL-fQ7" secondAttribute="leading" id="wPm-t8-mmE"/>
                                             <constraint firstAttribute="height" constant="167" id="wTB-RH-fih"/>
-                                            <constraint firstItem="gLq-PL-aYC" firstAttribute="top" secondItem="Lai-fL-fQ7" secondAttribute="topMargin" id="ywW-fr-LKH"/>
+                                            <constraint firstItem="gLq-PL-aYC" firstAttribute="top" secondItem="Lai-fL-fQ7" secondAttribute="topMargin" constant="-8" id="ywW-fr-LKH"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yn0-6i-UCY" userLabel="Date Expander" customClass="UIControl">
                                         <rect key="frame" x="22" y="58" width="299" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select A Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7O-cg-d2G">
-                                                <rect key="frame" x="0.0" y="0.0" width="299" height="30"/>
+                                                <rect key="frame" x="5" y="0.0" width="294" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" red="0.79607843140000001" green="0.79607843140000001" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hjP-5f-Exz">
+                                                <rect key="frame" x="174" y="0.0" width="125" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="125" id="Vd7-Ww-2nv"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.51372549020000002" green="0.51372549020000002" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="hjP-5f-Exz" secondAttribute="trailing" id="0h2-BY-cpC"/>
                                             <constraint firstItem="k7O-cg-d2G" firstAttribute="top" secondItem="yn0-6i-UCY" secondAttribute="top" id="7OW-rt-yeO"/>
                                             <constraint firstAttribute="bottom" secondItem="k7O-cg-d2G" secondAttribute="bottom" id="Swu-IR-HdP"/>
                                             <constraint firstAttribute="trailing" secondItem="k7O-cg-d2G" secondAttribute="trailing" id="fXs-IO-Qfj"/>
                                             <constraint firstAttribute="height" constant="30" id="gMm-tO-gGn"/>
-                                            <constraint firstItem="k7O-cg-d2G" firstAttribute="leading" secondItem="yn0-6i-UCY" secondAttribute="leading" id="kH3-RU-jsV"/>
+                                            <constraint firstItem="k7O-cg-d2G" firstAttribute="leading" secondItem="yn0-6i-UCY" secondAttribute="leading" constant="5" id="kH3-RU-jsV"/>
+                                            <constraint firstItem="hjP-5f-Exz" firstAttribute="top" secondItem="yn0-6i-UCY" secondAttribute="top" id="vO7-Sp-Ryt"/>
+                                            <constraint firstAttribute="bottom" secondItem="hjP-5f-Exz" secondAttribute="bottom" id="wGf-Ki-dfj"/>
                                         </constraints>
                                         <connections>
                                             <action selector="didSelectDatePicker" destination="Ypj-PG-o74" eventType="touchUpInside" id="vft-bA-Tyg"/>
@@ -227,6 +246,7 @@
                                     <constraint firstAttribute="bottom" secondItem="JRF-4p-N51" secondAttribute="bottom" constant="20" id="QXf-hd-IIf"/>
                                     <constraint firstAttribute="trailing" secondItem="yn0-6i-UCY" secondAttribute="trailing" constant="22" id="VRt-20-sk3"/>
                                     <constraint firstAttribute="trailing" secondItem="8HN-li-Uuf" secondAttribute="trailing" constant="20" id="Yqb-6h-Mt9"/>
+                                    <constraint firstAttribute="bottom" secondItem="BUy-6s-7Re" secondAttribute="bottom" constant="20" id="ZDG-Ao-LEw"/>
                                     <constraint firstItem="Lai-fL-fQ7" firstAttribute="centerX" secondItem="Ypj-PG-o74" secondAttribute="centerX" id="ahK-hc-Zni"/>
                                     <constraint firstItem="XQ0-sD-H3R" firstAttribute="top" secondItem="yn0-6i-UCY" secondAttribute="bottom" id="fjt-fs-D1K"/>
                                     <constraint firstItem="yn0-6i-UCY" firstAttribute="leading" secondItem="Ypj-PG-o74" secondAttribute="leading" constant="22" id="lyC-G3-7NV"/>
@@ -236,8 +256,10 @@
                                     <constraint firstItem="yn0-6i-UCY" firstAttribute="top" secondItem="8HN-li-Uuf" secondAttribute="bottom" constant="8" id="svb-pg-mns"/>
                                     <constraint firstItem="Lai-fL-fQ7" firstAttribute="top" secondItem="9yV-UJ-nh7" secondAttribute="bottom" constant="12" id="uFU-wp-ztd"/>
                                     <constraint firstAttribute="trailing" secondItem="Lai-fL-fQ7" secondAttribute="trailing" constant="62" id="uLR-FT-X9W"/>
+                                    <constraint firstAttribute="trailing" secondItem="BUy-6s-7Re" secondAttribute="trailing" constant="54" id="zLU-tx-CfZ"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="dateLabel" destination="hjP-5f-Exz" id="jmr-iT-NFm"/>
                                     <outlet property="datePicker" destination="hJs-0H-DkE" id="x0g-Pd-0yw"/>
                                     <outlet property="datePickerExpandView" destination="k7O-cg-d2G" id="kQp-sX-cWr"/>
                                     <outlet property="datePickerViewHeight" destination="qWN-jm-5gB" id="sie-Oi-uoQ"/>

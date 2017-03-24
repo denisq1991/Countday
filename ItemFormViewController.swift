@@ -64,6 +64,10 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
         self.dismiss(animated: true)
     }
     
+    @IBAction func didDismissForm() {
+        self.dismiss(animated: true)
+    }
+    
     func saveImage (image: UIImage?, path: String ){
         if (image != nil) {
             let pngImageData = UIImagePNGRepresentation(image!)
@@ -97,7 +101,7 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
                 return
             }
             
-            imageView.contentMode = .scaleAspectFit
+            imageView.contentMode = .scaleAspectFill
             imageView.image = pickedImage
         }
         picker.dismiss(animated: true, completion: nil)
@@ -112,6 +116,7 @@ class ItemFormView : UIView {
     @IBOutlet var imageView: UIImageView?
     @IBOutlet var datePickerExpandView: UIView?
     @IBOutlet var datePicker: UIDatePicker?
+    @IBOutlet var dateLabel: UILabel?
     
     @IBOutlet var datePickerViewHeight: NSLayoutConstraint?
     
@@ -120,6 +125,10 @@ class ItemFormView : UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.datePickerViewHeight?.constant = CGFloat(0)
+
+        let dateString = self.datePicker?.date.stringForDate()
+        self.dateLabel?.text = dateString
+        self.datePicker?.addTarget(self, action: #selector(datePickerChanged), for: .valueChanged)
     }
     
     func willMoveToSuperview(newSuperview: UIView) {
@@ -136,6 +145,12 @@ class ItemFormView : UIView {
         }
     }
     
+    @objc func datePickerChanged() {
+        let newDate = self.datePicker?.date
+        let dateString = newDate?.stringForDate()
+        self.dateLabel?.text = dateString
+    }
+    
     @IBAction func didAddNewItem(sender: Any) {
         guard let title: String = self.titleTextField?.text,
             let date: Date = self.datePicker?.date else {
@@ -149,10 +164,7 @@ class ItemFormView : UIView {
         let components = calendar.dateComponents(Set(arrayLiteral: .day, .hour), from: currentDate, to: date)
         
         let days = String(describing: components.day!)
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd-MM-yyyy"
-        let dateString = dateFormatter.string(from: date)
+        let dateString = date.stringForDate()
         
         let image: UIImage? = self.imageView?.image
         self.delegate?.saveItem(title: title, subtitle: dateString, image: image, countDown: days)
@@ -162,6 +174,14 @@ class ItemFormView : UIView {
         self.delegate?.addNewImage()
     }
     
-    
 }
 
+fileprivate extension Date {
+    
+    func stringForDate() -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        return dateFormatter.string(from: self)
+    }
+    
+}
