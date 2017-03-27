@@ -9,9 +9,10 @@
 import Foundation
 import UIKit
 import CoreData
+import UserNotifications
 
 protocol ItemFormDelegate {
-    func saveItem(title: String, subtitle: String, image: UIImage?, countDown: String)
+    func saveItem(title: String, date: Date, image: UIImage?, countDown: String, alertOn: Bool)
     func addNewImage()
 }
 
@@ -40,35 +41,7 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
         self.imagePicker = UIImagePickerController()
     }
     
-    func saveItem(title: String, subtitle: String, image: UIImage?, countDown: String) {
-        
-        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
-            return
-        }
-        
-        let managedContext = appDelegate.persistentContainer.viewContext
-        let entity = NSEntityDescription.entity(forEntityName: "Item", in: managedContext)!
-        let item = NSManagedObject(entity: entity, insertInto: managedContext)
-        item.setValue(title, forKeyPath: "title")
-        item.setValue(subtitle, forKeyPath: "subtitle")
-        item.setValue(countDown, forKey: "countDown")
-        
-        self.saveImage(image: image, path:title )
-        
-        do {
-            try managedContext.save()
-        } catch let error as NSError {
-            print("Could not save. \(error), \(error.userInfo)")
-        }
-        
-        self.dismiss(animated: true)
-    }
-    
-    @IBAction func didDismissForm() {
-        self.dismiss(animated: true)
-    }
-    
-    func saveImage (image: UIImage?, path: String ){
+    private func saveImage (image: UIImage?, path: String ){
         if (image != nil) {
             let pngImageData = UIImagePNGRepresentation(image!)
             let pathUrl = URL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent("\(path).png")
@@ -80,6 +53,70 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
             }
         }
         
+    }
+    
+    private func setLocalNotification(text: String, date: Date) {
+        let center = UNUserNotificationCenter.current()
+        let content = UNMutableNotificationContent()
+        content.title = "Countday Alert"
+        content.body = text
+        content.sound = UNNotificationSound.default()
+        
+        let triggerDate = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second,], from: date)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
+        
+        let identifier = "UYLLocalNotification" + text
+        let request = UNNotificationRequest(identifier: identifier,
+                                            content: content, trigger: trigger)
+        center.add(request, withCompletionHandler: { (error) in
+            if let error = error {
+                // Something went wrong
+                print(error)
+            }
+        })
+    }
+    
+    @IBAction func didDismissForm() {
+        self.dismiss(animated: true)
+    }
+    
+    // MARK: - ItemForm Delegate Methods
+    
+    func saveItem(title: String, date: Date, image: UIImage?, countDown: String, alertOn: Bool) {
+        
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        
+        let managedContext = appDelegate.persistentContainer.viewContext
+        let entity = NSEntityDescription.entity(forEntityName: "Item", in: managedContext)!
+        let item = NSManagedObject(entity: entity, insertInto: managedContext)
+        let dateString = date.stringForDate()
+        item.setValue(title, forKeyPath: "title")
+        item.setValue(dateString, forKeyPath: "dateString")
+        item.setValue(countDown, forKey: "countDown")
+        
+        if (alertOn) {
+            let center = UNUserNotificationCenter.current()
+            center.getNotificationSettings { (settings) in
+                if settings.authorizationStatus != .authorized {
+                    // Notifications not allowed
+                }
+                else {
+                    self.setLocalNotification(text: title, date: date)
+                }
+            }
+        }
+        
+        self.saveImage(image: image, path:title )
+        
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save. \(error), \(error.userInfo)")
+        }
+        
+        self.dismiss(animated: true)
     }
     
     func addNewImage() {
@@ -94,6 +131,7 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
     }
     
     // MARK: - UIImagePickerControllerDelegate Methods
+    
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
             guard let imageView = self.itemFormView?.imageView else {
@@ -101,7 +139,7 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
                 return
             }
             
-            imageView.contentMode = .scaleAspectFill
+            imageView.contentMode = .scaleAspectFit
             imageView.image = pickedImage
         }
         picker.dismiss(animated: true, completion: nil)
@@ -112,11 +150,11 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
 class ItemFormView : UIView {
     
     @IBOutlet var titleTextField: UITextField?
-    @IBOutlet var subtitleTextField: UITextField?
     @IBOutlet var imageView: UIImageView?
     @IBOutlet var datePickerExpandView: UIView?
     @IBOutlet var datePicker: UIDatePicker?
     @IBOutlet var dateLabel: UILabel?
+    @IBOutlet var alertSwitcher: UISwitch?
     
     @IBOutlet var datePickerViewHeight: NSLayoutConstraint?
     
@@ -164,10 +202,13 @@ class ItemFormView : UIView {
         let components = calendar.dateComponents(Set(arrayLiteral: .day, .hour), from: currentDate, to: date)
         
         let days = String(describing: components.day!)
-        let dateString = date.stringForDate()
         
         let image: UIImage? = self.imageView?.image
-        self.delegate?.saveItem(title: title, subtitle: dateString, image: image, countDown: days)
+        guard let alertOn: Bool = self.alertSwitcher?.isOn else {
+            return
+        }
+        
+        self.delegate?.saveItem(title: title, date: date, image: image, countDown: days, alertOn: alertOn)
     }
     
     @IBAction func addNewImage(sender: Any) {

@@ -76,7 +76,7 @@ extension ViewController: UITableViewDataSource {
         }
         
         cell.titleLabel?.text = title
-        cell.subtitleLabel?.text = item.value(forKeyPath: "subtitle") as? String
+        cell.dateLabel?.text = item.value(forKeyPath: "dateString") as? String
         cell.countdownLabel?.text = countDownString
         cell.backgroundView = UIImageView.init(image: self.loadImageFromPath(path: title))
         cell.backgroundView?.contentMode = .scaleAspectFill
@@ -115,7 +115,7 @@ extension ViewController: ItemViewCellDelegate {
 class ItemViewCell: UITableViewCell {
     
     @IBOutlet var titleLabel: UILabel!
-    @IBOutlet var subtitleLabel: UILabel!
+    @IBOutlet var dateLabel: UILabel!
     @IBOutlet var countdownLabel: UILabel!
     var delegate: ItemViewCellDelegate?
     
