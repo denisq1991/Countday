@@ -139,7 +139,9 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
                 return
             }
             
-            imageView.contentMode = .scaleAspectFit
+            imageView.contentMode = .center
+            imageView.contentMode = .scaleAspectFill
+            imageView.clipsToBounds = true
             imageView.image = pickedImage
         }
         picker.dismiss(animated: true, completion: nil)
