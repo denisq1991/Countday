@@ -101,6 +101,7 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
             center.getNotificationSettings { (settings) in
                 if settings.authorizationStatus != .authorized {
                     // Notifications not allowed
+                    // TODO: Alert the user and link them to change the setting
                 }
                 else {
                     self.setLocalNotification(text: title, date: date)
@@ -165,24 +166,21 @@ class ItemFormView : UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.datePickerViewHeight?.constant = CGFloat(0)
-
+        self.datePicker?.date = Date()
+        self.titleTextField?.text = ""
+        self.imageView?.image = nil
+        self.alertSwitcher?.isOn = false
+        
         let dateString = self.datePicker?.date.stringForDate()
         self.dateLabel?.text = dateString
         self.datePicker?.addTarget(self, action: #selector(datePickerChanged), for: .valueChanged)
     }
     
-    func willMoveToSuperview(newSuperview: UIView) {
-        super.willMove(toSuperview: newSuperview)
-    }
-    
     @IBAction func didSelectDatePicker() {
         // toggle the constraints of the datePickerView
-        let collapsed = self.datePickerViewHeight?.constant == CGFloat(0)
-        if !collapsed {
-            self.datePickerViewHeight?.constant = CGFloat(0)
-        } else {
-            self.datePickerViewHeight?.constant = CGFloat(216)
-        }
+        let isCollapsed = self.datePickerViewHeight?.constant == CGFloat(0)
+        // TODO: Animate this
+        self.datePickerViewHeight?.constant = isCollapsed ? CGFloat(216) : CGFloat(0)
     }
     
     @objc func datePickerChanged() {
@@ -198,7 +196,7 @@ class ItemFormView : UIView {
         }
         
         // Get the days between both dates
-        // TODO: Handle negatives
+        // TODO: Handle negatives gracefully
         let calendar = Calendar.current
         let currentDate = Date()
         let components = calendar.dateComponents(Set(arrayLiteral: .day, .hour), from: currentDate, to: date)
@@ -220,7 +218,6 @@ class ItemFormView : UIView {
 }
 
 fileprivate extension Date {
-    
     func stringForDate() -> String {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd-MM-yyyy"

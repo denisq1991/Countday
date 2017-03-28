@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A0A06101E8A9E1600B4BF47 /* IconChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0A060F1E8A9E1600B4BF47 /* IconChooserViewController.swift */; };
 		7A8C3F3A1E7804B900BA8936 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8C3F391E7804B900BA8936 /* AppDelegate.swift */; };
 		7A8C3F3C1E7804B900BA8936 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8C3F3B1E7804B900BA8936 /* ViewController.swift */; };
 		7A8C3F3F1E7804B900BA8936 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A8C3F3D1E7804B900BA8936 /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7A0A060F1E8A9E1600B4BF47 /* IconChooserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IconChooserViewController.swift; sourceTree = "<group>"; };
 		7A8C3F361E7804B900BA8936 /* nv-comms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "nv-comms.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A8C3F391E7804B900BA8936 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A8C3F3B1E7804B900BA8936 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -61,6 +63,7 @@
 				7A8C3F391E7804B900BA8936 /* AppDelegate.swift */,
 				7A8C3F3B1E7804B900BA8936 /* ViewController.swift */,
 				7A8C3F4E1E798A1300BA8936 /* ItemFormViewController.swift */,
+				7A0A060F1E8A9E1600B4BF47 /* IconChooserViewController.swift */,
 				7A8C3F3D1E7804B900BA8936 /* Main.storyboard */,
 				7A8C3F431E7804B900BA8936 /* Assets.xcassets */,
 				7A8C3F451E7804B900BA8936 /* LaunchScreen.storyboard */,
@@ -146,6 +149,7 @@
 				7A8C3F421E7804B900BA8936 /* nv_comms.xcdatamodeld in Sources */,
 				7A8C3F3A1E7804B900BA8936 /* AppDelegate.swift in Sources */,
 				7A8C3F4F1E798A1300BA8936 /* ItemFormViewController.swift in Sources */,
+				7A0A06101E8A9E1600B4BF47 /* IconChooserViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,6 +309,7 @@
 				7A8C3F4D1E7804B900BA8936 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
