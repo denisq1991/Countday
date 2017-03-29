@@ -34,21 +34,20 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GsC-Sd-9PR">
-                                                    <rect key="frame" x="2" y="8" width="40" height="40"/>
-                                                    <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <rect key="frame" x="6" y="8" width="40" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="BGD-Jf-vQO"/>
                                                         <constraint firstAttribute="width" constant="40" id="XL9-Sb-h0l"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Janes Birthday" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhf-bM-pCS" userLabel="Title Label">
-                                                    <rect key="frame" x="48" y="8" width="319" height="21"/>
+                                                    <rect key="frame" x="64" y="8" width="303" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24th June 2017" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="310-gl-jcg" userLabel="Date Label">
-                                                    <rect key="frame" x="48" y="39" width="319" height="17"/>
+                                                    <rect key="frame" x="64" y="39" width="303" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.51372549020000002" green="0.51372549020000002" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -73,15 +72,15 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="GsC-Sd-9PR" firstAttribute="leading" secondItem="SHs-7Y-IhL" secondAttribute="leading" constant="2" id="4fE-9Q-JbV"/>
+                                                <constraint firstItem="GsC-Sd-9PR" firstAttribute="leading" secondItem="SHs-7Y-IhL" secondAttribute="leading" constant="6" id="4fE-9Q-JbV"/>
                                                 <constraint firstItem="qhf-bM-pCS" firstAttribute="top" secondItem="SHs-7Y-IhL" secondAttribute="topMargin" id="9lT-vO-ZCG"/>
                                                 <constraint firstItem="psR-ac-2oW" firstAttribute="centerY" secondItem="SHs-7Y-IhL" secondAttribute="centerY" id="IO0-qh-4mT"/>
                                                 <constraint firstItem="GsC-Sd-9PR" firstAttribute="centerY" secondItem="SHs-7Y-IhL" secondAttribute="centerY" id="KVm-l4-HUG"/>
                                                 <constraint firstItem="310-gl-jcg" firstAttribute="top" secondItem="qhf-bM-pCS" secondAttribute="bottom" constant="10" id="N5S-lb-hzP"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="ygW-vg-lHy" secondAttribute="trailing" constant="10" id="PyD-ga-gPF"/>
-                                                <constraint firstItem="310-gl-jcg" firstAttribute="leading" secondItem="SHs-7Y-IhL" secondAttribute="leadingMargin" constant="40" id="VcZ-y3-ViH"/>
+                                                <constraint firstItem="310-gl-jcg" firstAttribute="leading" secondItem="SHs-7Y-IhL" secondAttribute="leadingMargin" constant="56" id="VcZ-y3-ViH"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="ygW-vg-lHy" secondAttribute="bottom" constant="10" id="bAE-HG-HcT"/>
-                                                <constraint firstItem="qhf-bM-pCS" firstAttribute="leading" secondItem="SHs-7Y-IhL" secondAttribute="leadingMargin" constant="40" id="iQO-Cx-GQJ"/>
+                                                <constraint firstItem="qhf-bM-pCS" firstAttribute="leading" secondItem="SHs-7Y-IhL" secondAttribute="leadingMargin" constant="56" id="iQO-Cx-GQJ"/>
                                                 <constraint firstItem="310-gl-jcg" firstAttribute="trailing" secondItem="SHs-7Y-IhL" secondAttribute="trailingMargin" id="mx0-Xe-8Gh"/>
                                                 <constraint firstItem="ygW-vg-lHy" firstAttribute="leading" secondItem="psR-ac-2oW" secondAttribute="trailing" constant="22" id="pcY-ml-4yG"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="qhf-bM-pCS" secondAttribute="trailing" id="tHM-35-Hb8"/>

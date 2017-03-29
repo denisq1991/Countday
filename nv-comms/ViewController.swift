@@ -75,12 +75,19 @@ extension ViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
+        guard let iconName = item.value(forKeyPath: "iconName") as? String else {
+            return UITableViewCell()
+        }
+        
+        let backgroundImage = self.loadImageFromPath(path: title)
+        
         cell.titleLabel?.text = title
         cell.dateLabel?.text = item.value(forKeyPath: "dateString") as? String
         cell.countdownLabel?.text = countDownString
-        cell.iconView?.backgroundColor = UIColor.blue
-        cell.iconView?.image = UIImage(named: "iconName")
-        cell.backgroundView = UIImageView.init(image: self.loadImageFromPath(path: title))
+        let iconColour = backgroundImage == nil ? "grey" : "white"
+        let icon = UIImage(named: iconName + "-" + iconColour)
+        cell.iconView?.image = icon
+        cell.backgroundView = UIImageView.init(image: backgroundImage)
         cell.backgroundView?.contentMode = .scaleAspectFill
         cell.backgroundView?.alpha = 0.4
     
