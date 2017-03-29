@@ -26,33 +26,33 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="56" id="InU-wK-rr7" customClass="ItemViewCell" customModule="nv_comms" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="56" id="InU-wK-rr7" customClass="ItemViewCell" customModule="nv_comms" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="InU-wK-rr7" id="SHs-7Y-IhL">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GsC-Sd-9PR">
+                                                    <rect key="frame" x="2" y="8" width="40" height="40"/>
+                                                    <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="BGD-Jf-vQO"/>
+                                                        <constraint firstAttribute="width" constant="40" id="XL9-Sb-h0l"/>
+                                                    </constraints>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Janes Birthday" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qhf-bM-pCS" userLabel="Title Label">
-                                                    <rect key="frame" x="28" y="8" width="339" height="21"/>
+                                                    <rect key="frame" x="48" y="8" width="319" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24th June 2017" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="310-gl-jcg" userLabel="Date Label">
-                                                    <rect key="frame" x="28" y="39" width="339" height="17"/>
+                                                    <rect key="frame" x="48" y="39" width="319" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" red="0.51372549020000002" green="0.51372549020000002" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygW-vg-lHy">
-                                                    <rect key="frame" x="327" y="18" width="30" height="19.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                                    <state key="normal" title="×"/>
-                                                    <connections>
-                                                        <action selector="deleteItem:" destination="InU-wK-rr7" eventType="touchUpInside" id="jfu-6j-Ez0"/>
-                                                    </connections>
-                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psR-ac-2oW">
                                                     <rect key="frame" x="265" y="14.5" width="40" height="26"/>
                                                     <constraints>
@@ -63,15 +63,25 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygW-vg-lHy">
+                                                    <rect key="frame" x="327" y="18" width="30" height="19.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                                    <state key="normal" title="×"/>
+                                                    <connections>
+                                                        <action selector="didDeleteEvent:" destination="InU-wK-rr7" eventType="touchUpInside" id="UF1-5J-8di"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="GsC-Sd-9PR" firstAttribute="leading" secondItem="SHs-7Y-IhL" secondAttribute="leading" constant="2" id="4fE-9Q-JbV"/>
                                                 <constraint firstItem="qhf-bM-pCS" firstAttribute="top" secondItem="SHs-7Y-IhL" secondAttribute="topMargin" id="9lT-vO-ZCG"/>
                                                 <constraint firstItem="psR-ac-2oW" firstAttribute="centerY" secondItem="SHs-7Y-IhL" secondAttribute="centerY" id="IO0-qh-4mT"/>
+                                                <constraint firstItem="GsC-Sd-9PR" firstAttribute="centerY" secondItem="SHs-7Y-IhL" secondAttribute="centerY" id="KVm-l4-HUG"/>
                                                 <constraint firstItem="310-gl-jcg" firstAttribute="top" secondItem="qhf-bM-pCS" secondAttribute="bottom" constant="10" id="N5S-lb-hzP"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="ygW-vg-lHy" secondAttribute="trailing" constant="10" id="PyD-ga-gPF"/>
-                                                <constraint firstItem="310-gl-jcg" firstAttribute="leading" secondItem="SHs-7Y-IhL" secondAttribute="leadingMargin" constant="20" id="VcZ-y3-ViH"/>
+                                                <constraint firstItem="310-gl-jcg" firstAttribute="leading" secondItem="SHs-7Y-IhL" secondAttribute="leadingMargin" constant="40" id="VcZ-y3-ViH"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="ygW-vg-lHy" secondAttribute="bottom" constant="10" id="bAE-HG-HcT"/>
-                                                <constraint firstItem="qhf-bM-pCS" firstAttribute="leading" secondItem="SHs-7Y-IhL" secondAttribute="leadingMargin" constant="20" id="iQO-Cx-GQJ"/>
+                                                <constraint firstItem="qhf-bM-pCS" firstAttribute="leading" secondItem="SHs-7Y-IhL" secondAttribute="leadingMargin" constant="40" id="iQO-Cx-GQJ"/>
                                                 <constraint firstItem="310-gl-jcg" firstAttribute="trailing" secondItem="SHs-7Y-IhL" secondAttribute="trailingMargin" id="mx0-Xe-8Gh"/>
                                                 <constraint firstItem="ygW-vg-lHy" firstAttribute="leading" secondItem="psR-ac-2oW" secondAttribute="trailing" constant="22" id="pcY-ml-4yG"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="qhf-bM-pCS" secondAttribute="trailing" id="tHM-35-Hb8"/>
@@ -81,6 +91,7 @@
                                         <connections>
                                             <outlet property="countdownLabel" destination="psR-ac-2oW" id="ZNc-Zs-YXv"/>
                                             <outlet property="dateLabel" destination="310-gl-jcg" id="v5Y-C2-0mB"/>
+                                            <outlet property="iconView" destination="GsC-Sd-9PR" id="rxx-gt-pFn"/>
                                             <outlet property="titleLabel" destination="qhf-bM-pCS" id="cx8-yw-z0a"/>
                                         </connections>
                                     </tableViewCell>
@@ -139,18 +150,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JRF-4p-N51" userLabel="Submit Form Button">
-                                        <rect key="frame" x="0.0" y="479" width="343" height="64"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="64" id="fXw-2k-aey"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        <state key="normal" title="Submit"/>
-                                        <connections>
-                                            <action selector="didAddNewItemWithSender:" destination="Ypj-PG-o74" eventType="touchUpInside" id="NaB-6A-fSF"/>
-                                        </connections>
-                                    </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H8T-5Y-TV7">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H8T-5Y-TV7" userLabel="Icon View">
                                         <rect key="frame" x="0.0" y="348" width="343" height="32"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose an icon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJM-0D-lWL">
@@ -295,11 +295,9 @@
                                 <constraints>
                                     <constraint firstItem="8HN-li-Uuf" firstAttribute="leading" secondItem="Ypj-PG-o74" secondAttribute="leading" id="0FH-4r-cpI"/>
                                     <constraint firstItem="H8T-5Y-TV7" firstAttribute="leading" secondItem="Ypj-PG-o74" secondAttribute="leading" id="6ex-n1-fOH"/>
-                                    <constraint firstItem="JRF-4p-N51" firstAttribute="leading" secondItem="Ypj-PG-o74" secondAttribute="leading" id="8I6-Fx-RvS"/>
                                     <constraint firstAttribute="trailing" secondItem="XQ0-sD-H3R" secondAttribute="trailing" id="Gvy-Ps-nHt"/>
                                     <constraint firstItem="Lai-fL-fQ7" firstAttribute="leading" secondItem="Ypj-PG-o74" secondAttribute="leading" id="Jib-Tn-bF0"/>
                                     <constraint firstItem="XQ0-sD-H3R" firstAttribute="leading" secondItem="Ypj-PG-o74" secondAttribute="leading" id="N47-5f-Cdm"/>
-                                    <constraint firstAttribute="bottom" secondItem="JRF-4p-N51" secondAttribute="bottom" constant="60" id="QXf-hd-IIf"/>
                                     <constraint firstAttribute="trailing" secondItem="H8T-5Y-TV7" secondAttribute="trailing" id="SCJ-Iy-IEd"/>
                                     <constraint firstAttribute="trailing" secondItem="yn0-6i-UCY" secondAttribute="trailing" id="VRt-20-sk3"/>
                                     <constraint firstItem="8Pv-0q-9z6" firstAttribute="leading" secondItem="Ypj-PG-o74" secondAttribute="leading" id="VYB-Fp-qwc"/>
@@ -310,7 +308,6 @@
                                     <constraint firstItem="8Pv-0q-9z6" firstAttribute="top" secondItem="XQ0-sD-H3R" secondAttribute="bottom" constant="8" id="mQ1-m3-hWI"/>
                                     <constraint firstAttribute="trailing" secondItem="8Pv-0q-9z6" secondAttribute="trailing" id="o53-ky-cXz"/>
                                     <constraint firstItem="Lai-fL-fQ7" firstAttribute="top" secondItem="H8T-5Y-TV7" secondAttribute="bottom" constant="20" id="oGu-u3-6A8"/>
-                                    <constraint firstAttribute="trailing" secondItem="JRF-4p-N51" secondAttribute="trailing" id="pP8-yF-jH9"/>
                                     <constraint firstItem="8HN-li-Uuf" firstAttribute="top" secondItem="Ypj-PG-o74" secondAttribute="top" constant="12" id="rpw-nO-41o"/>
                                     <constraint firstItem="yn0-6i-UCY" firstAttribute="top" secondItem="8HN-li-Uuf" secondAttribute="bottom" constant="8" id="svb-pg-mns"/>
                                     <constraint firstAttribute="trailing" secondItem="Lai-fL-fQ7" secondAttribute="trailing" id="uLR-FT-X9W"/>
@@ -322,6 +319,7 @@
                                     <outlet property="datePickerExpandView" destination="k7O-cg-d2G" id="kQp-sX-cWr"/>
                                     <outlet property="datePickerViewHeight" destination="qWN-jm-5gB" id="sie-Oi-uoQ"/>
                                     <outlet property="imageView" destination="gLq-PL-aYC" id="os1-gg-b14"/>
+                                    <outlet property="selectedIconView" destination="KWq-zB-IIT" id="zJp-So-q57"/>
                                     <outlet property="titleTextField" destination="8HN-li-Uuf" id="CoL-IB-Ggi"/>
                                 </connections>
                             </view>
@@ -336,6 +334,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Create An Event" id="bZg-nb-z98">
                         <barButtonItem key="backBarButtonItem" title="Back" id="DH3-NT-4Vm"/>
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="c2m-qI-gzo">
+                            <connections>
+                                <action selector="didSelectDone:" destination="W8y-7k-c0X" id="9rP-bs-1QX"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="itemFormView" destination="Ypj-PG-o74" id="CU1-zK-TOS"/>

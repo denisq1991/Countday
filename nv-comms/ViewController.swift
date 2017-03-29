@@ -78,11 +78,12 @@ extension ViewController: UITableViewDataSource {
         cell.titleLabel?.text = title
         cell.dateLabel?.text = item.value(forKeyPath: "dateString") as? String
         cell.countdownLabel?.text = countDownString
+        cell.iconView?.backgroundColor = UIColor.blue
+        cell.iconView?.image = UIImage(named: "iconName")
         cell.backgroundView = UIImageView.init(image: self.loadImageFromPath(path: title))
         cell.backgroundView?.contentMode = .scaleAspectFill
         cell.backgroundView?.alpha = 0.4
     
-        //cell.imageView?.image = self.loadImageFromPath(path: title)
         return cell
     }
 }
@@ -105,7 +106,7 @@ extension ViewController: ItemViewCellDelegate {
         do {
             try context?.save()
         } catch let error as NSError {
-            print("Could save context. \(error.userInfo)")
+            print("Couldn't save context. \(error.userInfo)")
         }
 
         self.fetchAndReloadItems()
@@ -117,9 +118,11 @@ class ItemViewCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var countdownLabel: UILabel!
+    @IBOutlet var iconView: UIImageView?
+    
     var delegate: ItemViewCellDelegate?
     
-    @IBAction func deleteItem(_ sender: UIButton) {
+    @IBAction func didDeleteEvent(_ sender: UIButton) {
         self.delegate?.deleteItemFromMemory(cell: self)
     }
     

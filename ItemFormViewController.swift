@@ -12,7 +12,7 @@ import CoreData
 import UserNotifications
 
 protocol ItemFormDelegate {
-    func saveItem(title: String, date: Date, image: UIImage?, countDown: String, alertOn: Bool)
+    func saveItem(title: String, date: Date, image: UIImage?, countDown: String, alertOn: Bool, iconName: String?)
     func addNewImage()
 }
 
@@ -32,7 +32,7 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
     var imagePicker: UIImagePickerController?
     
     // Define the specific path, image name
-    let imagePath:  String? = nil //fileInDocumentsDirectory(myImageName)
+    let imagePath:  String? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,13 +76,30 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
         })
     }
     
-    @IBAction func didDismissForm() {
-        self.dismiss(animated: true)
+    @IBAction func didSelectDone(_ sender: Any) {
+        guard let title: String = self.itemFormView?.titleTextField?.text,
+            let date: Date = self.itemFormView?.datePicker?.date else {
+                return
+        }
+        
+        // Get the days between both dates
+        // TODO: Handle negatives gracefully
+        let calendar = Calendar.current
+        let currentDate = Date()
+        let components = calendar.dateComponents(Set(arrayLiteral: .day, .hour), from: currentDate, to: date)
+        
+        let days = String(describing: components.day!)
+        
+        let image: UIImage? = self.itemFormView?.imageView?.image
+        guard let alertOn: Bool = self.itemFormView?.alertSwitcher?.isOn else {
+            return
+        }
+        
+        self.saveItem(title: title, date: date, image: image, countDown: days, alertOn: alertOn, iconName: self.itemFormView?.selectedIconName)
     }
-    
     // MARK: - ItemForm Delegate Methods
     
-    func saveItem(title: String, date: Date, image: UIImage?, countDown: String, alertOn: Bool) {
+    func saveItem(title: String, date: Date, image: UIImage?, countDown: String, alertOn: Bool, iconName: String?) {
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
@@ -95,6 +112,7 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
         item.setValue(title, forKeyPath: "title")
         item.setValue(dateString, forKeyPath: "dateString")
         item.setValue(countDown, forKey: "countDown")
+        item.setValue(iconName, forKey: "iconName")
         
         if (alertOn) {
             let center = UNUserNotificationCenter.current()
@@ -117,7 +135,7 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
             print("Could not save. \(error), \(error.userInfo)")
         }
         
-        self.dismiss(animated: true)
+        _ = self.navigationController?.popViewController(animated: true)
     }
     
     func addNewImage() {
@@ -158,6 +176,8 @@ class ItemFormView : UIView {
     @IBOutlet var datePicker: UIDatePicker?
     @IBOutlet var dateLabel: UILabel?
     @IBOutlet var alertSwitcher: UISwitch?
+    @IBOutlet var selectedIconView: UIImageView?
+    var selectedIconName: String?
     
     @IBOutlet var datePickerViewHeight: NSLayoutConstraint?
     
@@ -187,28 +207,6 @@ class ItemFormView : UIView {
         let newDate = self.datePicker?.date
         let dateString = newDate?.stringForDate()
         self.dateLabel?.text = dateString
-    }
-    
-    @IBAction func didAddNewItem(sender: Any) {
-        guard let title: String = self.titleTextField?.text,
-            let date: Date = self.datePicker?.date else {
-                return
-        }
-        
-        // Get the days between both dates
-        // TODO: Handle negatives gracefully
-        let calendar = Calendar.current
-        let currentDate = Date()
-        let components = calendar.dateComponents(Set(arrayLiteral: .day, .hour), from: currentDate, to: date)
-        
-        let days = String(describing: components.day!)
-        
-        let image: UIImage? = self.imageView?.image
-        guard let alertOn: Bool = self.alertSwitcher?.isOn else {
-            return
-        }
-        
-        self.delegate?.saveItem(title: title, date: date, image: image, countDown: days, alertOn: alertOn)
     }
     
     @IBAction func addNewImage(sender: Any) {
