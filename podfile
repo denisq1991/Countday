@@ -1,0 +1,9 @@
+platform :ios, '10.3'
+use_frameworks!
+
+source 'https://github.com/CocoaPods/Specs.git'
+
+target 'nv-comms' do 
+pod 'Koloda', '~> 4.0'
+end
+

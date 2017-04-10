@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Koloda
 
 protocol ItemViewCellDelegate {
     func deleteItemFromMemory(cell: UITableViewCell)
@@ -15,17 +16,23 @@ protocol ItemViewCellDelegate {
 
 class ViewController: UIViewController {
     
+    @IBOutlet weak var kolodaView: KolodaView!
     @IBOutlet weak var itemTableView: UITableView!
     var items: [NSManagedObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.title = "Items"
+        self.fetchAndReloadItems()
+        kolodaView.dataSource = self
+        kolodaView.delegate = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.fetchAndReloadItems()
+        self.kolodaView.reloadData()
     }
     
     fileprivate func fetchAndReloadItems() {
@@ -79,7 +86,10 @@ extension ViewController: UITableViewDataSource {
         cell.dateLabel?.text = item.value(forKeyPath: "dateString") as? String
         cell.countdownLabel?.text = countDownString
         cell.iconView?.backgroundColor = UIColor.blue
-        cell.iconView?.image = UIImage(named: "iconName")
+        if let iconName = item.value(forKeyPath: "iconName") as? String {
+            cell.iconView?.image = UIImage(named: iconName + "-white")
+        }
+        
         cell.backgroundView = UIImageView.init(image: self.loadImageFromPath(path: title))
         cell.backgroundView?.contentMode = .scaleAspectFill
         cell.backgroundView?.alpha = 0.4
@@ -110,6 +120,40 @@ extension ViewController: ItemViewCellDelegate {
         }
 
         self.fetchAndReloadItems()
+    }
+}
+
+    // MARK: - Kolada Delegate & Data Source
+
+extension ViewController: KolodaViewDelegate {
+    
+    func kolodaDidRunOutOfCards(koloda: KolodaView) {
+        self.kolodaView.reloadData()
+    }
+    
+    func koloda(koloda: KolodaView, didSelectCardAt index: Int) {
+        UIApplication.shared.open(NSURL(string: "https://yalantis.com/")! as URL, options: [:], completionHandler: nil)
+    }
+}
+
+extension ViewController: KolodaViewDataSource {
+    
+    func kolodaNumberOfCards(_ koloda:KolodaView) -> Int {
+        return self.items.count
+    }
+    
+    func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
+        let item = self.items[index]
+        guard let title = item.value(forKeyPath: "title") as? String else {
+            return UITableViewCell()
+        }
+        
+        let image = UIImageView(image: self.loadImageFromPath(path: title))
+        return image
+    }
+    
+    func koloda(koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {
+        return Bundle.main.loadNibNamed("OverlayView", owner: self, options: nil)?[0] as? OverlayView
     }
 }
 
