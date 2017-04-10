@@ -41,12 +41,6 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
         self.imagePicker = UIImagePickerController()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        
-    }
-    
     private func saveImage (image: UIImage?, path: String ){
         if (image != nil) {
             let pngImageData = UIImagePNGRepresentation(image!)

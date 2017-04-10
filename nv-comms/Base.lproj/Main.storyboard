@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="68" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xM2-Q6-LKg">
-                                <rect key="frame" x="0.0" y="284" width="375" height="383"/>
+                                <rect key="frame" x="0.0" y="296" width="375" height="371"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="56" id="InU-wK-rr7" customClass="ItemViewCell" customModule="nv_comms" customModuleProvider="target">
@@ -101,7 +101,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lin-SW-z9I" userLabel="SwipeCard View" customClass="KolodaView" customModule="Koloda">
-                                <rect key="frame" x="16" y="64" width="343" height="220"/>
+                                <rect key="frame" x="16" y="76" width="343" height="220"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="220" id="GxU-pT-dPj"/>
@@ -114,7 +114,7 @@
                             <constraint firstItem="lin-SW-z9I" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="5sc-Iw-VK5"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xM2-Q6-LKg" secondAttribute="bottom" id="5w3-T5-I9U"/>
                             <constraint firstItem="xM2-Q6-LKg" firstAttribute="top" secondItem="lin-SW-z9I" secondAttribute="bottom" id="AYs-eG-QTT"/>
-                            <constraint firstItem="lin-SW-z9I" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="SfD-w5-TkN"/>
+                            <constraint firstItem="lin-SW-z9I" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="12" id="SfD-w5-TkN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xM2-Q6-LKg" secondAttribute="trailing" constant="-16" id="Y7R-4H-IkD"/>
                             <constraint firstItem="xM2-Q6-LKg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="tM3-ba-9Dq"/>
                         </constraints>

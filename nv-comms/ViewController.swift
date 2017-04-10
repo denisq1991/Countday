@@ -62,6 +62,8 @@ class ViewController: UIViewController {
     }
 }
 
+    // MARK: - Tableview Delegate & DataSource
+
 extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -87,15 +89,16 @@ extension ViewController: UITableViewDataSource {
         cell.titleLabel?.text = title
         cell.dateLabel?.text = item.value(forKeyPath: "dateString") as? String
         cell.countdownLabel?.text = countDownString
-        cell.iconView?.backgroundColor = UIColor.blue
         if let iconName = item.value(forKeyPath: "iconName") as? String {
             cell.iconView?.image = UIImage(named: iconName + "-white")
         }
         
         cell.backgroundView = UIImageView.init(image: self.loadImageFromPath(path: title))
         cell.backgroundView = UIImageView.init(image: backgroundImage)
+        cell.backgroundView?.isUserInteractionEnabled = false
         cell.backgroundView?.contentMode = .scaleAspectFill
         cell.backgroundView?.alpha = 0.4
+        cell.selectionStyle = .none
     
         return cell
     }
@@ -126,7 +129,7 @@ extension ViewController: ItemViewCellDelegate {
     }
 }
 
-    // MARK: - Kolada Delegate & Data Source
+    // MARK: - Kolada Delegate & DataSource
 
 extension ViewController: KolodaViewDelegate {
     
@@ -135,7 +138,7 @@ extension ViewController: KolodaViewDelegate {
     }
     
     func koloda(koloda: KolodaView, didSelectCardAt index: Int) {
-        UIApplication.shared.open(NSURL(string: "https://yalantis.com/")! as URL, options: [:], completionHandler: nil)
+        // Don't really want to do anything here
     }
 }
 
@@ -151,8 +154,21 @@ extension ViewController: KolodaViewDataSource {
             return UITableViewCell()
         }
         
-        let image = UIImageView(image: self.loadImageFromPath(path: title))
-        return image
+        guard let countDownString = item.value(forKeyPath: "countDown") as? String else {
+            return UITableViewCell()
+        }
+        let swipeCard = Bundle.main.loadNibNamed("SwipeCardView", owner: self, options: nil)?[0] as! SwipeCardView
+        guard let imageView = swipeCard.imageView,
+            let daysLabel = swipeCard.daysLabel else {
+            return UIView()
+        }
+        
+        daysLabel.text = countDownString
+        imageView.image = self.loadImageFromPath(path: title)
+        imageView.layer.cornerRadius = 6
+        imageView.layer.masksToBounds = true
+        
+        return swipeCard
     }
     
     func koloda(koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {
