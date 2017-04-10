@@ -97,11 +97,12 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
         let days = String(describing: components.day!)
         
         let image: UIImage? = self.itemFormView?.imageView?.image
+        let iconName: String? = self.itemFormView?.selectedIconName
         guard let alertOn: Bool = self.itemFormView?.alertSwitcher?.isOn else {
             return
         }
         
-        self.saveItem(title: title, date: date, image: image, countDown: days, alertOn: alertOn, iconName: self.itemFormView?.selectedIconName)
+        self.saveItem(title: title, date: date, image: image, countDown: days, alertOn: alertOn, iconName: iconName)
     }
     // MARK: - ItemForm Delegate Methods
     

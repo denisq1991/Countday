@@ -82,6 +82,8 @@ extension ViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
+        let backgroundImage = self.loadImageFromPath(path: title)
+        
         cell.titleLabel?.text = title
         cell.dateLabel?.text = item.value(forKeyPath: "dateString") as? String
         cell.countdownLabel?.text = countDownString
@@ -91,6 +93,7 @@ extension ViewController: UITableViewDataSource {
         }
         
         cell.backgroundView = UIImageView.init(image: self.loadImageFromPath(path: title))
+        cell.backgroundView = UIImageView.init(image: backgroundImage)
         cell.backgroundView?.contentMode = .scaleAspectFill
         cell.backgroundView?.alpha = 0.4
     
