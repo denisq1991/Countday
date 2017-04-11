@@ -51,18 +51,18 @@ class ViewController: UIViewController {
         self.itemTableView.reloadData()
     }
     
-    func loadImageFromPath(path: String) -> UIImage? {
-        let tempDirectory = NSTemporaryDirectory()
-        let imagePath = ("\(tempDirectory)\(path).png")
-        let image = UIImage(contentsOfFile: imagePath)
-        if image == nil {
-            print("missing image at: \(imagePath)")
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let indexPath = self.itemTableView.indexPathForSelectedRow else {
+            return
         }
-        return image
+
+        let itemFormViewController = segue.destination as! ItemFormViewController
+        itemFormViewController.itemFormView?.isEditing = true
+        itemFormViewController.currentItem = self.items[indexPath.row]
     }
 }
 
-    // MARK: - Tableview Delegate & DataSource
+// MARK: - Tableview Delegate & DataSource
 
 extension ViewController: UITableViewDataSource {
     
@@ -76,30 +76,28 @@ extension ViewController: UITableViewDataSource {
         cell.delegate = self
         
         let item = self.items[indexPath.row]
-        guard let title = item.value(forKeyPath: "title") as? String else {
-            return UITableViewCell()
+        guard let countDownString = item.value(forKeyPath: "countDown") as? String,
+            let dateString = item.value(forKeyPath: "dateString") as? String,
+            let title = item.value(forKeyPath: "title") as? String else {
+                return UITableViewCell()
         }
         
-        guard let countDownString = item.value(forKeyPath: "countDown") as? String else {
-            return UITableViewCell()
-        }
-        
-        let backgroundImage = self.loadImageFromPath(path: title)
+        let backgroundImage = title.loadImageFromPath()
         
         cell.titleLabel?.text = title
-        cell.dateLabel?.text = item.value(forKeyPath: "dateString") as? String
+        cell.dateLabel?.text = dateString
         cell.countdownLabel?.text = countDownString
         if let iconName = item.value(forKeyPath: "iconName") as? String {
             cell.iconView?.image = UIImage(named: iconName + "-white")
         }
         
-        cell.backgroundView = UIImageView.init(image: self.loadImageFromPath(path: title))
+        cell.backgroundView = UIImageView.init(image: title.loadImageFromPath())
         cell.backgroundView = UIImageView.init(image: backgroundImage)
         cell.backgroundView?.isUserInteractionEnabled = false
         cell.backgroundView?.contentMode = .scaleAspectFill
         cell.backgroundView?.alpha = 0.4
         cell.selectionStyle = .none
-    
+        
         return cell
     }
 }
@@ -124,12 +122,12 @@ extension ViewController: ItemViewCellDelegate {
         } catch let error as NSError {
             print("Couldn't save context. \(error.userInfo)")
         }
-
+        
         self.fetchAndReloadItems()
     }
 }
 
-    // MARK: - Kolada Delegate & DataSource
+// MARK: - Kolada Delegate & DataSource
 
 extension ViewController: KolodaViewDelegate {
     
@@ -160,11 +158,11 @@ extension ViewController: KolodaViewDataSource {
         let swipeCard = Bundle.main.loadNibNamed("SwipeCardView", owner: self, options: nil)?[0] as! SwipeCardView
         guard let imageView = swipeCard.imageView,
             let daysLabel = swipeCard.daysLabel else {
-            return UIView()
+                return UIView()
         }
         
         daysLabel.text = countDownString
-        imageView.image = self.loadImageFromPath(path: title)
+        imageView.image = title.loadImageFromPath()
         imageView.layer.cornerRadius = 6
         imageView.layer.masksToBounds = true
         
@@ -189,6 +187,18 @@ class ItemViewCell: UITableViewCell {
         self.delegate?.deleteItemFromMemory(cell: self)
     }
     
+}
+
+extension String {
+    func loadImageFromPath() -> UIImage? {
+        let tempDirectory = NSTemporaryDirectory()
+        let imagePath = ("\(tempDirectory)\(self).png")
+        let image = UIImage(contentsOfFile: imagePath)
+        if image == nil {
+            print("missing image at: \(imagePath)")
+        }
+        return image
+    }
 }
 
 

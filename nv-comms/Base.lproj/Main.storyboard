@@ -49,7 +49,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="24th June 2017" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="310-gl-jcg" userLabel="Date Label">
                                                     <rect key="frame" x="64" y="39" width="303" height="17"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" red="0.51372549020000002" green="0.51372549020000002" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" red="0.29411764709999999" green="0.29411764709999999" blue="0.29411764709999999" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="psR-ac-2oW">
@@ -92,6 +92,7 @@
                                             <outlet property="dateLabel" destination="310-gl-jcg" id="v5Y-C2-0mB"/>
                                             <outlet property="iconView" destination="GsC-Sd-9PR" id="rxx-gt-pFn"/>
                                             <outlet property="titleLabel" destination="qhf-bM-pCS" id="cx8-yw-z0a"/>
+                                            <segue destination="W8y-7k-c0X" kind="show" id="Vpx-o5-8Ac"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -447,4 +448,7 @@
             <point key="canvasLocation" x="117.59999999999999" y="776.76161919040487"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Vpx-o5-8Ac"/>
+    </inferredMetricsTieBreakers>
 </document>

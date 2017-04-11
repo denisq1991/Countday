@@ -33,12 +33,36 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
     
     // Define the specific path, image name
     let imagePath:  String? = nil
+    var currentItem: NSManagedObject?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "Create New Item"
+        self.title = self.currentItem != nil ? "Edit An Item" : "Create New Item"
+        self.setUpItemForm(item: self.currentItem)
         self.itemFormView?.delegate = self
         self.imagePicker = UIImagePickerController()
+    }
+    
+    private func setUpItemForm(item: NSManagedObject?) {
+        self.itemFormView?.datePicker?.date = Date()
+        self.itemFormView?.imageView?.contentMode = .center
+        self.itemFormView?.imageView?.contentMode = .scaleAspectFill
+        self.itemFormView?.imageView?.clipsToBounds = true
+        
+        let dateString = item?.value(forKeyPath: "dateString") as? String
+        let title = item?.value(forKeyPath: "title") as? String
+        
+        self.itemFormView?.titleTextField?.text = title ?? ""
+        self.itemFormView?.imageView?.image = title?.loadImageFromPath()
+        self.itemFormView?.alertSwitcher?.isOn = false
+        if let iconName = item?.value(forKeyPath: "iconName") as? String {
+            self.itemFormView?.selectedIconName = iconName
+            self.itemFormView?.selectedIconView?.image = UIImage(named: iconName + "-grey")
+        } else {
+            self.itemFormView?.selectedIconName = ""
+        }
+        
+        self.itemFormView?.dateLabel?.text = dateString ?? self.itemFormView?.datePicker?.date.stringForDate()
     }
     
     private func saveImage (image: UIImage?, path: String ){
@@ -175,28 +199,39 @@ class ItemFormView : UIView {
     @IBOutlet var imageView: UIImageView?
     @IBOutlet var datePickerExpandView: UIView?
     @IBOutlet var datePicker: UIDatePicker?
+    @IBOutlet var datePickerViewHeight: NSLayoutConstraint?
     @IBOutlet var dateLabel: UILabel?
     @IBOutlet var alertSwitcher: UISwitch?
     @IBOutlet var selectedIconView: UIImageView?
+    
     var selectedIconName: String?
     
-    @IBOutlet var datePickerViewHeight: NSLayoutConstraint?
-    
+    var isEditing = false
     var delegate: ItemFormDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         self.datePickerViewHeight?.constant = CGFloat(0)
+        self.datePicker?.addTarget(self, action: #selector(datePickerChanged), for: .valueChanged)
+        
+        if !self.isEditing {
+            self.resetFormState()
+        } else {
+            self.resetFormState()
+        }
+    }
+    
+    private func resetFormState() {
         self.datePicker?.date = Date()
         self.titleTextField?.text = ""
         self.imageView?.image = nil
         self.alertSwitcher?.isOn = false
         self.selectedIconName = ""
-        
         let dateString = self.datePicker?.date.stringForDate()
         self.dateLabel?.text = dateString
-        self.datePicker?.addTarget(self, action: #selector(datePickerChanged), for: .valueChanged)
     }
+    
     
     @IBAction func didSelectDatePicker() {
         // toggle the constraints of the datePickerView
