@@ -18,7 +18,10 @@
 		7A8C3F421E7804B900BA8936 /* nv_comms.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A8C3F401E7804B900BA8936 /* nv_comms.xcdatamodeld */; };
 		7A8C3F441E7804B900BA8936 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A8C3F431E7804B900BA8936 /* Assets.xcassets */; };
 		7A8C3F471E7804B900BA8936 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A8C3F451E7804B900BA8936 /* LaunchScreen.storyboard */; };
-		7A8C3F4F1E798A1300BA8936 /* ItemFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8C3F4E1E798A1300BA8936 /* ItemFormViewController.swift */; };
+		7A9CAB5E1E9E4224001C82C2 /* ItemFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CAB5C1E9E4224001C82C2 /* ItemFormView.swift */; };
+		7A9CAB5F1E9E4224001C82C2 /* ItemFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CAB5D1E9E4224001C82C2 /* ItemFormViewController.swift */; };
+		7A9CAB621E9E422D001C82C2 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CAB601E9E422D001C82C2 /* Date+String.swift */; };
+		7A9CAB631E9E422D001C82C2 /* String+ImagePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CAB611E9E422D001C82C2 /* String+ImagePath.swift */; };
 		B4658DD02702B40DC390D4DE /* Pods_nv_comms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F27976FAE446F9A1454B3B4A /* Pods_nv_comms.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,8 +39,11 @@
 		7A8C3F431E7804B900BA8936 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A8C3F461E7804B900BA8936 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A8C3F481E7804B900BA8936 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7A8C3F4E1E798A1300BA8936 /* ItemFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ItemFormViewController.swift; path = ../ItemFormViewController.swift; sourceTree = "<group>"; };
 		7A99720B1E9BA1540043FFE7 /* Koloda.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Koloda.framework; path = "../../Library/Developer/Xcode/DerivedData/nv-comms-edyqljqymidzcmgcmipqueeqqjqo/Build/Products/Debug-iphonesimulator/Koloda/Koloda.framework"; sourceTree = "<group>"; };
+		7A9CAB5C1E9E4224001C82C2 /* ItemFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemFormView.swift; sourceTree = "<group>"; };
+		7A9CAB5D1E9E4224001C82C2 /* ItemFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemFormViewController.swift; sourceTree = "<group>"; };
+		7A9CAB601E9E422D001C82C2 /* Date+String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+String.swift"; sourceTree = "<group>"; };
+		7A9CAB611E9E422D001C82C2 /* String+ImagePath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+ImagePath.swift"; sourceTree = "<group>"; };
 		D9F4081076B47C802CA80CC6 /* Pods-nv-comms.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nv-comms.release.xcconfig"; path = "Pods/Target Support Files/Pods-nv-comms/Pods-nv-comms.release.xcconfig"; sourceTree = "<group>"; };
 		F27976FAE446F9A1454B3B4A /* Pods_nv_comms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nv_comms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -98,7 +104,8 @@
 			children = (
 				7A8C3F391E7804B900BA8936 /* AppDelegate.swift */,
 				7A8C3F3B1E7804B900BA8936 /* ViewController.swift */,
-				7A8C3F4E1E798A1300BA8936 /* ItemFormViewController.swift */,
+				7A9CAB5B1E9E40BE001C82C2 /* ItemForm */,
+				7A9CAB541E9E2513001C82C2 /* Helpers */,
 				7A0A060F1E8A9E1600B4BF47 /* IconChooserViewController.swift */,
 				7A4131AF1E9BBEC600B79FDD /* SwipeCardView.swift */,
 				7A4131AD1E9BBEA200B79FDD /* SwipeCardView.xib */,
@@ -109,6 +116,24 @@
 				7A8C3F401E7804B900BA8936 /* nv_comms.xcdatamodeld */,
 			);
 			path = "nv-comms";
+			sourceTree = "<group>";
+		};
+		7A9CAB541E9E2513001C82C2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				7A9CAB601E9E422D001C82C2 /* Date+String.swift */,
+				7A9CAB611E9E422D001C82C2 /* String+ImagePath.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		7A9CAB5B1E9E40BE001C82C2 /* ItemForm */ = {
+			isa = PBXGroup;
+			children = (
+				7A9CAB5C1E9E4224001C82C2 /* ItemFormView.swift */,
+				7A9CAB5D1E9E4224001C82C2 /* ItemFormViewController.swift */,
+			);
+			path = ItemForm;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,8 +262,11 @@
 			files = (
 				7A8C3F3C1E7804B900BA8936 /* ViewController.swift in Sources */,
 				7A8C3F421E7804B900BA8936 /* nv_comms.xcdatamodeld in Sources */,
+				7A9CAB631E9E422D001C82C2 /* String+ImagePath.swift in Sources */,
 				7A8C3F3A1E7804B900BA8936 /* AppDelegate.swift in Sources */,
-				7A8C3F4F1E798A1300BA8936 /* ItemFormViewController.swift in Sources */,
+				7A9CAB5E1E9E4224001C82C2 /* ItemFormView.swift in Sources */,
+				7A9CAB621E9E422D001C82C2 /* Date+String.swift in Sources */,
+				7A9CAB5F1E9E4224001C82C2 /* ItemFormViewController.swift in Sources */,
 				7A0A06101E8A9E1600B4BF47 /* IconChooserViewController.swift in Sources */,
 				7A4131B01E9BBEC600B79FDD /* SwipeCardView.swift in Sources */,
 			);

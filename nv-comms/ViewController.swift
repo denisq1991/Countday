@@ -131,12 +131,12 @@ extension ViewController: ItemViewCellDelegate {
 
 extension ViewController: KolodaViewDelegate {
     
-    func kolodaDidRunOutOfCards(koloda: KolodaView) {
-        self.kolodaView.reloadData()
+    func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
+        self.kolodaView.resetCurrentCardIndex()
     }
     
-    func koloda(koloda: KolodaView, didSelectCardAt index: Int) {
-        // Don't really want to do anything here
+    func kolodaShouldApplyAppearAnimation(_ koloda: KolodaView) -> Bool {
+        return false
     }
 }
 
@@ -188,17 +188,3 @@ class ItemViewCell: UITableViewCell {
     }
     
 }
-
-extension String {
-    func loadImageFromPath() -> UIImage? {
-        let tempDirectory = NSTemporaryDirectory()
-        let imagePath = ("\(tempDirectory)\(self).png")
-        let image = UIImage(contentsOfFile: imagePath)
-        if image == nil {
-            print("missing image at: \(imagePath)")
-        }
-        return image
-    }
-}
-
-
