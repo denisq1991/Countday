@@ -27,6 +27,7 @@ class ViewController: UIViewController {
         self.fetchAndReloadItems()
         kolodaView.dataSource = self
         kolodaView.delegate = self
+        kolodaView.countOfVisibleCards = 2
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -138,6 +139,10 @@ extension ViewController: KolodaViewDelegate {
     func kolodaShouldApplyAppearAnimation(_ koloda: KolodaView) -> Bool {
         return false
     }
+    
+    func kolodaShouldMoveBackgroundCard(_ koloda: KolodaView) -> Bool {
+        return false
+    }
 }
 
 extension ViewController: KolodaViewDataSource {
@@ -163,8 +168,6 @@ extension ViewController: KolodaViewDataSource {
         
         daysLabel.text = countDownString
         imageView.image = title.loadImageFromPath()
-        imageView.layer.cornerRadius = 6
-        imageView.layer.masksToBounds = true
         
         return swipeCard
     }

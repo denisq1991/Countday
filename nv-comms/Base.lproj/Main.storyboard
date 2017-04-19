@@ -10,6 +10,43 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Settings View Controller-->
+        <scene sceneID="UHM-C8-zvS">
+            <objects>
+                <viewController id="Shc-jh-07x" customClass="SettingsViewController" customModule="nv_comms" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eDI-nG-n5u"/>
+                        <viewControllerLayoutGuide type="bottom" id="0ww-JN-gzH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SFT-pw-I4r">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Cof-ij-ZSp">
+                                <rect key="frame" x="16" y="64" width="343" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="Shc-jh-07x" id="2Z7-oY-S8D"/>
+                                    <outlet property="delegate" destination="Shc-jh-07x" id="17e-Xr-NPt"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0ww-JN-gzH" firstAttribute="top" secondItem="Cof-ij-ZSp" secondAttribute="bottom" id="NfO-tF-QTJ"/>
+                            <constraint firstItem="Cof-ij-ZSp" firstAttribute="top" secondItem="eDI-nG-n5u" secondAttribute="bottom" id="WSW-zD-oRj"/>
+                            <constraint firstItem="Cof-ij-ZSp" firstAttribute="leading" secondItem="SFT-pw-I4r" secondAttribute="leadingMargin" id="e1r-Xa-GbO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Cof-ij-ZSp" secondAttribute="trailing" id="xq8-W7-gfN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="settingsTableView" destination="Cof-ij-ZSp" id="9aN-h2-Np0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qZ0-Sa-mp7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1049" y="-613"/>
+        </scene>
         <!--Events-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -23,7 +60,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="68" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xM2-Q6-LKg">
-                                <rect key="frame" x="0.0" y="296" width="375" height="371"/>
+                                <rect key="frame" x="0.0" y="284" width="375" height="383"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="56" id="InU-wK-rr7" customClass="ItemViewCell" customModule="nv_comms" customModuleProvider="target">
@@ -102,7 +139,7 @@
                                 </connections>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lin-SW-z9I" userLabel="SwipeCard View" customClass="KolodaView" customModule="Koloda">
-                                <rect key="frame" x="16" y="76" width="343" height="220"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="220"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="220" id="GxU-pT-dPj"/>
@@ -111,16 +148,21 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="lin-SW-z9I" secondAttribute="trailing" id="2zw-lp-9lO"/>
-                            <constraint firstItem="lin-SW-z9I" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="5sc-Iw-VK5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lin-SW-z9I" secondAttribute="trailing" constant="-16" id="2zw-lp-9lO"/>
+                            <constraint firstItem="lin-SW-z9I" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="5sc-Iw-VK5"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="xM2-Q6-LKg" secondAttribute="bottom" id="5w3-T5-I9U"/>
                             <constraint firstItem="xM2-Q6-LKg" firstAttribute="top" secondItem="lin-SW-z9I" secondAttribute="bottom" id="AYs-eG-QTT"/>
-                            <constraint firstItem="lin-SW-z9I" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="12" id="SfD-w5-TkN"/>
+                            <constraint firstItem="lin-SW-z9I" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="SfD-w5-TkN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xM2-Q6-LKg" secondAttribute="trailing" constant="-16" id="Y7R-4H-IkD"/>
                             <constraint firstItem="xM2-Q6-LKg" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="tM3-ba-9Dq"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Events" id="tSF-Ou-8sf">
+                        <barButtonItem key="leftBarButtonItem" title="Settings" id="Q23-mD-Ebp">
+                            <connections>
+                                <segue destination="Shc-jh-07x" kind="show" id="Ilm-7I-KkD"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="6dq-YK-6XE">
                             <connections>
                                 <segue destination="W8y-7k-c0X" kind="show" id="jOB-cg-R6P"/>
