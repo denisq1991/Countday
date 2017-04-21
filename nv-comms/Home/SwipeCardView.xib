@@ -28,11 +28,11 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAE-5o-Rn9">
-                    <rect key="frame" x="143.5" y="27" width="42" height="80"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAE-5o-Rn9">
+                    <rect key="frame" x="114.5" y="27" width="100" height="80"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="80" id="7w1-e0-Rto"/>
-                        <constraint firstAttribute="width" constant="42" id="jra-jp-xDu"/>
+                        <constraint firstAttribute="width" constant="100" id="jra-jp-xDu"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="70"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

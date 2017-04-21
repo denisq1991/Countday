@@ -132,6 +132,7 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
             self.saveItem(title: title, date: date, image: image, countDown: days, alertOn: alertOn, iconName: iconName)
         }
     }
+    
     // MARK: - ItemForm Delegate Methods
     
     func editItem(id: NSManagedObjectID, title: String, date: Date, image: UIImage?, countDown: String, alertOn: Bool, iconName: String?) {
@@ -147,7 +148,7 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
             let dateString = date.stringForDate()
             managedObject.setValue(title, forKey: "title")
             managedObject.setValue(dateString, forKeyPath: "dateString")
-            managedObject.setValue(countDown, forKey: "countDown")
+            managedObject.setValue(Int(countDown), forKey: "countDown")
             managedObject.setValue(iconName, forKey: "iconName")
             self.saveImage(image: image, path:title )
             
@@ -174,7 +175,7 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
         let dateString = date.stringForDate()
         item.setValue(title, forKeyPath: "title")
         item.setValue(dateString, forKeyPath: "dateString")
-        item.setValue(countDown, forKey: "countDown")
+        item.setValue(Int(countDown), forKey: "countDown")
         item.setValue(iconName, forKey: "iconName")
         
         if (alertOn) {

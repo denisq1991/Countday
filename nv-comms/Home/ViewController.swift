@@ -24,7 +24,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         self.title = "Items"
-        self.fetchAndReloadItems()
         kolodaView.dataSource = self
         kolodaView.delegate = self
         kolodaView.countOfVisibleCards = 2
@@ -43,7 +42,8 @@ class ViewController: UIViewController {
         
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Item")
-        
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "countDown", ascending: true)]
+
         do {
             self.items = try managedContext.fetch(fetchRequest)
         } catch let error as NSError {
@@ -59,53 +59,6 @@ class ViewController: UIViewController {
 
         let itemFormViewController = segue.destination as! ItemFormViewController
         itemFormViewController.currentItem = self.items[indexPath.row]
-    }
-}
-
-// MARK: - Tableview Delegate & DataSource
-
-extension ViewController: UITableViewDataSource {
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.items.count
-    }
-    
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemViewCell
-        cell.delegate = self
-        
-        let item = self.items[indexPath.row]
-        guard let countDownString = item.value(forKeyPath: "countDown") as? String,
-            let dateString = item.value(forKeyPath: "dateString") as? String,
-            let title = item.value(forKeyPath: "title") as? String else {
-                return UITableViewCell()
-        }
-        
-        let backgroundImage = title.loadImageFromPath()
-        
-        cell.titleLabel?.text = title
-        cell.dateLabel?.text = dateString
-        cell.countdownLabel?.text = countDownString
-        if let iconName = item.value(forKeyPath: "iconName") as? String {
-            let iconColorString = backgroundImage != nil ? "-white" : "-grey"
-            cell.iconView?.image = UIImage(named: iconName + iconColorString)
-        }
-        
-        cell.backgroundView = UIImageView.init(image: title.loadImageFromPath())
-        cell.backgroundView = UIImageView.init(image: backgroundImage)
-        cell.backgroundView?.isUserInteractionEnabled = false
-        cell.backgroundView?.contentMode = .scaleAspectFill
-        cell.backgroundView?.alpha = 0.4
-        cell.selectionStyle = .none
-        
-        return cell
-    }
-}
-
-extension ViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0
     }
 }
 
@@ -125,57 +78,11 @@ extension ViewController: ItemViewCellDelegate {
         }
         
         self.fetchAndReloadItems()
+        self.kolodaView.reloadData()
     }
 }
 
-// MARK: - Kolada Delegate & DataSource
 
-extension ViewController: KolodaViewDelegate {
-    
-    func kolodaDidRunOutOfCards(_ koloda: KolodaView) {
-        self.kolodaView.resetCurrentCardIndex()
-    }
-    
-    func kolodaShouldApplyAppearAnimation(_ koloda: KolodaView) -> Bool {
-        return false
-    }
-    
-    func kolodaShouldMoveBackgroundCard(_ koloda: KolodaView) -> Bool {
-        return false
-    }
-}
-
-extension ViewController: KolodaViewDataSource {
-    
-    func kolodaNumberOfCards(_ koloda:KolodaView) -> Int {
-        return self.items.count
-    }
-    
-    func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
-        let item = self.items[index]
-        guard let title = item.value(forKeyPath: "title") as? String else {
-            return UITableViewCell()
-        }
-        
-        guard let countDownString = item.value(forKeyPath: "countDown") as? String else {
-            return UITableViewCell()
-        }
-        let swipeCard = Bundle.main.loadNibNamed("SwipeCardView", owner: self, options: nil)?[0] as! SwipeCardView
-        guard let imageView = swipeCard.imageView,
-            let daysLabel = swipeCard.daysLabel else {
-                return UIView()
-        }
-        
-        daysLabel.text = countDownString
-        imageView.image = title.loadImageFromPath()
-        
-        return swipeCard
-    }
-    
-    func koloda(koloda: KolodaView, viewForCardOverlayAt index: Int) -> OverlayView? {
-        return Bundle.main.loadNibNamed("OverlayView", owner: self, options: nil)?[0] as? OverlayView
-    }
-}
 
 class ItemViewCell: UITableViewCell {
     
