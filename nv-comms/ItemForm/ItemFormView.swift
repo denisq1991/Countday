@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class ItemFormView : UIView {
     
@@ -23,6 +24,8 @@ class ItemFormView : UIView {
     var selectedIconName: String?
     
     var isEditing = false
+    var managedItemId: NSManagedObjectID?
+    
     var delegate: ItemFormDelegate?
     
     override func awakeFromNib() {
@@ -34,7 +37,7 @@ class ItemFormView : UIView {
         if !self.isEditing {
             self.resetFormState()
         } else {
-            self.resetFormState()
+
         }
     }
     

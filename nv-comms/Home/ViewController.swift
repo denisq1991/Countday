@@ -58,7 +58,6 @@ class ViewController: UIViewController {
         }
 
         let itemFormViewController = segue.destination as! ItemFormViewController
-        itemFormViewController.itemFormView?.isEditing = true
         itemFormViewController.currentItem = self.items[indexPath.row]
     }
 }
@@ -89,7 +88,8 @@ extension ViewController: UITableViewDataSource {
         cell.dateLabel?.text = dateString
         cell.countdownLabel?.text = countDownString
         if let iconName = item.value(forKeyPath: "iconName") as? String {
-            cell.iconView?.image = UIImage(named: iconName + "-white")
+            let iconColorString = backgroundImage != nil ? "-white" : "-grey"
+            cell.iconView?.image = UIImage(named: iconName + iconColorString)
         }
         
         cell.backgroundView = UIImageView.init(image: title.loadImageFromPath())

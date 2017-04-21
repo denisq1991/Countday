@@ -51,7 +51,6 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
         
         let dateString = item?.value(forKeyPath: "dateString") as? String
         let title = item?.value(forKeyPath: "title") as? String
-        
         self.itemFormView?.titleTextField?.text = title ?? ""
         self.itemFormView?.imageView?.image = title?.loadImageFromPath()
         self.itemFormView?.alertSwitcher?.isOn = false
@@ -61,6 +60,8 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
         } else {
             self.itemFormView?.selectedIconName = ""
         }
+        self.itemFormView?.isEditing = item != nil ? true : false
+        self.itemFormView?.managedItemId = item?.objectID
         
         self.itemFormView?.dateLabel?.text = dateString ?? self.itemFormView?.datePicker?.date.stringForDate()
     }
@@ -120,9 +121,44 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
             return
         }
         
-        self.saveItem(title: title, date: date, image: image, countDown: days, alertOn: alertOn, iconName: iconName)
+        if self.itemFormView?.isEditing == true {
+            guard let id = self.itemFormView?.managedItemId else {
+                print("No id found for managed object")
+                return
+            }
+            
+            self.editItem(id: id, title: title, date: date, image: image, countDown: days, alertOn: alertOn, iconName: iconName)
+        } else {
+            self.saveItem(title: title, date: date, image: image, countDown: days, alertOn: alertOn, iconName: iconName)
+        }
     }
     // MARK: - ItemForm Delegate Methods
+    
+    func editItem(id: NSManagedObjectID, title: String, date: Date, image: UIImage?, countDown: String, alertOn: Bool, iconName: String?) {
+        guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
+            return
+        }
+        
+        // Make a request to the core data database
+        let managedContext = appDelegate.persistentContainer.viewContext
+        
+        do {
+            let managedObject = try managedContext.existingObject(with: id)
+            let dateString = date.stringForDate()
+            managedObject.setValue(title, forKey: "title")
+            managedObject.setValue(dateString, forKeyPath: "dateString")
+            managedObject.setValue(countDown, forKey: "countDown")
+            managedObject.setValue(iconName, forKey: "iconName")
+            self.saveImage(image: image, path:title )
+            
+            try managedContext.save()
+            
+        } catch let error as NSError {
+            print("Fetch failed: \(error.localizedDescription)")
+        }
+        
+        _ = self.navigationController?.popViewController(animated: true)
+    }
     
     func saveItem(title: String, date: Date, image: UIImage?, countDown: String, alertOn: Bool, iconName: String?) {
         
@@ -130,9 +166,11 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
             return
         }
         
+        // Make a request to the core data database
         let managedContext = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "Item", in: managedContext)!
         let item = NSManagedObject(entity: entity, insertInto: managedContext)
+        
         let dateString = date.stringForDate()
         item.setValue(title, forKeyPath: "title")
         item.setValue(dateString, forKeyPath: "dateString")

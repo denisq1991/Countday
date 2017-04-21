@@ -17,7 +17,7 @@ enum SettingsItem {
 
 class SettingsViewController: UIViewController {
     @IBOutlet weak var settingsTableView: UITableView!
-    let settingsItems: [(String, SettingsItem)] = [("Notifications", .toggle)]
+    let settingsItems: [(String, SettingsItem)] = [("Sort By Date", .toggle)]
 }
 
 extension SettingsViewController: UITableViewDelegate {
