@@ -49,7 +49,7 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
         self.itemFormView?.imageView?.contentMode = .scaleAspectFill
         self.itemFormView?.imageView?.clipsToBounds = true
         
-        let dateString = item?.value(forKeyPath: "dateString") as? String
+        let date = item?.value(forKeyPath: "date") as? Date
         let title = item?.value(forKeyPath: "title") as? String
         self.itemFormView?.titleTextField?.text = title ?? ""
         self.itemFormView?.imageView?.image = title?.loadImageFromPath()
@@ -63,7 +63,7 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
         self.itemFormView?.isEditing = item != nil ? true : false
         self.itemFormView?.managedItemId = item?.objectID
         
-        self.itemFormView?.dateLabel?.text = dateString ?? self.itemFormView?.datePicker?.date.stringForDate()
+        self.itemFormView?.dateLabel?.text = date?.stringForDate()
     }
     
     private func saveImage (image: UIImage?, path: String ){
@@ -147,7 +147,7 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
             let managedObject = try managedContext.existingObject(with: id)
             let dateString = date.stringForDate()
             managedObject.setValue(title, forKey: "title")
-            managedObject.setValue(dateString, forKeyPath: "dateString")
+            managedObject.setValue(date, forKeyPath: "date")
             managedObject.setValue(iconName, forKey: "iconName")
             self.saveImage(image: image, path:title )
             
@@ -173,7 +173,7 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
         
         let dateString = date.stringForDate()
         item.setValue(title, forKeyPath: "title")
-        item.setValue(dateString, forKeyPath: "dateString")
+        item.setValue(date, forKeyPath: "date")
         item.setValue(iconName, forKey: "iconName")
         
         if (alertOn) {

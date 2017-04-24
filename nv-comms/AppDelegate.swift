@@ -26,9 +26,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Something went wrong")
             }
         }
-        
         return true
     }
+    
 
     // MARK: - Core Data stack
 

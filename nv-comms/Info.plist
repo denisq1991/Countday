@@ -36,5 +36,7 @@
 	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>We need to access your photos for you to uplaod images</string>
+	<key>UIViewControllerBasedStatusBarAppearance</key>
+	<true/>
 </dict>
 </plist>

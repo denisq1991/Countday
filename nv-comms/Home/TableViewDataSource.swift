@@ -21,20 +21,17 @@ extension ViewController: UITableViewDataSource {
         
         cell.delegate = self
         let item = self.items[indexPath.row]
-        guard let dateString = item.value(forKeyPath: "dateString") as? String,
+        guard let date = item.value(forKeyPath: "date") as? Date,
             let title = item.value(forKeyPath: "title") as? String else {
                 return UITableViewCell()
         }
         
-        guard let date = dateString.dateForString() else {
-            return UITableViewCell()
-        }
 
         cell.titleLabel?.text = title
-        cell.dateLabel?.text = dateString
+        cell.dateLabel?.text = date.stringForDate()
         cell.countdownLabel?.text = date.daysFromToday()
         if let iconName = item.value(forKeyPath: "iconName") as? String {
-            cell.iconView?.image = UIImage(named: iconName + "- grey")
+            cell.iconView?.image = UIImage(named: iconName + "-grey")
         }
 
         

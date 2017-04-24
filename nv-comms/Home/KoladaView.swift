@@ -35,7 +35,7 @@ extension ViewController: KolodaViewDataSource {
     func koloda(_ koloda: KolodaView, viewForCardAt index: Int) -> UIView {
         let item = self.items[index]
         guard let title = item.value(forKeyPath: "title") as? String,
-            let dateString = item.value(forKeyPath: "dateString") as? String else {
+            let date = item.value(forKeyPath: "date") as? Date else {
                 return UITableViewCell()
         }
         
@@ -45,12 +45,7 @@ extension ViewController: KolodaViewDataSource {
                 return UIView()
         }
         
-        guard let date = dateString.dateForString() else {
-            return UITableViewCell()
-        }
-        let days = date.daysFromToday()
-        
-        daysLabel.text = days
+        daysLabel.text = date.daysFromToday()
         imageView.image = title.loadImageFromPath()
         
         return swipeCard

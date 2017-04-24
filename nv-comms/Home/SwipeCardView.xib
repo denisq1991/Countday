@@ -20,7 +20,7 @@
                     <color key="backgroundColor" red="0.51372549020000002" green="0.51372549020000002" blue="0.51372549020000002" alpha="1" colorSpace="calibratedRGB"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="days to go" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9Q-b3-rVV">
-                    <rect key="frame" x="84" y="115.5" width="160" height="40"/>
+                    <rect key="frame" x="84" y="150.5" width="160" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="3Wt-iR-6S9"/>
                         <constraint firstAttribute="width" constant="160" id="Qcf-WG-VCm"/>
@@ -30,10 +30,10 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CAE-5o-Rn9">
-                    <rect key="frame" x="114.5" y="27" width="100" height="80"/>
+                    <rect key="frame" x="114.5" y="62" width="100" height="80"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="80" id="7w1-e0-Rto"/>
-                        <constraint firstAttribute="width" constant="100" id="jra-jp-xDu"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="jra-jp-xDu"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="70"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -43,7 +43,7 @@
             <constraints>
                 <constraint firstItem="O9Q-b3-rVV" firstAttribute="top" secondItem="CAE-5o-Rn9" secondAttribute="bottom" constant="8.5" id="JTt-JR-rtr"/>
                 <constraint firstItem="eHA-ai-HXJ" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="TPV-ZJ-Upt"/>
-                <constraint firstItem="CAE-5o-Rn9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="27" id="Xkc-5Z-AeC"/>
+                <constraint firstItem="CAE-5o-Rn9" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="62" id="Xkc-5Z-AeC"/>
                 <constraint firstAttribute="bottom" secondItem="eHA-ai-HXJ" secondAttribute="bottom" id="ZmX-iI-4fw"/>
                 <constraint firstItem="eHA-ai-HXJ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="acT-CG-yvI"/>
                 <constraint firstItem="CAE-5o-Rn9" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="oMK-y6-wtH"/>

@@ -27,6 +27,7 @@
 		7A9CAB7B1EAA46E8001C82C2 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CAB7A1EAA46E7001C82C2 /* TableViewDataSource.swift */; };
 		7A9CAB7E1EAA48D7001C82C2 /* TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CAB7C1EAA48D7001C82C2 /* TableViewDelegate.swift */; };
 		7A9CAB7F1EAA48D7001C82C2 /* KoladaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CAB7D1EAA48D7001C82C2 /* KoladaView.swift */; };
+		7A9CAB831EAE3B05001C82C2 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CAB821EAE3B05001C82C2 /* CustomNavigationController.swift */; };
 		B4658DD02702B40DC390D4DE /* Pods_nv_comms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F27976FAE446F9A1454B3B4A /* Pods_nv_comms.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		7A9CAB7A1EAA46E7001C82C2 /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewDataSource.swift; path = Home/TableViewDataSource.swift; sourceTree = "<group>"; };
 		7A9CAB7C1EAA48D7001C82C2 /* TableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TableViewDelegate.swift; path = Home/TableViewDelegate.swift; sourceTree = "<group>"; };
 		7A9CAB7D1EAA48D7001C82C2 /* KoladaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KoladaView.swift; path = Home/KoladaView.swift; sourceTree = "<group>"; };
+		7A9CAB821EAE3B05001C82C2 /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		D9F4081076B47C802CA80CC6 /* Pods-nv-comms.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nv-comms.release.xcconfig"; path = "Pods/Target Support Files/Pods-nv-comms/Pods-nv-comms.release.xcconfig"; sourceTree = "<group>"; };
 		F27976FAE446F9A1454B3B4A /* Pods_nv_comms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nv_comms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				7A8C3F391E7804B900BA8936 /* AppDelegate.swift */,
+				7A9CAB821EAE3B05001C82C2 /* CustomNavigationController.swift */,
 				7A9CAB641E9E46D1001C82C2 /* Home */,
 				7A9CAB5B1E9E40BE001C82C2 /* ItemForm */,
 				7A9CAB6D1EA7C83B001C82C2 /* Settings */,
@@ -297,6 +300,7 @@
 				7A9CAB711EA7C872001C82C2 /* SettingsViewController.swift in Sources */,
 				7A8C3F3A1E7804B900BA8936 /* AppDelegate.swift in Sources */,
 				7A9CAB7E1EAA48D7001C82C2 /* TableViewDelegate.swift in Sources */,
+				7A9CAB831EAE3B05001C82C2 /* CustomNavigationController.swift in Sources */,
 				7A9CAB6A1E9E474F001C82C2 /* ViewController.swift in Sources */,
 				7A9CAB7F1EAA48D7001C82C2 /* KoladaView.swift in Sources */,
 				7A9CAB681E9E474F001C82C2 /* SwipeCardView.swift in Sources */,
