@@ -104,8 +104,4 @@ class ItemViewCell: UITableViewCell {
     
     var delegate: ItemViewCellDelegate?
     
-    @IBAction func didDeleteEvent(_ sender: UIButton) {
-        self.delegate?.deleteItemFromMemory(cell: self)
-    }
-    
 }

@@ -18,6 +18,12 @@ enum SettingsItem {
 class SettingsViewController: UIViewController {
     @IBOutlet weak var settingsTableView: UITableView!
     let settingsItems: [(String, SettingsItem)] = [("Sort By Date", .toggle)]
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.title = "Settings"
+    }
 }
 
 extension SettingsViewController: UITableViewDelegate {

@@ -13,7 +13,7 @@
         <!--Settings View Controller-->
         <scene sceneID="UHM-C8-zvS">
             <objects>
-                <viewController id="Shc-jh-07x" customClass="SettingsViewController" customModule="nv_comms" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Shc-jh-07x" customClass="SettingsViewController" customModule="nv_comms" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eDI-nG-n5u"/>
                         <viewControllerLayoutGuide type="bottom" id="0ww-JN-gzH"/>
@@ -160,7 +160,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="tSF-Ou-8sf">
-                        <barButtonItem key="leftBarButtonItem" title="Settings" id="Q23-mD-Ebp">
+                        <barButtonItem key="leftBarButtonItem" image="settings-white" id="Q23-mD-Ebp">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="Shc-jh-07x" kind="show" id="Ilm-7I-KkD"/>
@@ -495,6 +495,9 @@
             <point key="canvasLocation" x="117.59999999999999" y="776.76161919040487"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="settings-white" width="24" height="24"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Vpx-o5-8Ac"/>
     </inferredMetricsTieBreakers>
