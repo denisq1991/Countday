@@ -19,4 +19,10 @@ extension String {
         }
         return image
     }
+    
+    func dateForString() -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd-MM-yyyy"
+        return dateFormatter.date(from: self)
+    }
 }

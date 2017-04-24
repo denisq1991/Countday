@@ -16,32 +16,27 @@ extension ViewController: UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemViewCell
-        cell.delegate = self
+        let cellIdentifier = "ItemCell"
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ItemViewCell
         
+        cell.delegate = self
         let item = self.items[indexPath.row]
-        guard let countDownInt = item.value(forKeyPath: "countDown") as? Int,
-            let dateString = item.value(forKeyPath: "dateString") as? String,
+        guard let dateString = item.value(forKeyPath: "dateString") as? String,
             let title = item.value(forKeyPath: "title") as? String else {
                 return UITableViewCell()
         }
         
-        let backgroundImage = title.loadImageFromPath()
-        
+        guard let date = dateString.dateForString() else {
+            return UITableViewCell()
+        }
+
         cell.titleLabel?.text = title
         cell.dateLabel?.text = dateString
-        cell.countdownLabel?.text = String(countDownInt)
+        cell.countdownLabel?.text = date.daysFromToday()
         if let iconName = item.value(forKeyPath: "iconName") as? String {
-            let iconColorString = backgroundImage != nil ? "-white" : "-grey"
-            cell.iconView?.image = UIImage(named: iconName + iconColorString)
+            cell.iconView?.image = UIImage(named: iconName + "- grey")
         }
-        
-        cell.backgroundView = UIImageView.init(image: title.loadImageFromPath())
-        cell.backgroundView = UIImageView.init(image: backgroundImage)
-        cell.backgroundView?.isUserInteractionEnabled = false
-        cell.backgroundView?.contentMode = .scaleAspectFill
-        cell.backgroundView?.alpha = 0.4
-        cell.selectionStyle = .none
+
         
         return cell
     }

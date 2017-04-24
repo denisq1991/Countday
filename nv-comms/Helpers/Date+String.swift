@@ -15,4 +15,11 @@ extension Date {
         return dateFormatter.string(from: self)
     }
     
+    func daysFromToday() -> String {
+        let calendar = Calendar.current
+        let currentDate = Date()
+        let components = calendar.dateComponents(Set(arrayLiteral: .day, .hour), from: currentDate, to: self)
+        return String(describing: components.day!)
+    }
+    
 }

@@ -99,14 +99,6 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygW-vg-lHy">
-                                                    <rect key="frame" x="327" y="18" width="30" height="19.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="29"/>
-                                                    <state key="normal" title="×"/>
-                                                    <connections>
-                                                        <action selector="didDeleteEvent:" destination="InU-wK-rr7" eventType="touchUpInside" id="UF1-5J-8di"/>
-                                                    </connections>
-                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="GsC-Sd-9PR" firstAttribute="leading" secondItem="SHs-7Y-IhL" secondAttribute="leading" constant="6" id="4fE-9Q-JbV"/>
@@ -114,14 +106,11 @@
                                                 <constraint firstItem="psR-ac-2oW" firstAttribute="centerY" secondItem="SHs-7Y-IhL" secondAttribute="centerY" id="IO0-qh-4mT"/>
                                                 <constraint firstItem="GsC-Sd-9PR" firstAttribute="centerY" secondItem="SHs-7Y-IhL" secondAttribute="centerY" id="KVm-l4-HUG"/>
                                                 <constraint firstItem="310-gl-jcg" firstAttribute="top" secondItem="qhf-bM-pCS" secondAttribute="bottom" constant="10" id="N5S-lb-hzP"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="ygW-vg-lHy" secondAttribute="trailing" constant="10" id="PyD-ga-gPF"/>
                                                 <constraint firstItem="310-gl-jcg" firstAttribute="leading" secondItem="SHs-7Y-IhL" secondAttribute="leadingMargin" constant="56" id="VcZ-y3-ViH"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="ygW-vg-lHy" secondAttribute="bottom" constant="10" id="bAE-HG-HcT"/>
                                                 <constraint firstItem="qhf-bM-pCS" firstAttribute="leading" secondItem="SHs-7Y-IhL" secondAttribute="leadingMargin" constant="56" id="iQO-Cx-GQJ"/>
                                                 <constraint firstItem="310-gl-jcg" firstAttribute="trailing" secondItem="SHs-7Y-IhL" secondAttribute="trailingMargin" id="mx0-Xe-8Gh"/>
-                                                <constraint firstItem="ygW-vg-lHy" firstAttribute="leading" secondItem="psR-ac-2oW" secondAttribute="trailing" constant="22" id="pcY-ml-4yG"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="qhf-bM-pCS" secondAttribute="trailing" id="tHM-35-Hb8"/>
-                                                <constraint firstItem="ygW-vg-lHy" firstAttribute="top" secondItem="SHs-7Y-IhL" secondAttribute="topMargin" constant="10" id="tpE-Sr-d4m"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="psR-ac-2oW" secondAttribute="trailing" constant="62" id="yX5-ej-l4Y"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>

@@ -12,4 +12,23 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+        
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == UITableViewCellEditingStyle.delete {
+            guard let cell = tableView.cellForRow(at: indexPath) else {
+                return
+            }
+            
+            self.deleteItemFromMemory(cell: cell)
+            tableView.reloadData()
+        }
+        
+    }
+    
 }

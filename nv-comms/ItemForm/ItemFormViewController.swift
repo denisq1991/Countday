@@ -12,7 +12,7 @@ import CoreData
 import UserNotifications
 
 protocol ItemFormDelegate {
-    func saveItem(title: String, date: Date, image: UIImage?, countDown: String, alertOn: Bool, iconName: String?)
+    func saveItem(title: String, date: Date, image: UIImage?, alertOn: Bool, iconName: String?)
     func addNewImage()
 }
 
@@ -127,15 +127,15 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
                 return
             }
             
-            self.editItem(id: id, title: title, date: date, image: image, countDown: days, alertOn: alertOn, iconName: iconName)
+            self.editItem(id: id, title: title, date: date, image: image, alertOn: alertOn, iconName: iconName)
         } else {
-            self.saveItem(title: title, date: date, image: image, countDown: days, alertOn: alertOn, iconName: iconName)
+            self.saveItem(title: title, date: date, image: image, alertOn: alertOn, iconName: iconName)
         }
     }
     
     // MARK: - ItemForm Delegate Methods
     
-    func editItem(id: NSManagedObjectID, title: String, date: Date, image: UIImage?, countDown: String, alertOn: Bool, iconName: String?) {
+    func editItem(id: NSManagedObjectID, title: String, date: Date, image: UIImage?, alertOn: Bool, iconName: String?) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
@@ -148,7 +148,6 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
             let dateString = date.stringForDate()
             managedObject.setValue(title, forKey: "title")
             managedObject.setValue(dateString, forKeyPath: "dateString")
-            managedObject.setValue(Int(countDown), forKey: "countDown")
             managedObject.setValue(iconName, forKey: "iconName")
             self.saveImage(image: image, path:title )
             
@@ -161,7 +160,7 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
         _ = self.navigationController?.popViewController(animated: true)
     }
     
-    func saveItem(title: String, date: Date, image: UIImage?, countDown: String, alertOn: Bool, iconName: String?) {
+    func saveItem(title: String, date: Date, image: UIImage?, alertOn: Bool, iconName: String?) {
         
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
@@ -175,7 +174,6 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
         let dateString = date.stringForDate()
         item.setValue(title, forKeyPath: "title")
         item.setValue(dateString, forKeyPath: "dateString")
-        item.setValue(Int(countDown), forKey: "countDown")
         item.setValue(iconName, forKey: "iconName")
         
         if (alertOn) {
