@@ -14,6 +14,7 @@
 		7A8C3F421E7804B900BA8936 /* nv_comms.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A8C3F401E7804B900BA8936 /* nv_comms.xcdatamodeld */; };
 		7A8C3F441E7804B900BA8936 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A8C3F431E7804B900BA8936 /* Assets.xcassets */; };
 		7A8C3F471E7804B900BA8936 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A8C3F451E7804B900BA8936 /* LaunchScreen.storyboard */; };
+		7A9625C01EAE608D00E86F87 /* Kayak Sans Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A9625BF1EAE608D00E86F87 /* Kayak Sans Regular.otf */; };
 		7A9CAB5E1E9E4224001C82C2 /* ItemFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CAB5C1E9E4224001C82C2 /* ItemFormView.swift */; };
 		7A9CAB5F1E9E4224001C82C2 /* ItemFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CAB5D1E9E4224001C82C2 /* ItemFormViewController.swift */; };
 		7A9CAB621E9E422D001C82C2 /* Date+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CAB601E9E422D001C82C2 /* Date+String.swift */; };
@@ -41,6 +42,7 @@
 		7A8C3F431E7804B900BA8936 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A8C3F461E7804B900BA8936 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A8C3F481E7804B900BA8936 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A9625BF1EAE608D00E86F87 /* Kayak Sans Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kayak Sans Regular.otf"; sourceTree = "<group>"; };
 		7A99720B1E9BA1540043FFE7 /* Koloda.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Koloda.framework; path = "../../Library/Developer/Xcode/DerivedData/nv-comms-edyqljqymidzcmgcmipqueeqqjqo/Build/Products/Debug-iphonesimulator/Koloda/Koloda.framework"; sourceTree = "<group>"; };
 		7A9CAB5C1E9E4224001C82C2 /* ItemFormView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemFormView.swift; sourceTree = "<group>"; };
 		7A9CAB5D1E9E4224001C82C2 /* ItemFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemFormViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				7A9CAB5B1E9E40BE001C82C2 /* ItemForm */,
 				7A9CAB6D1EA7C83B001C82C2 /* Settings */,
 				7A9CAB541E9E2513001C82C2 /* Helpers */,
+				7A9CAB841EAE5C52001C82C2 /* Resources */,
 				7A8C3F3D1E7804B900BA8936 /* Main.storyboard */,
 				7A8C3F431E7804B900BA8936 /* Assets.xcassets */,
 				7A8C3F451E7804B900BA8936 /* LaunchScreen.storyboard */,
@@ -168,6 +171,22 @@
 				7A9CAB721EA7CC02001C82C2 /* SettingsTableViewToggleCell.xib */,
 			);
 			name = Settings;
+			sourceTree = "<group>";
+		};
+		7A9CAB841EAE5C52001C82C2 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7A9CAB851EAE5C60001C82C2 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		7A9CAB851EAE5C60001C82C2 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				7A9625BF1EAE608D00E86F87 /* Kayak Sans Regular.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +253,7 @@
 			files = (
 				7A8C3F471E7804B900BA8936 /* LaunchScreen.storyboard in Resources */,
 				7A8C3F441E7804B900BA8936 /* Assets.xcassets in Resources */,
+				7A9625C01EAE608D00E86F87 /* Kayak Sans Regular.otf in Resources */,
 				7A8C3F3F1E7804B900BA8936 /* Main.storyboard in Resources */,
 				7A9CAB731EA7CC02001C82C2 /* SettingsTableViewToggleCell.xib in Resources */,
 				7A9CAB691E9E474F001C82C2 /* SwipeCardView.xib in Resources */,

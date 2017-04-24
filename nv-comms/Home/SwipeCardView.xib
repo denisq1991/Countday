@@ -8,6 +8,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Kayak Sans Regular.otf">
+            <string>KayakSans</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SwipeCardView" customModule="nv_comms"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -25,7 +30,7 @@
                         <constraint firstAttribute="height" constant="40" id="3Wt-iR-6S9"/>
                         <constraint firstAttribute="width" constant="160" id="Qcf-WG-VCm"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                    <fontDescription key="fontDescription" name="KayakSans" family="Kayak Sans" pointSize="23"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -35,7 +40,7 @@
                         <constraint firstAttribute="height" constant="80" id="7w1-e0-Rto"/>
                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="100" id="jra-jp-xDu"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                    <fontDescription key="fontDescription" name="KayakSans" family="Kayak Sans" pointSize="66"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>

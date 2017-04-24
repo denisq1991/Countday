@@ -38,5 +38,9 @@
 	<string>We need to access your photos for you to uplaod images</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Kayak Sans Regular.otf</string>
+	</array>
 </dict>
 </plist>
