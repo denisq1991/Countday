@@ -18,11 +18,12 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var kolodaView: KolodaView!
     @IBOutlet weak var itemTableView: UITableView!
+    @IBOutlet weak var OnboardingMessage: UILabel!
+    
     var items: [NSManagedObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.setNeedsStatusBarAppearanceUpdate()
         
         kolodaView.dataSource = self
@@ -38,8 +39,13 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         self.fetchAndReloadItems()
         self.kolodaView.reloadData()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     fileprivate func fetchAndReloadItems() {
@@ -56,11 +62,8 @@ class ViewController: UIViewController {
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
+        self.OnboardingMessage.isHidden = self.items.count > 0 ? true : false
         self.itemTableView.reloadData()
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -68,8 +71,8 @@ class ViewController: UIViewController {
             return
         }
 
-        let itemFormViewController = segue.destination as! ItemFormViewController
-        itemFormViewController.currentItem = self.items[indexPath.row]
+        let itemDetailsViewController = segue.destination as! ItemDetailsViewController
+        itemDetailsViewController.item = self.items[indexPath.row]
     }
 }
 

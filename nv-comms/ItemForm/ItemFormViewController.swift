@@ -41,6 +41,8 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
         self.setUpItemForm(item: self.currentItem)
         self.itemFormView?.delegate = self
         self.imagePicker = UIImagePickerController()
+        self.navigationController?.navigationBar.tintColor = UIColor.black
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.black]
     }
     
     private func setUpItemForm(item: NSManagedObject?) {
