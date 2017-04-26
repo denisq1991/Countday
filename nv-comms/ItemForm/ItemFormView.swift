@@ -21,6 +21,7 @@ class ItemFormView : UIView {
     @IBOutlet var alertSwitcher: UISwitch?
     @IBOutlet var selectedIconView: UIImageView?
     
+    var initialAlertState: Bool?
     var selectedIconName: String?
     
     var isEditing = false
@@ -33,6 +34,7 @@ class ItemFormView : UIView {
         
         self.datePickerViewHeight?.constant = CGFloat(0)
         self.datePicker?.addTarget(self, action: #selector(datePickerChanged), for: .valueChanged)
+        self.initialAlertState = self.alertSwitcher?.isOn
         
         if !self.isEditing {
             self.resetFormState()

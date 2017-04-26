@@ -10,7 +10,40 @@ import Foundation
 import UIKit
 
 class CustomNavigationController: UINavigationController {
+    
+    enum navBarTheme {
+        case dark
+        case light
+        case lightBlackText
+    }
+    
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return topViewController?.preferredStatusBarStyle ?? .default
+    }
+    
+    func setNavBar(theme: navBarTheme) {
+        switch theme {
+        case .light :
+            self.navigationBar.setBackgroundImage(UIImage(), for: .default)
+            self.navigationBar.shadowImage = UIImage()
+            self.navigationBar.isTranslucent = true
+            self.view.backgroundColor = UIColor.clear
+            self.navigationBar.backgroundColor = UIColor.clear
+            self.navigationBar.tintColor = UIColor.white
+            self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
+        case .dark:
+            self.navigationController?.view.backgroundColor = UIColor.black
+            self.navigationController?.navigationBar.backgroundColor = UIColor.black
+        case .lightBlackText:
+            self.navigationBar.setBackgroundImage(UIImage(), for: .default)
+            self.navigationBar.shadowImage = UIImage()
+            self.navigationBar.isTranslucent = true
+            self.view.backgroundColor = UIColor.clear
+            self.navigationBar.backgroundColor = UIColor.clear
+            self.navigationBar.tintColor = UIColor.black
+            self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.black]
+        }
+        
+        
     }
 }

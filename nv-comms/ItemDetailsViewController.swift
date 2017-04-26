@@ -30,8 +30,9 @@ class ItemDetailsViewController: UIViewController {
         // TODO: If a notification is set, show some kind of icon representing that
         
         self.title =  title
-        self.navigationController?.navigationBar.tintColor = UIColor.white
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
+        if let customNavigationController = self.navigationController as? CustomNavigationController {
+            customNavigationController.setNavBar(theme: .light)
+        }
         
         let image = title.loadImageFromPath()
         self.imageBackground.image = image

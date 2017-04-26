@@ -31,6 +31,8 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
     @IBOutlet weak var itemFormView: ItemFormView?
     var imagePicker: UIImagePickerController?
     
+    let localNotificationService = LocalNotificationService()
+    
     // Define the specific path, image name
     let imagePath:  String? = nil
     var currentItem: NSManagedObject?
@@ -41,8 +43,10 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
         self.setUpItemForm(item: self.currentItem)
         self.itemFormView?.delegate = self
         self.imagePicker = UIImagePickerController()
-        self.navigationController?.navigationBar.tintColor = UIColor.black
-        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName:UIColor.black]
+        
+        if let customNavigationController = self.navigationController as? CustomNavigationController {
+            customNavigationController.setNavBar(theme: .lightBlackText)
+        }
     }
     
     private func setUpItemForm(item: NSManagedObject?) {
@@ -55,7 +59,8 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
         let title = item?.value(forKeyPath: "title") as? String
         self.itemFormView?.titleTextField?.text = title ?? ""
         self.itemFormView?.imageView?.image = title?.loadImageFromPath()
-        self.itemFormView?.alertSwitcher?.isOn = false
+        self.itemFormView?.datePicker?.date = date != nil ? date! : Date()
+        self.itemFormView?.alertSwitcher?.isOn = item?.value(forKeyPath: "notificationActive") as? Bool ?? false
         if let iconName = item?.value(forKeyPath: "iconName") as? String {
             self.itemFormView?.selectedIconName = iconName
             self.itemFormView?.selectedIconView?.image = UIImage(named: iconName + "-grey")
@@ -82,46 +87,14 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
         
     }
     
-    private func setLocalNotification(text: String, date: Date) {
-        let center = UNUserNotificationCenter.current()
-        let content = UNMutableNotificationContent()
-        content.title = "Countday Alert"
-        content.body = text
-        content.sound = UNNotificationSound.default()
-        
-        let triggerDate = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second,], from: date)
-        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
-        
-        let identifier = "UYLLocalNotification" + text
-        let request = UNNotificationRequest(identifier: identifier,
-                                            content: content, trigger: trigger)
-        center.add(request, withCompletionHandler: { (error) in
-            if let error = error {
-                // Something went wrong
-                print(error)
-            }
-        })
-    }
-    
     @IBAction func didSelectDone(_ sender: Any) {
         guard let title: String = self.itemFormView?.titleTextField?.text,
+            let alertOn: Bool = self.itemFormView?.alertSwitcher?.isOn,
             let date: Date = self.itemFormView?.datePicker?.date else {
                 return
         }
-        
-        // Get the days between both dates
-        // TODO: Handle negatives gracefully
-        let calendar = Calendar.current
-        let currentDate = Date()
-        let components = calendar.dateComponents(Set(arrayLiteral: .day, .hour), from: currentDate, to: date)
-        
-        let days = String(describing: components.day!)
-        
         let image: UIImage? = self.itemFormView?.imageView?.image
         let iconName: String? = self.itemFormView?.selectedIconName
-        guard let alertOn: Bool = self.itemFormView?.alertSwitcher?.isOn else {
-            return
-        }
         
         if self.itemFormView?.isEditing == true {
             guard let id = self.itemFormView?.managedItemId else {
@@ -142,16 +115,25 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
             return
         }
         
-        // Make a request to the core data database
         let managedContext = appDelegate.persistentContainer.viewContext
         
         do {
             let managedObject = try managedContext.existingObject(with: id)
-            let dateString = date.stringForDate()
             managedObject.setValue(title, forKey: "title")
             managedObject.setValue(date, forKeyPath: "date")
             managedObject.setValue(iconName, forKey: "iconName")
             self.saveImage(image: image, path:title )
+            
+            // if it was off but is now on, add a new alert.
+            if (self.itemFormView?.initialAlertState == false) && (alertOn == true) {
+                localNotificationService.createNewLocalNotification(forManagedObject: managedObject, title: title, date: date)
+            }
+            
+            // if it was on but is now off, remove the existing alert.
+            if (self.itemFormView?.initialAlertState == true) && (alertOn == false) {
+                localNotificationService.removeLocalNotification(withIdentifier: "UYLLocalNotification" + title, managedObject: managedObject)
+                managedObject.setValue(false, forKey: "notificationActive")
+            }
             
             try managedContext.save()
             
@@ -159,11 +141,11 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
             print("Fetch failed: \(error.localizedDescription)")
         }
         
+        // TODO: Show the correctly changed state on the previous view controller
         _ = self.navigationController?.popViewController(animated: true)
     }
     
     func saveItem(title: String, date: Date, image: UIImage?, alertOn: Bool, iconName: String?) {
-        
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {
             return
         }
@@ -173,22 +155,13 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
         let entity = NSEntityDescription.entity(forEntityName: "Item", in: managedContext)!
         let item = NSManagedObject(entity: entity, insertInto: managedContext)
         
-        let dateString = date.stringForDate()
         item.setValue(title, forKeyPath: "title")
         item.setValue(date, forKeyPath: "date")
         item.setValue(iconName, forKey: "iconName")
+        item.setValue(false, forKey: "notificationActive")
         
-        if (alertOn) {
-            let center = UNUserNotificationCenter.current()
-            center.getNotificationSettings { (settings) in
-                if settings.authorizationStatus != .authorized {
-                    // Notifications not allowed
-                    // TODO: Alert the user and link them to change the setting
-                }
-                else {
-                    self.setLocalNotification(text: title, date: date)
-                }
-            }
+        if alertOn {
+            localNotificationService.createNewLocalNotification(forManagedObject: item, title: title, date: date)
         }
         
         self.saveImage(image: image, path:title )

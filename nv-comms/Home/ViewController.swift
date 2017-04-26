@@ -30,11 +30,10 @@ class ViewController: UIViewController {
         kolodaView.delegate = self
         kolodaView.countOfVisibleCards = 2
         
-        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?.navigationBar.shadowImage = UIImage()
-        self.navigationController?.navigationBar.isTranslucent = true
-        self.navigationController?.view.backgroundColor = UIColor.clear
-        self.navigationController?.navigationBar.backgroundColor = UIColor.clear
+        if let customNavigationContoller = self.navigationController as? CustomNavigationController {
+            // TODO: If we have no items, change this to dark
+                customNavigationContoller.setNavBar(theme: .light)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -56,7 +55,7 @@ class ViewController: UIViewController {
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Item")
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true)]
-
+        
         do {
             self.items = try managedContext.fetch(fetchRequest)
         } catch let error as NSError {
@@ -70,7 +69,7 @@ class ViewController: UIViewController {
         guard let indexPath = self.itemTableView.indexPathForSelectedRow else {
             return
         }
-
+        
         let itemDetailsViewController = segue.destination as! ItemDetailsViewController
         itemDetailsViewController.item = self.items[indexPath.row]
     }

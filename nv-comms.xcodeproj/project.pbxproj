@@ -14,6 +14,7 @@
 		7A8C3F421E7804B900BA8936 /* nv_comms.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A8C3F401E7804B900BA8936 /* nv_comms.xcdatamodeld */; };
 		7A8C3F441E7804B900BA8936 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A8C3F431E7804B900BA8936 /* Assets.xcassets */; };
 		7A8C3F471E7804B900BA8936 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A8C3F451E7804B900BA8936 /* LaunchScreen.storyboard */; };
+		7A94DA271EB10C9D00723DC3 /* LocalNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A94DA261EB10C9D00723DC3 /* LocalNotificationService.swift */; };
 		7A9625C01EAE608D00E86F87 /* Kayak Sans Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A9625BF1EAE608D00E86F87 /* Kayak Sans Regular.otf */; };
 		7A9625C41EAF57D400E86F87 /* ItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9625C31EAF57D400E86F87 /* ItemDetailsViewController.swift */; };
 		7A9CAB5E1E9E4224001C82C2 /* ItemFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CAB5C1E9E4224001C82C2 /* ItemFormView.swift */; };
@@ -43,6 +44,7 @@
 		7A8C3F431E7804B900BA8936 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A8C3F461E7804B900BA8936 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A8C3F481E7804B900BA8936 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A94DA261EB10C9D00723DC3 /* LocalNotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationService.swift; sourceTree = "<group>"; };
 		7A9625BF1EAE608D00E86F87 /* Kayak Sans Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kayak Sans Regular.otf"; sourceTree = "<group>"; };
 		7A9625C31EAF57D400E86F87 /* ItemDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailsViewController.swift; sourceTree = "<group>"; };
 		7A99720B1E9BA1540043FFE7 /* Koloda.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Koloda.framework; path = "../../Library/Developer/Xcode/DerivedData/nv-comms-edyqljqymidzcmgcmipqueeqqjqo/Build/Products/Debug-iphonesimulator/Koloda/Koloda.framework"; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				7A9CAB5C1E9E4224001C82C2 /* ItemFormView.swift */,
 				7A9CAB6B1E9E4759001C82C2 /* IconChooserViewController.swift */,
 				7A9CAB5D1E9E4224001C82C2 /* ItemFormViewController.swift */,
+				7A94DA261EB10C9D00723DC3 /* LocalNotificationService.swift */,
 			);
 			path = ItemForm;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				7A9CAB681E9E474F001C82C2 /* SwipeCardView.swift in Sources */,
 				7A9CAB5E1E9E4224001C82C2 /* ItemFormView.swift in Sources */,
 				7A9CAB621E9E422D001C82C2 /* Date+String.swift in Sources */,
+				7A94DA271EB10C9D00723DC3 /* LocalNotificationService.swift in Sources */,
 				7A9CAB5F1E9E4224001C82C2 /* ItemFormViewController.swift in Sources */,
 				7A9CAB7B1EAA46E8001C82C2 /* TableViewDataSource.swift in Sources */,
 				7A9CAB6C1E9E4759001C82C2 /* IconChooserViewController.swift in Sources */,
