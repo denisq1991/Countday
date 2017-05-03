@@ -15,26 +15,36 @@ class ItemDetailsViewController: UIViewController {
     var item: NSManagedObject?
     @IBOutlet weak var imageBackground: UIImageView!
     @IBOutlet weak var iconView: UIImageView!
+    @IBOutlet weak var alarmView: UIImageView!
     @IBOutlet weak var daysLeft: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setNeedsStatusBarAppearanceUpdate()
         
-        guard let date = self.item?.value(forKeyPath: "date") as? Date,
-            let iconName = self.item?.value(forKeyPath: "iconName") as? String,
-            let title = self.item?.value(forKeyPath: "title") as? String else {
+        guard let title = self.item?.value(forKeyPath: "title") as? String else {
                 return
         }
         
-        // TODO: If a notification is set, show some kind of icon representing that
-        
         self.title =  title
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
         if let customNavigationController = self.navigationController as? CustomNavigationController {
             customNavigationController.setNavBar(theme: .light)
         }
         
-        let image = title.loadImageFromPath()
+        guard let date = self.item?.value(forKeyPath: "date") as? Date,
+            let alarmActive = self.item?.value(forKeyPath: "notificationActive") as? Bool,
+            let iconName = self.item?.value(forKeyPath: "iconName") as? String else {
+                return
+        }
+        
+        let image = self.title?.loadImageFromPath()
+        let alarmColour = alarmActive ? "-yellow" : "-white"
+        self.alarmView.image = UIImage(named: "bell" + alarmColour)
         self.imageBackground.image = image
         self.iconView.image = UIImage(named: iconName + "-white")
         self.daysLeft.text = date.daysFromToday()
@@ -45,7 +55,6 @@ class ItemDetailsViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         let itemFormViewController = segue.destination as! ItemFormViewController
         itemFormViewController.currentItem = self.item
     }

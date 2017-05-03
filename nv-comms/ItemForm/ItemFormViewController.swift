@@ -60,7 +60,9 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
         self.itemFormView?.titleTextField?.text = title ?? ""
         self.itemFormView?.imageView?.image = title?.loadImageFromPath()
         self.itemFormView?.datePicker?.date = date != nil ? date! : Date()
+        // TODO: Roll the next two lines into a more sensisble structure
         self.itemFormView?.alertSwitcher?.isOn = item?.value(forKeyPath: "notificationActive") as? Bool ?? false
+        self.itemFormView?.initialAlertState = self.itemFormView?.alertSwitcher?.isOn
         if let iconName = item?.value(forKeyPath: "iconName") as? String {
             self.itemFormView?.selectedIconName = iconName
             self.itemFormView?.selectedIconView?.image = UIImage(named: iconName + "-grey")

@@ -34,7 +34,6 @@ class ItemFormView : UIView {
         
         self.datePickerViewHeight?.constant = CGFloat(0)
         self.datePicker?.addTarget(self, action: #selector(datePickerChanged), for: .valueChanged)
-        self.initialAlertState = self.alertSwitcher?.isOn
         
         if !self.isEditing {
             self.resetFormState()
