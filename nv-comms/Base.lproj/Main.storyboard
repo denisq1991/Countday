@@ -148,6 +148,7 @@
                     <connections>
                         <outlet property="alarmView" destination="8MP-mF-HLc" id="0Ex-lm-l1J"/>
                         <outlet property="daysLeft" destination="zgf-03-ss5" id="46M-3X-NPx"/>
+                        <outlet property="daysToGoLabel" destination="98c-K0-mFQ" id="Sk4-W3-jCY"/>
                         <outlet property="iconView" destination="dmd-Xw-GZR" id="EA6-pc-NhM"/>
                         <outlet property="imageBackground" destination="fAS-sX-BJv" id="ITs-oc-YKq"/>
                     </connections>

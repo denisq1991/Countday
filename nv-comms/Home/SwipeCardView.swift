@@ -12,4 +12,5 @@ import UIKit
 class SwipeCardView: UIView {
     @IBOutlet var imageView: UIImageView?
     @IBOutlet var daysLabel: UILabel?
+    @IBOutlet var daysToGoLabel: UILabel?
 }

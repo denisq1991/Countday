@@ -45,7 +45,10 @@ extension ViewController: KolodaViewDataSource {
                 return UIView()
         }
         
-        daysLabel.text = date.daysFromToday()
+        if date.daysFromToday().range(of:"-") != nil{
+            swipeCard.daysToGoLabel?.text = "days ago"
+        }
+        daysLabel.text = date.daysFromToday().replacingOccurrences(of: "-", with: "", options: .literal, range: nil)
         imageView.image = title.loadImageFromPath()
         
         return swipeCard

@@ -17,6 +17,7 @@ class ItemDetailsViewController: UIViewController {
     @IBOutlet weak var iconView: UIImageView!
     @IBOutlet weak var alarmView: UIImageView!
     @IBOutlet weak var daysLeft: UILabel!
+    @IBOutlet weak var daysToGoLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +48,10 @@ class ItemDetailsViewController: UIViewController {
         self.alarmView.image = UIImage(named: "bell" + alarmColour)
         self.imageBackground.image = image
         self.iconView.image = UIImage(named: iconName + "-white")
-        self.daysLeft.text = date.daysFromToday()
+        if date.daysFromToday().range(of:"-") != nil{
+            self.daysToGoLabel.text = "days ago"
+        }
+        self.daysLeft.text = date.daysFromToday().replacingOccurrences(of: "-", with: "", options: .literal, range: nil)
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {

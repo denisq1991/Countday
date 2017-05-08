@@ -30,6 +30,9 @@ extension ViewController: UITableViewDataSource {
         cell.titleLabel?.text = title
         cell.dateLabel?.text = date.stringForDate()
         cell.countdownLabel?.text = date.daysFromToday()
+        if date.daysFromToday().range(of:"-") != nil{
+            cell.countdownLabel.textColor = UIColor.red
+        }
         if let iconName = item.value(forKeyPath: "iconName") as? String {
             cell.iconView?.image = UIImage(named: iconName + "-grey")
         }
