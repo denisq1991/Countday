@@ -30,7 +30,7 @@ class ItemDetailsViewController: UIViewController {
         self.title =  title
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
         if let customNavigationController = self.navigationController as? CustomNavigationController {
@@ -61,6 +61,10 @@ class ItemDetailsViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let itemFormViewController = segue.destination as! ItemFormViewController
         itemFormViewController.currentItem = self.item
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        self.imageBackground.image = nil
     }
     
 }
