@@ -14,6 +14,7 @@
 		7A8C3F421E7804B900BA8936 /* nv_comms.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A8C3F401E7804B900BA8936 /* nv_comms.xcdatamodeld */; };
 		7A8C3F441E7804B900BA8936 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A8C3F431E7804B900BA8936 /* Assets.xcassets */; };
 		7A8C3F471E7804B900BA8936 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A8C3F451E7804B900BA8936 /* LaunchScreen.storyboard */; };
+		7A91E2B21EC3681500FB14F7 /* SettingsTableViewOptionsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A91E2B11EC3681500FB14F7 /* SettingsTableViewOptionsCell.xib */; };
 		7A94DA271EB10C9D00723DC3 /* LocalNotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A94DA261EB10C9D00723DC3 /* LocalNotificationService.swift */; };
 		7A9625C01EAE608D00E86F87 /* Kayak Sans Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7A9625BF1EAE608D00E86F87 /* Kayak Sans Regular.otf */; };
 		7A9625C41EAF57D400E86F87 /* ItemDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9625C31EAF57D400E86F87 /* ItemDetailsViewController.swift */; };
@@ -44,6 +45,7 @@
 		7A8C3F431E7804B900BA8936 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A8C3F461E7804B900BA8936 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A8C3F481E7804B900BA8936 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7A91E2B11EC3681500FB14F7 /* SettingsTableViewOptionsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsTableViewOptionsCell.xib; sourceTree = "<group>"; };
 		7A94DA261EB10C9D00723DC3 /* LocalNotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalNotificationService.swift; sourceTree = "<group>"; };
 		7A9625BF1EAE608D00E86F87 /* Kayak Sans Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kayak Sans Regular.otf"; sourceTree = "<group>"; };
 		7A9625C31EAF57D400E86F87 /* ItemDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemDetailsViewController.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			children = (
 				7A9CAB701EA7C872001C82C2 /* SettingsViewController.swift */,
 				7A9CAB721EA7CC02001C82C2 /* SettingsTableViewToggleCell.xib */,
+				7A91E2B11EC3681500FB14F7 /* SettingsTableViewOptionsCell.xib */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A8C3F471E7804B900BA8936 /* LaunchScreen.storyboard in Resources */,
+				7A91E2B21EC3681500FB14F7 /* SettingsTableViewOptionsCell.xib in Resources */,
 				7A8C3F441E7804B900BA8936 /* Assets.xcassets in Resources */,
 				7A9625C01EAE608D00E86F87 /* Kayak Sans Regular.otf in Resources */,
 				7A8C3F3F1E7804B900BA8936 /* Main.storyboard in Resources */,

@@ -19,11 +19,16 @@ class ItemDetailsViewController: UIViewController {
     @IBOutlet weak var daysLeft: UILabel!
     @IBOutlet weak var daysToGoLabel: UILabel!
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setNeedsStatusBarAppearanceUpdate()
         
         guard let title = self.item?.value(forKeyPath: "title") as? String else {
+            print("Couldn't find a title for this item")
             return
         }
         self.title =  title
@@ -31,8 +36,6 @@ class ItemDetailsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
-        
         
         guard let date = self.item?.value(forKeyPath: "date") as? Date,
             let customNavigationController = self.navigationController as? CustomNavigationController,
@@ -53,14 +56,8 @@ class ItemDetailsViewController: UIViewController {
         let alarmColour = alarmActive ? "-yellow" : "-white"
         self.alarmView.image = UIImage(named: "bell" + alarmColour)
         self.iconView.image = UIImage(named: iconName + "-white")
-        if date.daysFromToday().range(of:"-") != nil{
-            self.daysToGoLabel.text = "days ago"
-        }
+        self.daysToGoLabel.text = date.daysFromToday().range(of:"-") != nil ? "days ago" : "days to go!"
         self.daysLeft.text = date.daysFromToday().replacingOccurrences(of: "-", with: "", options: .literal, range: nil)
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

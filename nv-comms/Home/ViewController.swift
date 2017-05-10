@@ -30,6 +30,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setNeedsStatusBarAppearanceUpdate()
+        self.itemTableView.tableFooterView = UIView()
         
         kolodaView.dataSource = self
         kolodaView.delegate = self
@@ -40,7 +41,6 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         
         self.fetchAndReloadItems()
-        self.kolodaView.reloadData()
         if let customNavigationContoller = self.navigationController as? CustomNavigationController {
             customNavigationContoller.setNavBar(theme: self.items.count > 0 ? .light : .lightBlackText)
         }
@@ -65,6 +65,7 @@ class ViewController: UIViewController {
         }
         self.OnboardingMessage.isHidden = self.items.count > 0 ? true : false
         self.itemTableView.reloadData()
+        self.kolodaView.reloadData()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -81,8 +82,7 @@ extension ViewController: ItemViewCellDelegate {
     
     func deleteItemFromMemory(cell: UITableViewCell) {
         guard let index  = self.itemTableView .indexPath(for: cell) else { return }
-        let row = index.row
-        let item = self.items[row]
+        let item = self.items[index.row]
         
         let context = item.managedObjectContext
         context?.delete(item)
@@ -93,7 +93,6 @@ extension ViewController: ItemViewCellDelegate {
         }
         
         self.fetchAndReloadItems()
-        self.kolodaView.reloadData()
     }
 }
 

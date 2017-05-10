@@ -22,7 +22,6 @@ func getDocumentsURL() -> NSURL {
 }
 
 func fileInDocumentsDirectory(filename: String) -> String {
-    
     let fileURL = getDocumentsURL().appendingPathComponent(filename)
     return fileURL!.path
 }
@@ -48,12 +47,6 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
         if let customNavigationController = self.navigationController as? CustomNavigationController {
             customNavigationController.setNavBar(theme: .lightBlackText)
         }
-    }
-
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
     }
     
     private func setUpItemForm(item: NSManagedObject?) {

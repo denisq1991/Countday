@@ -37,8 +37,6 @@ class ItemFormView : UIView {
         
         if !self.isEditing {
             self.resetFormState()
-        } else {
-
         }
     }
     
@@ -54,10 +52,13 @@ class ItemFormView : UIView {
     
     
     @IBAction func didSelectDatePicker() {
-        // toggle the constraints of the datePickerView
         let isCollapsed = self.datePickerViewHeight?.constant == CGFloat(0)
-        // TODO: Animate this
         self.datePickerViewHeight?.constant = isCollapsed ? CGFloat(216) : CGFloat(0)
+        if isCollapsed {
+            UIView.animate(withDuration: 1.0, animations: {
+                self.layoutIfNeeded()
+            })
+        }
     }
     
     @objc func datePickerChanged() {

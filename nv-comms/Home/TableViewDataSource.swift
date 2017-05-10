@@ -16,8 +16,7 @@ extension ViewController: UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier = "ItemCell"
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! ItemViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemViewCell
         
         cell.delegate = self
         let item = self.items[indexPath.row]
@@ -26,19 +25,14 @@ extension ViewController: UITableViewDataSource {
                 return UITableViewCell()
         }
         
-
         cell.titleLabel?.text = title
         cell.dateLabel?.text = date.stringForDate()
-        cell.countdownLabel.textColor = UIColor.black
+        cell.countdownLabel.textColor = date.daysFromToday().range(of:"-") != nil ? UIColor.red : UIColor.black
         cell.countdownLabel?.text = date.daysFromToday()
-        if date.daysFromToday().range(of:"-") != nil{
-            cell.countdownLabel.textColor = UIColor.red
-        }
         if let iconName = item.value(forKeyPath: "iconName") as? String {
             cell.iconView?.image = UIImage(named: iconName + "-grey")
         }
 
-        
         return cell
     }
 }
