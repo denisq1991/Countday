@@ -24,29 +24,34 @@ class ItemDetailsViewController: UIViewController {
         self.setNeedsStatusBarAppearanceUpdate()
         
         guard let title = self.item?.value(forKeyPath: "title") as? String else {
-                return
+            return
         }
-        
         self.title =  title
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if let customNavigationController = self.navigationController as? CustomNavigationController {
-            customNavigationController.setNavBar(theme: .light)
-        }
+        
         
         guard let date = self.item?.value(forKeyPath: "date") as? Date,
+            let customNavigationController = self.navigationController as? CustomNavigationController,
             let alarmActive = self.item?.value(forKeyPath: "notificationActive") as? Bool,
             let iconName = self.item?.value(forKeyPath: "iconName") as? String else {
                 return
         }
         
-        let image = self.title?.loadImageFromPath()
+        if let image = self.title?.loadImageFromPath() {
+            self.imageBackground.image = image
+            customNavigationController.setNavBar(theme: .light)
+        } else {
+            self.daysToGoLabel.textColor = UIColor.black
+            self.daysLeft.textColor = UIColor.black
+            customNavigationController.setNavBar(theme: .lightBlackText)
+        }
+        
         let alarmColour = alarmActive ? "-yellow" : "-white"
         self.alarmView.image = UIImage(named: "bell" + alarmColour)
-        self.imageBackground.image = image
         self.iconView.image = UIImage(named: iconName + "-white")
         if date.daysFromToday().range(of:"-") != nil{
             self.daysToGoLabel.text = "days ago"

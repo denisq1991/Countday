@@ -20,7 +20,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var itemTableView: UITableView!
     @IBOutlet weak var OnboardingMessage: UILabel!
     
+    // a sorted array of items
     var items: [NSManagedObject] = []
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +34,6 @@ class ViewController: UIViewController {
         kolodaView.dataSource = self
         kolodaView.delegate = self
         kolodaView.countOfVisibleCards = 2
-        
-        if let customNavigationContoller = self.navigationController as? CustomNavigationController {
-            // TODO: If we have no items, change this to dark
-                customNavigationContoller.setNavBar(theme: .light)
-        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,10 +41,9 @@ class ViewController: UIViewController {
         
         self.fetchAndReloadItems()
         self.kolodaView.reloadData()
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+        if let customNavigationContoller = self.navigationController as? CustomNavigationController {
+            customNavigationContoller.setNavBar(theme: self.items.count > 0 ? .light : .lightBlackText)
+        }
     }
     
     fileprivate func fetchAndReloadItems() {
@@ -54,7 +53,10 @@ class ViewController: UIViewController {
         
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Item")
-        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: true)]
+        
+        if let toggleState = UserDefaults.standard.value(forKey: "Sort By Date Ascending") as? Bool {
+                fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: toggleState)]
+        }
         
         do {
             self.items = try managedContext.fetch(fetchRequest)

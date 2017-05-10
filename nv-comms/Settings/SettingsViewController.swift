@@ -1,3 +1,4 @@
+
 //
 //  SettingsViewController.swift
 //  nv-comms
@@ -17,12 +18,21 @@ enum SettingsItem {
 
 class SettingsViewController: UIViewController {
     @IBOutlet weak var settingsTableView: UITableView!
-    let settingsItems: [(String, SettingsItem)] = [("Sort By Date", .toggle)]
+    let settingsItems: [(String, SettingsItem)] = [("Sort By Date Ascending", .toggle)]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.title = "Settings"
+        
+        if let customNavigationController = self.navigationController as? CustomNavigationController {
+            customNavigationController.setNavBar(theme: .lightBlackText)
+        }
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        
     }
 }
 
@@ -43,7 +53,9 @@ extension SettingsViewController: UITableViewDataSource {
             self.settingsTableView.register(UINib(nibName: "SettingsTableViewToggleCell", bundle: nil), forCellReuseIdentifier: "SettingsTableViewToggleCell")
             let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsTableViewToggleCell", for: indexPath) as! SettingsTableViewToggleCell
             cell.titleLabel?.text = item.title
-            cell.toggle?.isOn = false
+            if let toggleState = UserDefaults.standard.value(forKey: item.title) as? Bool {
+                cell.toggle?.isOn = toggleState
+            }
             return cell
         } else {
             return UITableViewCell()
@@ -55,4 +67,17 @@ extension SettingsViewController: UITableViewDataSource {
 class SettingsTableViewToggleCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel?
     @IBOutlet weak var toggle: UISwitch?
+    
+
+    @IBAction func didToggleOption(_ sender: Any) {
+        guard let title = titleLabel?.text else {
+            print("Cell needs a title to save to user defaults!")
+            return
+        }
+        UserDefaults.standard.set(self.toggle?.isOn, forKey: title)
+    }
 }
+
+
+
+

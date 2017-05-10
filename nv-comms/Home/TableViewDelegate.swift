@@ -19,7 +19,6 @@ extension ViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        
         if editingStyle == UITableViewCellEditingStyle.delete {
             guard let cell = tableView.cellForRow(at: indexPath) else {
                 return

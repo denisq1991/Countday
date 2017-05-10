@@ -39,6 +39,7 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setNeedsStatusBarAppearanceUpdate()
         self.title = self.currentItem != nil ? "Edit An Item" : "Create New Item"
         self.setUpItemForm(item: self.currentItem)
         self.itemFormView?.delegate = self
@@ -47,6 +48,12 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
         if let customNavigationController = self.navigationController as? CustomNavigationController {
             customNavigationController.setNavBar(theme: .lightBlackText)
         }
+    }
+
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
     
     private func setUpItemForm(item: NSManagedObject?) {

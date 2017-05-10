@@ -29,6 +29,7 @@ extension ViewController: UITableViewDataSource {
 
         cell.titleLabel?.text = title
         cell.dateLabel?.text = date.stringForDate()
+        cell.countdownLabel.textColor = UIColor.black
         cell.countdownLabel?.text = date.daysFromToday()
         if date.daysFromToday().range(of:"-") != nil{
             cell.countdownLabel.textColor = UIColor.red
