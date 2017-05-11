@@ -23,13 +23,8 @@ class ViewController: UIViewController {
     // a sorted array of items
     var items: [NSManagedObject] = []
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setNeedsStatusBarAppearanceUpdate()
         self.itemTableView.tableFooterView = UIView()
         
         kolodaView.dataSource = self
@@ -63,7 +58,12 @@ class ViewController: UIViewController {
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
+                self.setNeedsStatusBarAppearanceUpdate()
         self.OnboardingMessage.isHidden = self.items.count > 0 ? true : false
+        if let customNavigationController = self.navigationController as? CustomNavigationController {
+            customNavigationController.setNavBar(theme: self.items.count > 0 ? .light : .lightBlackText)
+        }
+        self.setNeedsStatusBarAppearanceUpdate()
         self.itemTableView.reloadData()
         self.kolodaView.reloadData()
     }

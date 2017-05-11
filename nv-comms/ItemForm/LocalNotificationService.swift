@@ -25,7 +25,6 @@ class LocalNotificationService {
                 self.setLocalNotification(text: title, date: date)
                 managedObject.setValue(true, forKey: "notificationActive")
             }
-            
         }
     }
     
@@ -42,8 +41,17 @@ class LocalNotificationService {
         content.body = text
         content.sound = UNNotificationSound.default()
         
-        let triggerDate = Calendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second,], from: date)
-        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate, repeats: false)
+        
+        let triggerDate: DateComponents?
+        if let defaultTriggerTime = UserDefaults.standard.value(forKey: "defaultAlarmTime") as? Date {
+            let timeComponents = NSCalendar.current.dateComponents([.hour, .minute, .second], from: defaultTriggerTime)
+            let dateComponents = NSCalendar.current.dateComponents([.year, .month, .day], from: date)
+            triggerDate = self.mergeDateComponents(dateComponents: dateComponents, timeComponents: timeComponents)
+        } else {
+            // maybe do something to force a default date to avoid this problem
+            triggerDate = NSCalendar.current.dateComponents([.year,.month,.day,.hour,.minute,.second,], from: date)
+        }
+        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerDate!, repeats: false)
         
         // TODO: Make this more unique so double titles won't mess it up
         let identifier = "UYLLocalNotification" + text
@@ -56,4 +64,21 @@ class LocalNotificationService {
             }
         })
     }
+    
+    private func mergeDateComponents(dateComponents: DateComponents, timeComponents: DateComponents) -> DateComponents {
+        var mergedComponments = DateComponents()
+        mergedComponments.year = dateComponents.year
+        mergedComponments.month = dateComponents.month
+        mergedComponments.day = dateComponents.day
+        mergedComponments.hour = timeComponents.hour
+        mergedComponments.minute = timeComponents.minute
+        mergedComponments.second = timeComponents.second
+        
+        return mergedComponments
+    }
 }
+
+
+
+
+

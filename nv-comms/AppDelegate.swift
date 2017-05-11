@@ -26,6 +26,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Something went wrong")
             }
         }
+        
+        if UIApplication.isFirstLaunch() {
+            // If it's the first time a user has launched the app, set the default alarm time to 12:00
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat =  "HH:mm:ss"
+            let defaultTime = dateFormatter.date(from: "12:00:00")
+            UserDefaults.standard.set(defaultTime, forKey: "defaultAlarmTime")
+        }
+        
         return true
     }
     
@@ -75,5 +84,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
+}
+
+extension UIApplication {
+    class func isFirstLaunch() -> Bool {
+        if UserDefaults.standard.bool(forKey: "hasBeenLaunchedBeforeFlag") {
+            UserDefaults.standard.set(true, forKey: "hasBeenLaunchedBeforeFlag")
+            UserDefaults.standard.synchronize()
+            return false
+        }
+        return true
+    }
 }
 

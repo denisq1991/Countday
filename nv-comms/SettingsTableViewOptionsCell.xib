@@ -28,9 +28,6 @@
                             <date key="date" timeIntervalSinceReferenceDate="516122705.83071101">
                                 <!--2017-05-10 15:25:05 +0000-->
                             </date>
-                            <connections>
-                                <action selector="didSelectDefaultTime:" destination="iN0-l3-epB" eventType="valueChanged" id="qBb-A8-wc2"/>
-                            </connections>
                         </datePicker>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

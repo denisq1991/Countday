@@ -10,6 +10,8 @@
 import Foundation
 import UIKit
 
+typealias SettingsCellItem = (title: String, type: SettingsItem)
+
 enum SettingsItem {
     case toggle
     case options
@@ -51,8 +53,11 @@ extension SettingsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let item: (title: String, type: SettingsItem) = self.settingsItems[indexPath.row]
-        
+        let item: SettingsCellItem = self.settingsItems[indexPath.row]
+        return self.cellForItem(item: item, indexPath: indexPath, tableView: tableView)
+    }
+    
+    private func cellForItem(item: SettingsCellItem, indexPath: IndexPath, tableView: UITableView) -> UITableViewCell {
         switch item.type {
         case .toggle:
             self.settingsTableView.register(UINib(nibName: "SettingsTableViewToggleCell", bundle: nil), forCellReuseIdentifier: "SettingsTableViewToggleCell")
@@ -122,9 +127,40 @@ class SettingsTableViewOptionsCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.timeLabel?.text = "12:00pm"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "hh:mm a"
+
+        let defaultTime = UserDefaults.standard.value(forKey: "defaultAlarmTime") as? Date
+        self.timeLabel?.text = dateFormatter.string(from: defaultTime!)
         self.timeSelectorViewHeight.constant = 0
+        self.timeSelector?.addTarget(self, action: #selector(timeSelectorChanged), for: .valueChanged)
     }
+    
+    @objc private func timeSelectorChanged() {
+        let selectedTime = self.timeSelector?.date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "hh:mm a"
+        let timeComponents = NSCalendar.current.dateComponents([.hour, .minute, .second], from: selectedTime!)
+        let isolatedTime = NSCalendar.current.date(from: timeComponents)
+        
+        UserDefaults.standard.set(isolatedTime, forKey: "defaultAlarmTime")
+        self.timeLabel?.text = dateFormatter.string(from: selectedTime!)
+    }
+    
+    override func willRemoveSubview(_ subview: UIView) {
+        super.willRemoveSubview(subview)
+        
+        // if the time set for the defaultAlarmTime key is different to what it was when settings was opened 
+        
+        // get all the current "items" from the NSManagedObject
+        
+        // Loop through each of them
+        
+        // If the alarm is set on
+        
+        // change from the previous alarm time to this new time
+    }
+    
 }
 
 
