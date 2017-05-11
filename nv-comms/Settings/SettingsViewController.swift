@@ -11,6 +11,7 @@ import Foundation
 import UIKit
 
 typealias SettingsCellItem = (title: String, type: SettingsItem)
+let defaultAlarmTimeKey = "defaultAlarmTime"
 
 enum SettingsItem {
     case toggle
@@ -130,7 +131,7 @@ class SettingsTableViewOptionsCell: UITableViewCell {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "hh:mm a"
 
-        let defaultTime = UserDefaults.standard.value(forKey: "defaultAlarmTime") as? Date
+        let defaultTime = UserDefaults.standard.value(forKey: defaultAlarmTimeKey) as? Date
         self.timeLabel?.text = dateFormatter.string(from: defaultTime!)
         self.timeSelectorViewHeight.constant = 0
         self.timeSelector?.addTarget(self, action: #selector(timeSelectorChanged), for: .valueChanged)
@@ -143,7 +144,7 @@ class SettingsTableViewOptionsCell: UITableViewCell {
         let timeComponents = NSCalendar.current.dateComponents([.hour, .minute, .second], from: selectedTime!)
         let isolatedTime = NSCalendar.current.date(from: timeComponents)
         
-        UserDefaults.standard.set(isolatedTime, forKey: "defaultAlarmTime")
+        UserDefaults.standard.set(isolatedTime, forKey: defaultAlarmTimeKey)
         self.timeLabel?.text = dateFormatter.string(from: selectedTime!)
     }
     

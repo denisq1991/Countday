@@ -33,6 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             dateFormatter.dateFormat =  "HH:mm:ss"
             let defaultTime = dateFormatter.date(from: "12:00:00")
             UserDefaults.standard.set(defaultTime, forKey: "defaultAlarmTime")
+            UserDefaults.standard.set(true, forKey: sortByDateKey)
         }
         
         return true
@@ -89,10 +90,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension UIApplication {
     class func isFirstLaunch() -> Bool {
         if UserDefaults.standard.bool(forKey: "hasBeenLaunchedBeforeFlag") {
-            UserDefaults.standard.set(true, forKey: "hasBeenLaunchedBeforeFlag")
             UserDefaults.standard.synchronize()
             return false
         }
+        UserDefaults.standard.set(true, forKey: "hasBeenLaunchedBeforeFlag")
         return true
     }
 }

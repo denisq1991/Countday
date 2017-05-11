@@ -241,6 +241,7 @@
 				TargetAttributes = {
 					7A8C3F351E7804B900BA8936 = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = C6Q7446YJ9;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -470,7 +471,9 @@
 			baseConfigurationReference = 6BBB87C6422679316519577C /* Pods-nv-comms.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = C6Q7446YJ9;
 				INFOPLIST_FILE = "nv-comms/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "dquaid.nv-comms";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -483,7 +486,9 @@
 			baseConfigurationReference = D9F4081076B47C802CA80CC6 /* Pods-nv-comms.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = C6Q7446YJ9;
 				INFOPLIST_FILE = "nv-comms/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "dquaid.nv-comms";
 				PRODUCT_NAME = "$(TARGET_NAME)";

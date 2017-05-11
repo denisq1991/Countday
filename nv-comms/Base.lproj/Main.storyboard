@@ -276,7 +276,7 @@
                                 <segue destination="Shc-jh-07x" kind="show" id="Ilm-7I-KkD"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="6dq-YK-6XE">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="add" id="6dq-YK-6XE">
                             <connections>
                                 <segue destination="W8y-7k-c0X" kind="show" id="jOB-cg-R6P"/>
                             </connections>
@@ -305,7 +305,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ypj-PG-o74" userLabel="New Title Form View" customClass="ItemFormView" customModule="nv_comms" customModuleProvider="target">
-                                <rect key="frame" x="16" y="64" width="343" height="559"/>
+                                <rect key="frame" x="16" y="64" width="343" height="603"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8HN-li-Uuf" userLabel="Title Text Field">
                                         <rect key="frame" x="0.0" y="12" width="343" height="32"/>
@@ -597,7 +597,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AnG-tL-7xK" customClass="CustomNavigationController" customModule="nv_comms" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="MtG-BE-f0Z">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MtG-BE-f0Z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

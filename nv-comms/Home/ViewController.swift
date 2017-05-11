@@ -10,6 +10,8 @@ import UIKit
 import CoreData
 import Koloda
 
+let sortByDateKey = "Sort By Date Ascending"
+
 protocol ItemViewCellDelegate {
     func deleteItemFromMemory(cell: UITableViewCell)
 }
@@ -49,8 +51,8 @@ class ViewController: UIViewController {
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Item")
         
-        if let toggleState = UserDefaults.standard.value(forKey: "Sort By Date Ascending") as? Bool {
-                fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: toggleState)]
+        if let toggleState = UserDefaults.standard.value(forKey: sortByDateKey) as? Bool {
+            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date", ascending: toggleState)]
         }
         
         do {
@@ -58,7 +60,7 @@ class ViewController: UIViewController {
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
         }
-                self.setNeedsStatusBarAppearanceUpdate()
+        self.setNeedsStatusBarAppearanceUpdate()
         self.OnboardingMessage.isHidden = self.items.count > 0 ? true : false
         if let customNavigationController = self.navigationController as? CustomNavigationController {
             customNavigationController.setNavBar(theme: self.items.count > 0 ? .light : .lightBlackText)
