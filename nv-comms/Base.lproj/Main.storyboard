@@ -122,14 +122,37 @@
                                     <constraint firstAttribute="width" constant="35" id="qXw-4a-tXW"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eeS-rf-kue">
+                                <rect key="frame" x="67" y="456" width="240" height="128"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JW0-M1-ZRK">
+                                        <rect key="frame" x="70" y="44" width="100" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="FMr-Fc-GH1"/>
+                                            <constraint firstAttribute="height" constant="40" id="LNk-LD-xUg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="JW0-M1-ZRK" firstAttribute="centerX" secondItem="eeS-rf-kue" secondAttribute="centerX" id="7W2-du-EJg"/>
+                                    <constraint firstItem="JW0-M1-ZRK" firstAttribute="centerY" secondItem="eeS-rf-kue" secondAttribute="centerY" id="jIg-gy-HWe"/>
+                                    <constraint firstAttribute="height" constant="128" id="nfp-iV-aI4"/>
+                                    <constraint firstAttribute="width" constant="240" id="rQH-DA-KfC"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9Cz-BR-MSa" firstAttribute="top" secondItem="fAS-sX-BJv" secondAttribute="bottom" constant="-44" id="3hO-pC-eLh"/>
+                            <constraint firstItem="9Cz-BR-MSa" firstAttribute="top" secondItem="eeS-rf-kue" secondAttribute="bottom" constant="39" id="78v-lb-2F4"/>
                             <constraint firstItem="fAS-sX-BJv" firstAttribute="top" secondItem="doJ-TU-PTq" secondAttribute="bottom" constant="-64" id="Bta-ro-FeL"/>
                             <constraint firstItem="rUq-OY-Ol1" firstAttribute="centerX" secondItem="Jek-pP-187" secondAttribute="centerX" id="ZwA-E6-TSp"/>
                             <constraint firstItem="8MP-mF-HLc" firstAttribute="leading" secondItem="Jek-pP-187" secondAttribute="leading" constant="6" id="a8Q-Uv-N4V"/>
                             <constraint firstItem="fAS-sX-BJv" firstAttribute="leading" secondItem="Jek-pP-187" secondAttribute="leadingMargin" constant="-16" id="ahq-39-y47"/>
+                            <constraint firstItem="eeS-rf-kue" firstAttribute="centerX" secondItem="Jek-pP-187" secondAttribute="centerX" id="t5q-95-z4t"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fAS-sX-BJv" secondAttribute="trailing" constant="-16" id="xGA-A7-y3O"/>
                             <constraint firstItem="rUq-OY-Ol1" firstAttribute="centerY" secondItem="Jek-pP-187" secondAttribute="centerY" id="xSq-Ag-ARB"/>
                             <constraint firstItem="9Cz-BR-MSa" firstAttribute="top" secondItem="8MP-mF-HLc" secondAttribute="bottom" constant="6" id="zVw-te-547"/>
@@ -151,6 +174,7 @@
                         <outlet property="daysToGoLabel" destination="98c-K0-mFQ" id="Sk4-W3-jCY"/>
                         <outlet property="iconView" destination="dmd-Xw-GZR" id="EA6-pc-NhM"/>
                         <outlet property="imageBackground" destination="fAS-sX-BJv" id="ITs-oc-YKq"/>
+                        <outlet property="weatherDisplayLabel" destination="JW0-M1-ZRK" id="Xlj-hN-62f"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YCm-Ne-Ztz" userLabel="First Responder" sceneMemberID="firstResponder"/>
