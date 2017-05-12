@@ -23,7 +23,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var settingsTableView: UITableView!
     var currentlySelectedRow: Int?
     let settingsItems: [(String, SettingsItem)] = [("Sort By Date Ascending", .toggle),
-                                                   ("Default Alarm Time", .options)
+                                                   ("Default Alarm Time", .options),
+                                                   ("Dynamic Events Table", .toggle)
     ]
     
     override func viewDidLoad() {
@@ -88,8 +89,6 @@ extension SettingsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let row = indexPath.row
-        
-        // if this row is the same as the row we've just selected, toggle the height
         if row == self.currentlySelectedRow {
             return 200
         }
@@ -137,15 +136,18 @@ class SettingsTableViewOptionsCell: UITableViewCell {
         self.timeSelector?.addTarget(self, action: #selector(timeSelectorChanged), for: .valueChanged)
     }
     
+    
     @objc private func timeSelectorChanged() {
-        let selectedTime = self.timeSelector?.date
+        guard let selectedTime = self.timeSelector?.date else {
+            return
+        }
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "hh:mm a"
-        let timeComponents = NSCalendar.current.dateComponents([.hour, .minute, .second], from: selectedTime!)
+        let timeComponents = NSCalendar.current.dateComponents([.hour, .minute, .second], from: selectedTime)
         let isolatedTime = NSCalendar.current.date(from: timeComponents)
         
         UserDefaults.standard.set(isolatedTime, forKey: defaultAlarmTimeKey)
-        self.timeLabel?.text = dateFormatter.string(from: selectedTime!)
+        self.timeLabel?.text = dateFormatter.string(from: selectedTime)
     }
     
     override func willRemoveSubview(_ subview: UIView) {

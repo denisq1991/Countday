@@ -21,7 +21,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTD-mu-Sva">
-                    <rect key="frame" x="16" y="16" width="39" height="19"/>
+                    <rect key="frame" x="4" y="16" width="39" height="19"/>
                     <fontDescription key="fontDescription" name="KayakSans" family="Kayak Sans" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -35,7 +35,7 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="YTD-mu-Sva" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="3bA-SF-72R"/>
+                <constraint firstItem="YTD-mu-Sva" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="4" id="3bA-SF-72R"/>
                 <constraint firstItem="YTD-mu-Sva" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Lde-eY-jbo"/>
                 <constraint firstAttribute="trailing" secondItem="qdx-0x-CKg" secondAttribute="trailing" constant="54" id="WhX-G2-fyr"/>
                 <constraint firstItem="qdx-0x-CKg" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="kvb-pv-QJM"/>

@@ -49,7 +49,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default  Alarm Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ho-PL-bq8">
-                    <rect key="frame" x="16" y="14" width="144.5" height="21"/>
+                    <rect key="frame" x="4" y="14" width="144.5" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="BqV-qR-lrN"/>
                     </constraints>
@@ -64,7 +64,7 @@
                 <constraint firstItem="DgR-qA-WvX" firstAttribute="trailing" secondItem="JuL-yE-Hbv" secondAttribute="trailing" id="DkW-IG-YLe"/>
                 <constraint firstItem="JuL-yE-Hbv" firstAttribute="top" secondItem="2ho-PL-bq8" secondAttribute="top" id="VKl-5X-7rI"/>
                 <constraint firstItem="DgR-qA-WvX" firstAttribute="leading" secondItem="JuL-yE-Hbv" secondAttribute="leading" id="cTm-Ap-vrb"/>
-                <constraint firstItem="2ho-PL-bq8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="d4V-Dn-HZE"/>
+                <constraint firstItem="2ho-PL-bq8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="4" id="d4V-Dn-HZE"/>
                 <constraint firstAttribute="trailing" secondItem="JuL-yE-Hbv" secondAttribute="trailing" id="lkF-2z-126"/>
                 <constraint firstItem="DgR-qA-WvX" firstAttribute="top" secondItem="JuL-yE-Hbv" secondAttribute="bottom" id="qNt-KD-PWP"/>
             </constraints>

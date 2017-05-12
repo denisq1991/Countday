@@ -173,7 +173,7 @@
                                 <rect key="frame" x="0.0" y="284" width="375" height="383"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="56" id="InU-wK-rr7" customClass="ItemViewCell" customModule="nv_comms" customModuleProvider="target">
+                                    <tableViewCell autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="56" id="InU-wK-rr7" customClass="ItemViewCell" customModule="nv_comms" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="InU-wK-rr7" id="SHs-7Y-IhL">
@@ -223,6 +223,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="psR-ac-2oW" secondAttribute="trailing" constant="40" id="yX5-ej-l4Y"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="12" minY="0.0" maxX="12" maxY="0.0"/>
                                         <connections>
                                             <outlet property="countdownLabel" destination="psR-ac-2oW" id="ZNc-Zs-YXv"/>
                                             <outlet property="dateLabel" destination="310-gl-jcg" id="v5Y-C2-0mB"/>
@@ -271,7 +272,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="tSF-Ou-8sf">
                         <barButtonItem key="leftBarButtonItem" image="settings-white" id="Q23-mD-Ebp">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="5"/>
                             <connections>
                                 <segue destination="Shc-jh-07x" kind="show" id="Ilm-7I-KkD"/>
                             </connections>
@@ -597,7 +598,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AnG-tL-7xK" customClass="CustomNavigationController" customModule="nv_comms" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MtG-BE-f0Z">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="MtG-BE-f0Z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -612,7 +613,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="settings-white" width="24" height="24"/>
+        <image name="settings-white" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="jOB-cg-R6P"/>
