@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AnG-tL-7xK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AnG-tL-7xK">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -122,17 +122,26 @@
                                     <constraint firstAttribute="width" constant="35" id="qXw-4a-tXW"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P3a-iF-tNG">
+                                <rect key="frame" x="166" y="462" width="42" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="UBt-oN-nDh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eeS-rf-kue">
                                 <rect key="frame" x="67" y="456" width="240" height="128"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JW0-M1-ZRK">
-                                        <rect key="frame" x="70" y="44" width="100" height="40"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No weather Info Available :(" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JW0-M1-ZRK">
+                                        <rect key="frame" x="0.0" y="44" width="240" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="FMr-Fc-GH1"/>
+                                            <constraint firstAttribute="width" constant="240" id="FMr-Fc-GH1"/>
                                             <constraint firstAttribute="height" constant="40" id="LNk-LD-xUg"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -143,16 +152,29 @@
                                     <constraint firstAttribute="width" constant="240" id="rQH-DA-KfC"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tTy-06-XlP">
+                                <rect key="frame" x="158" y="94" width="58" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="Ffx-rQ-3aF"/>
+                                    <constraint firstAttribute="width" constant="58" id="nDc-bE-zcL"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9Cz-BR-MSa" firstAttribute="top" secondItem="fAS-sX-BJv" secondAttribute="bottom" constant="-44" id="3hO-pC-eLh"/>
+                            <constraint firstItem="P3a-iF-tNG" firstAttribute="centerX" secondItem="Jek-pP-187" secondAttribute="centerX" id="4R5-GM-Iob"/>
                             <constraint firstItem="9Cz-BR-MSa" firstAttribute="top" secondItem="eeS-rf-kue" secondAttribute="bottom" constant="39" id="78v-lb-2F4"/>
                             <constraint firstItem="fAS-sX-BJv" firstAttribute="top" secondItem="doJ-TU-PTq" secondAttribute="bottom" constant="-64" id="Bta-ro-FeL"/>
+                            <constraint firstItem="P3a-iF-tNG" firstAttribute="top" secondItem="98c-K0-mFQ" secondAttribute="bottom" constant="26.5" id="F7w-JD-Z5F"/>
                             <constraint firstItem="rUq-OY-Ol1" firstAttribute="centerX" secondItem="Jek-pP-187" secondAttribute="centerX" id="ZwA-E6-TSp"/>
                             <constraint firstItem="8MP-mF-HLc" firstAttribute="leading" secondItem="Jek-pP-187" secondAttribute="leading" constant="6" id="a8Q-Uv-N4V"/>
                             <constraint firstItem="fAS-sX-BJv" firstAttribute="leading" secondItem="Jek-pP-187" secondAttribute="leadingMargin" constant="-16" id="ahq-39-y47"/>
+                            <constraint firstItem="tTy-06-XlP" firstAttribute="top" secondItem="doJ-TU-PTq" secondAttribute="bottom" constant="30" id="hLg-RI-08a"/>
+                            <constraint firstItem="tTy-06-XlP" firstAttribute="centerX" secondItem="Jek-pP-187" secondAttribute="centerX" id="ogR-BY-BjP"/>
                             <constraint firstItem="eeS-rf-kue" firstAttribute="centerX" secondItem="Jek-pP-187" secondAttribute="centerX" id="t5q-95-z4t"/>
+                            <constraint firstItem="eeS-rf-kue" firstAttribute="top" secondItem="98c-K0-mFQ" secondAttribute="bottom" constant="20.5" id="wyH-kY-FgM"/>
+                            <constraint firstItem="eeS-rf-kue" firstAttribute="centerX" secondItem="Jek-pP-187" secondAttribute="centerX" id="xFT-FD-F3J"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fAS-sX-BJv" secondAttribute="trailing" constant="-16" id="xGA-A7-y3O"/>
                             <constraint firstItem="rUq-OY-Ol1" firstAttribute="centerY" secondItem="Jek-pP-187" secondAttribute="centerY" id="xSq-Ag-ARB"/>
                             <constraint firstItem="9Cz-BR-MSa" firstAttribute="top" secondItem="8MP-mF-HLc" secondAttribute="bottom" constant="6" id="zVw-te-547"/>
@@ -170,11 +192,13 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="alarmView" destination="8MP-mF-HLc" id="0Ex-lm-l1J"/>
+                        <outlet property="dateLabel" destination="P3a-iF-tNG" id="YcK-WV-eDJ"/>
                         <outlet property="daysLeft" destination="zgf-03-ss5" id="46M-3X-NPx"/>
                         <outlet property="daysToGoLabel" destination="98c-K0-mFQ" id="Sk4-W3-jCY"/>
                         <outlet property="iconView" destination="dmd-Xw-GZR" id="EA6-pc-NhM"/>
                         <outlet property="imageBackground" destination="fAS-sX-BJv" id="ITs-oc-YKq"/>
                         <outlet property="weatherDisplayLabel" destination="JW0-M1-ZRK" id="Xlj-hN-62f"/>
+                        <outlet property="weatherIconView" destination="tTy-06-XlP" id="qYA-1m-4PA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YCm-Ne-Ztz" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -201,7 +225,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="InU-wK-rr7" id="SHs-7Y-IhL">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GsC-Sd-9PR">
@@ -330,7 +354,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ypj-PG-o74" userLabel="New Title Form View" customClass="ItemFormView" customModule="nv_comms" customModuleProvider="target">
-                                <rect key="frame" x="16" y="64" width="343" height="603"/>
+                                <rect key="frame" x="16" y="64" width="343" height="559"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8HN-li-Uuf" userLabel="Title Text Field">
                                         <rect key="frame" x="0.0" y="12" width="343" height="32"/>
@@ -559,7 +583,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Tf0-oU-86H">
-                                <rect key="frame" x="32" y="72" width="311" height="447"/>
+                                <rect key="frame" x="32" y="72" width="311" height="403"/>
                                 <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6PI-yb-lny">
                                     <size key="itemSize" width="87" height="79"/>
@@ -640,7 +664,7 @@
         <image name="settings-white" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jOB-cg-R6P"/>
+        <segue reference="FoP-13-l2Y"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
 </document>

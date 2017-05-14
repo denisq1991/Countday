@@ -13,14 +13,29 @@ import OpenWeatherMapAPI
 
 class ItemDetailsViewController: UIViewController {
     
+    enum weatherEnum: String
+    {
+        case fewClouds = "few clouds"
+        case scatteredClouds = "scattered clouds"
+        case brokenClouds = "broken clouds"
+        case showerRain = "shower rain"
+        case rain = "rain"
+        case thunderstorm = "thunderstorm"
+        case snow = "snow"
+        case mist = "mist"
+    }
+    
     var item: NSManagedObject?
     @IBOutlet weak var imageBackground: UIImageView!
     @IBOutlet weak var iconView: UIImageView!
     @IBOutlet weak var alarmView: UIImageView!
     @IBOutlet weak var daysLeft: UILabel!
     @IBOutlet weak var daysToGoLabel: UILabel!
-    
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var weatherDisplayLabel: UILabel!
+    
+    @IBOutlet weak var weatherIconView: UIImageView!
+    var date: Date?
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -35,6 +50,12 @@ class ItemDetailsViewController: UIViewController {
             return
         }
         
+        guard let date = self.item?.value(forKeyPath: "date") as? Date else {
+            return
+        }
+        self.date = date
+        self.weatherDisplayLabel.isHidden = true
+        
         let weatherAPI = OWMWeatherAPI(apiKey: "37be4c8a6b11f53b9c0164b9ee1748b3")
         weatherAPI?.setTemperatureFormat(kOWMTempCelcius)
         
@@ -44,35 +65,32 @@ class ItemDetailsViewController: UIViewController {
                 return
             }
             
+            let daysAway = self.date!.daysFromToday()
+            let placeInArrayDict: [String: Int] = ["1" : 4,"2" : 12,"3" : 20,"4" : 28,"5" : 36]
+            guard let place = placeInArrayDict[daysAway] else {
+                return
+            }
             
             // data from the API
             guard let resultDict = result as? [String: Any],
-                let forecastDate = resultDict["dt"] as? Date,
                 let forecastList = resultDict["list"] as? [[String: Any]],
-                let tommorowsForecast = forecastList.first as? [String: Any],
-                let tommorowsWeather = tommorowsForecast["weather"] as? [[String: Any]],
-                let tommorowsCondition = tommorowsWeather[0]["main"] as? String else {
+                let forecastForDay = forecastList[place] as? [String: Any],
+                let forecastDate = forecastForDay["dt_txt"] as? String,
+                let weatherForDay = forecastForDay["weather"] as? [[String: Any]],
+                let conditionsForDay = weatherForDay[0]["main"] as? String else {
                     return
             }
+            
             
             // get the date of this item
             guard let eventDate = self.item?.value(forKeyPath: "date") as? Date else {
                 return
             }
             
-            // find out how many days away this event is
-            let daysAway = Int(eventDate.daysFromToday()) as! Int
+            let anEnum = weatherEnum(rawValue: conditionsForDay.lowercased())
             
-            // if it's less than five
-            if daysAway < 6 {
-                
-            }
-            
-            // got to that day in the list
-            
-            // get the name of the weather
-            
-            
+            self.weatherDisplayLabel.isHidden = false
+            self.weatherDisplayLabel.text = "\(conditionsForDay) for \(forecastDate)"
             
         })
         
@@ -82,12 +100,15 @@ class ItemDetailsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        guard let date = self.item?.value(forKeyPath: "date") as? Date,
-            let customNavigationController = self.navigationController as? CustomNavigationController,
+        guard let customNavigationController = self.navigationController as? CustomNavigationController,
+            let date = self.item?.value(forKeyPath: "date") as? Date,
             let alarmActive = self.item?.value(forKeyPath: "notificationActive") as? Bool,
             let iconName = self.item?.value(forKeyPath: "iconName") as? String else {
                 return
         }
+        
+        self.date = date
+        self.dateLabel.text = date.stringForDate()
         
         if let image = self.title?.loadImageFromPath() {
             self.imageBackground.image = image
@@ -101,8 +122,8 @@ class ItemDetailsViewController: UIViewController {
         let alarmColour = alarmActive ? "-yellow" : "-white"
         self.alarmView.image = UIImage(named: "bell" + alarmColour)
         self.iconView.image = UIImage(named: iconName + "-white")
-        self.daysToGoLabel.text = date.daysFromToday().range(of:"-") != nil ? "days ago" : "days to go!"
-        self.daysLeft.text = date.daysFromToday().replacingOccurrences(of: "-", with: "", options: .literal, range: nil)
+        self.daysToGoLabel.text = self.date?.daysFromToday().range(of:"-") != nil ? "days ago" : "days to go!"
+        self.daysLeft.text = self.date?.daysFromToday().replacingOccurrences(of: "-", with: "", options: .literal, range: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

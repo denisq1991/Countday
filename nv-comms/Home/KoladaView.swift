@@ -27,6 +27,10 @@ extension ViewController: KolodaViewDelegate {
 }
 
 extension ViewController: KolodaViewDataSource {
+    public func kolodaSpeedThatCardShouldDrag(_ koloda: KolodaView) -> DragSpeed {
+        return .default
+    }
+    
     
     func kolodaNumberOfCards(_ koloda:KolodaView) -> Int {
         return self.items.count

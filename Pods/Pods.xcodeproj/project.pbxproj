@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0370A6BAE58BCF9A691F36F4240537F7 /* Koloda-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0A0571F15E2DEEFC429D4C5F5794C22E /* Koloda-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		05A098BA5318408C3053B9BBD481C9BE /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23E28214DB6A93F0B72EBB44B4C0A7E1 /* MobileCoreServices.framework */; };
 		082FA92AEBCC24472DD735AEA0015372 /* POPAnimationExtras.h in Headers */ = {isa = PBXBuildFile; fileRef = 7079D8696D9936535B921D157107D5BC /* POPAnimationExtras.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		091442CC5D5EA9C84B49F888E2328501 /* pop-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D3D81451DEE7C28D85467D390469CA /* pop-dummy.m */; };
 		09793E2E8334A2F3349173C3250A57F8 /* OWMWeatherAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C4808BD69B060F5DDB20E7DD6DF2BEE /* OWMWeatherAPI.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
@@ -21,14 +20,17 @@
 		16143090A5E1AC434839BE67339EDB95 /* DraggableCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE946AAD9B31358DC6E039E99F527DC4 /* DraggableCardView.swift */; };
 		161782812773E6C4776D76E02102F36C /* POPCGUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = D75E5C59779F83730ED9709E46510BC9 /* POPCGUtils.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		1D6EC5800196AB04C390C606DF0BCE87 /* POPDecayAnimation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1BFDFBB1923E1F63FCF8085D0009933A /* POPDecayAnimation.mm */; };
+		1F6AB3D8D08335674B1F4FD0A1BEA109 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63735089B8E8731595A1322E7AE8E6F /* Foundation.framework */; };
 		2134B885A5573C990EB1DAA8D374BF66 /* POPBasicAnimationInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = E9B65EA8826531D1323B167D712FF6AF /* POPBasicAnimationInternal.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		28117F4351FE9F0F8901D2C7A424FF8A /* TransformationMatrix.h in Headers */ = {isa = PBXBuildFile; fileRef = F4857F852C20902E2D1893D417F9618B /* TransformationMatrix.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		2A21C43309E85E8CD108D459A0CF7A24 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C8ADDAB7E28DD8D378F85E4B2328F42 /* Foundation.framework */; };
 		2E8798F5624B99D885B6C55C88CA7CA3 /* POPCustomAnimation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 24B68AE0B4B8287A42231BFB16CC2E91 /* POPCustomAnimation.mm */; };
 		2F67EE18A0EDAD436998B8BBFCB4FC98 /* AFImageRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CBCBE46085259E5E674F551653F9DCC /* AFImageRequestOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		302025D2A931A70C3E506B879D992758 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7C6D0B15A8A682C6FF1A991135C6CC6 /* CoreGraphics.framework */; };
 		3045053359FDEFAED32A09BA0B246A93 /* POPDecayAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D86C88086058749AE053B2F61299642 /* POPDecayAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		318115318B128C5B1AD22CD091198D74 /* POPPropertyAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = 49B02B07DEB48624B4D23185A221C4AD /* POPPropertyAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3DFC4863FF2CA8A34F11CCB1A0B51B82 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C8ADDAB7E28DD8D378F85E4B2328F42 /* Foundation.framework */; };
+		323CAFC661E9C684B7F8CC6CA8D974E2 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66FBAF6610C33EED30F85833E70F6FF6 /* MobileCoreServices.framework */; };
+		3B54A1EC52236BC7D341C0AEC5F38E0D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63735089B8E8731595A1322E7AE8E6F /* Foundation.framework */; };
+		3BED91C554BFB10BFD1B442D5C01F6C1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63735089B8E8731595A1322E7AE8E6F /* Foundation.framework */; };
 		3F32285BE9FD0980D0CC49C2A6450236 /* Pods-nv-comms-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B02A09573C39A8558FD9AB3F64506BBF /* Pods-nv-comms-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3FCC0C7A9CAF6FBF9BE833C95C471331 /* POPAnimationRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F8E8477AEC88F6A51535D2259B8B0EC /* POPAnimationRuntime.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		43ED47B7D1369613B9A6857C2657DC9C /* POPAnimationTracer.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C5FB97F648CEC786C7B7748F250CFDA /* POPAnimationTracer.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -43,6 +45,7 @@
 		5F9BDC0436331235FFADD09366BA2EA5 /* POPSpringAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = F8CEC1C43A877AF1FCE4951B0B889869 /* POPSpringAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		611EBA6258C9C42F2029C636A7D47512 /* Koloda-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 96039010C6FAC2C35FCE2A1A9C243AD1 /* Koloda-dummy.m */; };
 		61BBEB0B1BE50D22C96A48D80D5143AC /* POPCustomAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = D3C6503AE5A93C97B3CE895F6D3C1073 /* POPCustomAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63B1155BF07706CF3B3A6024429F96DA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 47BC365CC749EB07F14BE67E0B8F9426 /* UIKit.framework */; };
 		69C653694C632A81FDA4C3334741C271 /* POPGeometry.mm in Sources */ = {isa = PBXBuildFile; fileRef = 0EC9FA81C4679D1F3149A29D7198A6DE /* POPGeometry.mm */; };
 		69FD1C37268D80D2322A939881AD06C9 /* KolodaCardStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BE722063A107035F747C7F2CD20CDB /* KolodaCardStorage.swift */; };
 		7087F7FB7914F24189A28C9BC854BC8E /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 41B2F2B171A6A4F180F8476B10B3A69D /* AFHTTPRequestOperation.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
@@ -60,6 +63,7 @@
 		8591D58B89206D495D40E250AB416CC4 /* AFPropertyListRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A19A15894D3F4ACAF8B618E2CA2EB564 /* AFPropertyListRequestOperation.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		87C96F5A170A11E619C15037EFE4E649 /* POPAnimationRuntime.mm in Sources */ = {isa = PBXBuildFile; fileRef = 01CCBFD1F89245962557F5CA9710BB9E /* POPAnimationRuntime.mm */; };
 		8DBF4434B421CA81C8AE3E05F0F62881 /* POPAnimationTracer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 86F84A74F920FAA261619B4AE7D3915C /* POPAnimationTracer.mm */; };
+		8F31EEAD389B9E4AF52C8323EFA374CF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 533627D382B12DED96071334993DDB4F /* SystemConfiguration.framework */; };
 		9878FFEB5378C1A71B800D9A25809578 /* POPAnimationPrivate.h in Headers */ = {isa = PBXBuildFile; fileRef = A8FD7C469F9A746225C9BB4FCA018686 /* POPAnimationPrivate.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		9AE61F3F4384E022E3EC153BF9CDD464 /* POPLayerExtras.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B3D526BFE6827A2CBAB664531046F10 /* POPLayerExtras.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		9CC1C669F6275AC6BB3D3B5135E55956 /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = EA0EB7EDBE74FDA5CC307F622FD7C25F /* AFXMLRequestOperation.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
@@ -69,24 +73,22 @@
 		A9B6000681F655C81A8258103473CF78 /* OpenWeatherMapAPI-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F8F0785041E211C2AD3A8FD7BC711BC /* OpenWeatherMapAPI-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AA07E7636764018BCF45A2399745E0F3 /* AFNetworkActivityIndicatorManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 7E3AE35091CFA988926B529BF62C1A6F /* AFNetworkActivityIndicatorManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		AA25531D2526E7400F9EFBF7203253D7 /* POPSpringAnimationInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = B30B90BBBEB7823C790FFE9CDDB3651F /* POPSpringAnimationInternal.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		AD90677D741E7163041C7F7AD26E98BE /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA936EBA93EA9C77BABF360A499291A6 /* SystemConfiguration.framework */; };
+		AA6752960E13BF4EBEE033C9AFDED770 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1AC4B996D384F740C3524B6F10D863A /* Security.framework */; };
 		AFA7F36E3DCA966C0A973841DC20EACF /* POPAnimatableProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = 49A755E0CC4721F0D2FA8D7E112A97AE /* POPAnimatableProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B056619CB136F59FB2898D466F0D7EF4 /* AFNetworking-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F5D81A2466EEB5B84CF34E92230A23C9 /* AFNetworking-dummy.m */; };
 		B18023213F25C14848832DFB6B9667AA /* OpenWeatherMapAPI-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D5780166386957E760758D2F98BFF3C2 /* OpenWeatherMapAPI-dummy.m */; };
 		B2553DE2AE44A982AD174EFFDEDAFB71 /* AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = 19160BC2EFAAF6DCC668C499071E772F /* AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B2C3B37325BB542770FE36ECBCFCF096 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2BA5A4883C1FBC945F0C431A3A595EE4 /* CoreGraphics.framework */; };
 		B3A14619A59A9225CFF411B563A599F4 /* AFHTTPClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A3BAF354D3C58D9D080386DCEDF7098 /* AFHTTPClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B6BA0CBA5DAC94DB26257DDFE2544E30 /* POPAnimationEventInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 7140C1AE8D348C1F1804E0280826E87A /* POPAnimationEventInternal.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		B84335EEBDEC72442C06CFE135D4C172 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D7CE1AA2A42206C547324B136F9F063 /* AFNetworking.framework */; };
 		BA1ED15096C0921A2EE107E16B15F32B /* AFHTTPRequestOperation.h in Headers */ = {isa = PBXBuildFile; fileRef = 411E9548DA1443AB6B0BFD8142DA3AA5 /* AFHTTPRequestOperation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BE643E9E816AB1F9C4C95C8395F68100 /* Pods-nv-comms-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BD55F85E4F28780F7F44BF03E9EEA0BD /* Pods-nv-comms-dummy.m */; };
+		C3F31F5C613EC224BBB883DB6C0CCC5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63735089B8E8731595A1322E7AE8E6F /* Foundation.framework */; };
 		C3FE4825DE03FA8E3FEBFE04FF28817D /* POPAnimator.mm in Sources */ = {isa = PBXBuildFile; fileRef = 937CA24AA834DAD8654C25667C47A9F2 /* POPAnimator.mm */; };
-		C4271BEFC3CC34BB2A95F0B2350B0080 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9019ED6194E87722D603A4B29A32A91C /* UIKit.framework */; };
-		C4689A98C80FAE99E8CEAB21764A1475 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C8ADDAB7E28DD8D378F85E4B2328F42 /* Foundation.framework */; };
 		C4B61C095ED7D9C0696FD088E8BA00B2 /* POPPropertyAnimation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 33661B6AE14732487A764D4AF47FDA1B /* POPPropertyAnimation.mm */; };
 		C7F2DB90F91D99EEBC46FD72588469F2 /* POPGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = FC72FEC6C3E32D96FC624880F76DD8E4 /* POPGeometry.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C7FB8E9070B347F9B17C1690E0FA58D7 /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F26FE6B603B658C8043C0D31B1A77C /* AFHTTPClient.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		C8B102C95EB7C017733793A13A3BDCDC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C8ADDAB7E28DD8D378F85E4B2328F42 /* Foundation.framework */; };
+		D379F92A589CF78F22EBCFD76924C79A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F63735089B8E8731595A1322E7AE8E6F /* Foundation.framework */; };
 		D3F01E30AE65D8A31C664B826C38B0FC /* UIImageView+AFNetworking.h in Headers */ = {isa = PBXBuildFile; fileRef = AF335046E642FD88C5BB747B85051355 /* UIImageView+AFNetworking.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D5A1FED0856A10F53BE000F1C25CE407 /* pop-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AFC6F16187EA2C33FB6E3AAD96B5A028 /* pop-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D6A47178A4C100A23454657400E63862 /* POPSpringSolver.h in Headers */ = {isa = PBXBuildFile; fileRef = 473046E4FD30B9ABC03F1DCAAA227F7E /* POPSpringSolver.h */; settings = {ATTRIBUTES = (Project, ); }; };
@@ -94,7 +96,6 @@
 		DC0FCE670975A1C3E088AB9BBA76E38F /* POP.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B9BDFB35838159E9467FD3CC2DE6E0B /* POP.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DD360B1EDF1C5906C19196EA37B358B8 /* POPAnimation.h in Headers */ = {isa = PBXBuildFile; fileRef = EF5E7F4155B4957C399AA58650292CF6 /* POPAnimation.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E65B8B7A9F86692FD925781210CC22B3 /* OWMWeatherAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D6957DCBB8E483BA5DD325497CCF1D2 /* OWMWeatherAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		E68E20FACE0C05C8904B34BD5E91C3E6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C8ADDAB7E28DD8D378F85E4B2328F42 /* Foundation.framework */; };
 		E7977CE5D10B1E31304069F3062C5222 /* FloatConversion.h in Headers */ = {isa = PBXBuildFile; fileRef = 88542DB4E6C48964911FBDE28DBABD19 /* FloatConversion.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		E7CFA496151B74F9E89CA0A87FB66C30 /* POPBasicAnimation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 07970C93F996DEF5599DE602F943630D /* POPBasicAnimation.mm */; };
 		E8974278399F5501771E817A3ACFF711 /* POPSpringAnimation.mm in Sources */ = {isa = PBXBuildFile; fileRef = 939CBC300035A2DCD85A9417C0C1E493 /* POPSpringAnimation.mm */; };
@@ -105,7 +106,6 @@
 		F959060194AD6FB27A8CB306E2B54E50 /* POPAnimationTracerInternal.h in Headers */ = {isa = PBXBuildFile; fileRef = 23A26FE496F16FB4F3D484F7C1333AA9 /* POPAnimationTracerInternal.h */; settings = {ATTRIBUTES = (Project, ); }; };
 		FA060264730E562225775FDB988A202D /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 22D49BA83BD8C16A51F27486D1D09AE8 /* AFImageRequestOperation.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 		FE8E36200138DB0A4D879C75D7B808D4 /* POPVector.h in Headers */ = {isa = PBXBuildFile; fileRef = D68E224C824881CD185D9B604512A0CF /* POPVector.h */; settings = {ATTRIBUTES = (Project, ); }; };
-		FF90B0E0A3ACC0A78F0D8B607D852697 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 928628CDD8A8F59D6EEAFEBDE94D1C6A /* Security.framework */; };
 		FFB0AC96268D6B54160E66F5B6C5DB84 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 2E42742462B88C72F94158DC130D35E9 /* UIImageView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
 /* End PBXBuildFile section */
 
@@ -165,18 +165,15 @@
 		1210DD732E33D9019FA498F344C32B41 /* POPAnimatableProperty.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = POPAnimatableProperty.mm; path = pop/POPAnimatableProperty.mm; sourceTree = "<group>"; };
 		19160BC2EFAAF6DCC668C499071E772F /* AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
 		1BFDFBB1923E1F63FCF8085D0009933A /* POPDecayAnimation.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = POPDecayAnimation.mm; path = pop/POPDecayAnimation.mm; sourceTree = "<group>"; };
-		1C8ADDAB7E28DD8D378F85E4B2328F42 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		1D6957DCBB8E483BA5DD325497CCF1D2 /* OWMWeatherAPI.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = OWMWeatherAPI.h; path = OpenWeatherMapAPI/OpenWeatherMapAPI/OWMWeatherAPI.h; sourceTree = "<group>"; };
 		1DB982FBE3C217B661529DF5E72FEE4D /* SwipeResultDirection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeResultDirection.swift; path = Pod/Classes/KolodaView/SwipeResultDirection.swift; sourceTree = "<group>"; };
 		22D49BA83BD8C16A51F27486D1D09AE8 /* AFImageRequestOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFImageRequestOperation.m; path = AFNetworking/AFImageRequestOperation.m; sourceTree = "<group>"; };
 		23A26FE496F16FB4F3D484F7C1333AA9 /* POPAnimationTracerInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPAnimationTracerInternal.h; path = pop/POPAnimationTracerInternal.h; sourceTree = "<group>"; };
-		23E28214DB6A93F0B72EBB44B4C0A7E1 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
 		24B68AE0B4B8287A42231BFB16CC2E91 /* POPCustomAnimation.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = POPCustomAnimation.mm; path = pop/POPCustomAnimation.mm; sourceTree = "<group>"; };
 		26D3D81451DEE7C28D85467D390469CA /* pop-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "pop-dummy.m"; sourceTree = "<group>"; };
 		28A1C9A695E2D35B5508A414E5FE9E93 /* pop.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = pop.xcconfig; sourceTree = "<group>"; };
 		28AA702B413C37F4047175FD428303E3 /* AFJSONRequestOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFJSONRequestOperation.h; path = AFNetworking/AFJSONRequestOperation.h; sourceTree = "<group>"; };
 		298BB2985EA04ADAF9D71D3301D251C0 /* AFNetworking.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AFNetworking.xcconfig; sourceTree = "<group>"; };
-		2BA5A4883C1FBC945F0C431A3A595EE4 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		2E42742462B88C72F94158DC130D35E9 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		3178BB60AD8BF5F92CC9E69584FF05EC /* POPBasicAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPBasicAnimation.h; path = pop/POPBasicAnimation.h; sourceTree = "<group>"; };
 		33661B6AE14732487A764D4AF47FDA1B /* POPPropertyAnimation.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = POPPropertyAnimation.mm; path = pop/POPPropertyAnimation.mm; sourceTree = "<group>"; };
@@ -192,6 +189,7 @@
 		41B2F2B171A6A4F180F8476B10B3A69D /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPRequestOperation.m; path = AFNetworking/AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		46ED2A1976905770DCDDA4D31F37A417 /* Pods-nv-comms-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-nv-comms-frameworks.sh"; sourceTree = "<group>"; };
 		473046E4FD30B9ABC03F1DCAAA227F7E /* POPSpringSolver.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPSpringSolver.h; path = pop/POPSpringSolver.h; sourceTree = "<group>"; };
+		47BC365CC749EB07F14BE67E0B8F9426 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		49A755E0CC4721F0D2FA8D7E112A97AE /* POPAnimatableProperty.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPAnimatableProperty.h; path = pop/POPAnimatableProperty.h; sourceTree = "<group>"; };
 		49B02B07DEB48624B4D23185A221C4AD /* POPPropertyAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPPropertyAnimation.h; path = pop/POPPropertyAnimation.h; sourceTree = "<group>"; };
 		4A44ECBDF62DF857B3999D74B1C88400 /* POPAnimationEvent.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPAnimationEvent.h; path = pop/POPAnimationEvent.h; sourceTree = "<group>"; };
@@ -200,6 +198,7 @@
 		4F6E5741BEF99CC2B679D6A89772F960 /* KolodaView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KolodaView.swift; path = Pod/Classes/KolodaView/KolodaView.swift; sourceTree = "<group>"; };
 		4F8F0785041E211C2AD3A8FD7BC711BC /* OpenWeatherMapAPI-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OpenWeatherMapAPI-umbrella.h"; sourceTree = "<group>"; };
 		506E10FC35585848F83CFAA04C8E3733 /* OpenWeatherMapAPI.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = OpenWeatherMapAPI.xcconfig; sourceTree = "<group>"; };
+		533627D382B12DED96071334993DDB4F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		558792164405726E425A26EF074FF825 /* POPLayerExtras.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = POPLayerExtras.mm; path = pop/POPLayerExtras.mm; sourceTree = "<group>"; };
 		5598B10FF99078AB763C585682BE1B1A /* POPCGUtils.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = POPCGUtils.mm; path = pop/POPCGUtils.mm; sourceTree = "<group>"; };
 		57363E0002ED7CD01B490F0BAF1ED3FD /* POPPropertyAnimationInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPPropertyAnimationInternal.h; path = pop/POPPropertyAnimationInternal.h; sourceTree = "<group>"; };
@@ -208,6 +207,7 @@
 		5F8A25F399005DC955529A4467905E51 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFURLConnectionOperation.m; path = AFNetworking/AFURLConnectionOperation.m; sourceTree = "<group>"; };
 		5F8E8477AEC88F6A51535D2259B8B0EC /* POPAnimationRuntime.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPAnimationRuntime.h; path = pop/POPAnimationRuntime.h; sourceTree = "<group>"; };
 		6267372547BA79562E44F6D5A1746772 /* POPAnimationExtras.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = POPAnimationExtras.mm; path = pop/POPAnimationExtras.mm; sourceTree = "<group>"; };
+		66FBAF6610C33EED30F85833E70F6FF6 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
 		69BE722063A107035F747C7F2CD20CDB /* KolodaCardStorage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = KolodaCardStorage.swift; path = Pod/Classes/KolodaView/KolodaCardStorage.swift; sourceTree = "<group>"; };
 		6A3BAF354D3C58D9D080386DCEDF7098 /* AFHTTPClient.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFHTTPClient.h; path = AFNetworking/AFHTTPClient.h; sourceTree = "<group>"; };
 		6D3EF651AEBF5A994601D68CC6DCA64F /* Pods-nv-comms-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-nv-comms-acknowledgements.markdown"; sourceTree = "<group>"; };
@@ -222,8 +222,6 @@
 		86F84A74F920FAA261619B4AE7D3915C /* POPAnimationTracer.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = POPAnimationTracer.mm; path = pop/POPAnimationTracer.mm; sourceTree = "<group>"; };
 		88542DB4E6C48964911FBDE28DBABD19 /* FloatConversion.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FloatConversion.h; path = pop/WebCore/FloatConversion.h; sourceTree = "<group>"; };
 		8B2A6E4F7E70F26EEC27F26A5CB1C366 /* POPMath.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPMath.h; path = pop/POPMath.h; sourceTree = "<group>"; };
-		9019ED6194E87722D603A4B29A32A91C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		928628CDD8A8F59D6EEAFEBDE94D1C6A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		937CA24AA834DAD8654C25667C47A9F2 /* POPAnimator.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = POPAnimator.mm; path = pop/POPAnimator.mm; sourceTree = "<group>"; };
 		939CBC300035A2DCD85A9417C0C1E493 /* POPSpringAnimation.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = POPSpringAnimation.mm; path = pop/POPSpringAnimation.mm; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -237,6 +235,7 @@
 		9F071FFB29EFC333E746C75074D37695 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AFNetworking.framework; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F47CA188B939B4A562B0E6AE97FBBDF /* AFNetworking.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = AFNetworking.modulemap; sourceTree = "<group>"; };
 		A19A15894D3F4ACAF8B618E2CA2EB564 /* AFPropertyListRequestOperation.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFPropertyListRequestOperation.m; path = AFNetworking/AFPropertyListRequestOperation.m; sourceTree = "<group>"; };
+		A7C6D0B15A8A682C6FF1A991135C6CC6 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/CoreGraphics.framework; sourceTree = DEVELOPER_DIR; };
 		A8FD7C469F9A746225C9BB4FCA018686 /* POPAnimationPrivate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPAnimationPrivate.h; path = pop/POPAnimationPrivate.h; sourceTree = "<group>"; };
 		A9F26FE6B603B658C8043C0D31B1A77C /* AFHTTPClient.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFHTTPClient.m; path = AFNetworking/AFHTTPClient.m; sourceTree = "<group>"; };
 		ACD7BC66C29CC0B83F4BAA0387BF78C7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -246,10 +245,10 @@
 		AFC6F16187EA2C33FB6E3AAD96B5A028 /* pop-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "pop-umbrella.h"; sourceTree = "<group>"; };
 		B02A09573C39A8558FD9AB3F64506BBF /* Pods-nv-comms-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-nv-comms-umbrella.h"; sourceTree = "<group>"; };
 		B08B3F4C3C1F8A5C7A88AEE524EE410E /* POPAnimationInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPAnimationInternal.h; path = pop/POPAnimationInternal.h; sourceTree = "<group>"; };
+		B1AC4B996D384F740C3524B6F10D863A /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
 		B30B90BBBEB7823C790FFE9CDDB3651F /* POPSpringAnimationInternal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPSpringAnimationInternal.h; path = pop/POPSpringAnimationInternal.h; sourceTree = "<group>"; };
 		B47713A25FDF36F9A0826CA9AB340E5B /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B935622BCC4C981D13108629557E5D2E /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFURLConnectionOperation.h; path = AFNetworking/AFURLConnectionOperation.h; sourceTree = "<group>"; };
-		BA936EBA93EA9C77BABF360A499291A6 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/SystemConfiguration.framework; sourceTree = DEVELOPER_DIR; };
 		BD55F85E4F28780F7F44BF03E9EEA0BD /* Pods-nv-comms-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-nv-comms-dummy.m"; sourceTree = "<group>"; };
 		C1113FBD34FB3C51A8BF201478594C66 /* OpenWeatherMapAPI-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "OpenWeatherMapAPI-prefix.pch"; sourceTree = "<group>"; };
 		C17FEE86553B9C7321186C5B3A731A37 /* POPAction.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPAction.h; path = pop/POPAction.h; sourceTree = "<group>"; };
@@ -275,6 +274,7 @@
 		F18894D9F8073A5CAF3DA9DDA9F419E8 /* Koloda.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Koloda.xcconfig; sourceTree = "<group>"; };
 		F4857F852C20902E2D1893D417F9618B /* TransformationMatrix.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TransformationMatrix.h; path = pop/WebCore/TransformationMatrix.h; sourceTree = "<group>"; };
 		F5D81A2466EEB5B84CF34E92230A23C9 /* AFNetworking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AFNetworking-dummy.m"; sourceTree = "<group>"; };
+		F63735089B8E8731595A1322E7AE8E6F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		F86BE92F6CBB5FFB1C66F6F60B98393F /* OpenWeatherMapAPI.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = OpenWeatherMapAPI.modulemap; sourceTree = "<group>"; };
 		F8CEC1C43A877AF1FCE4951B0B889869 /* POPSpringAnimation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = POPSpringAnimation.h; path = pop/POPSpringAnimation.h; sourceTree = "<group>"; };
 		FB47E7AE64A1BF577CB92F28AD5B9894 /* POPAnimationEvent.mm */ = {isa = PBXFileReference; includeInIndex = 1; name = POPAnimationEvent.mm; path = pop/POPAnimationEvent.mm; sourceTree = "<group>"; };
@@ -288,9 +288,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C4689A98C80FAE99E8CEAB21764A1475 /* Foundation.framework in Frameworks */,
+				C3F31F5C613EC224BBB883DB6C0CCC5E /* Foundation.framework in Frameworks */,
 				81D94DDC2AF1479F0CA2F22F02AD5BF3 /* pop.framework in Frameworks */,
-				C4271BEFC3CC34BB2A95F0B2350B0080 /* UIKit.framework in Frameworks */,
+				63B1155BF07706CF3B3A6024429F96DA /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -298,7 +298,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E68E20FACE0C05C8904B34BD5E91C3E6 /* Foundation.framework in Frameworks */,
+				D379F92A589CF78F22EBCFD76924C79A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,11 +306,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B2C3B37325BB542770FE36ECBCFCF096 /* CoreGraphics.framework in Frameworks */,
-				C8B102C95EB7C017733793A13A3BDCDC /* Foundation.framework in Frameworks */,
-				05A098BA5318408C3053B9BBD481C9BE /* MobileCoreServices.framework in Frameworks */,
-				FF90B0E0A3ACC0A78F0D8B607D852697 /* Security.framework in Frameworks */,
-				AD90677D741E7163041C7F7AD26E98BE /* SystemConfiguration.framework in Frameworks */,
+				302025D2A931A70C3E506B879D992758 /* CoreGraphics.framework in Frameworks */,
+				3B54A1EC52236BC7D341C0AEC5F38E0D /* Foundation.framework in Frameworks */,
+				323CAFC661E9C684B7F8CC6CA8D974E2 /* MobileCoreServices.framework in Frameworks */,
+				AA6752960E13BF4EBEE033C9AFDED770 /* Security.framework in Frameworks */,
+				8F31EEAD389B9E4AF52C8323EFA374CF /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,7 +318,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3DFC4863FF2CA8A34F11CCB1A0B51B82 /* Foundation.framework in Frameworks */,
+				3BED91C554BFB10BFD1B442D5C01F6C1 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,7 +327,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B84335EEBDEC72442C06CFE135D4C172 /* AFNetworking.framework in Frameworks */,
-				2A21C43309E85E8CD108D459A0CF7A24 /* Foundation.framework in Frameworks */,
+				1F6AB3D8D08335674B1F4FD0A1BEA109 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,7 +522,7 @@
 			children = (
 				0D7CE1AA2A42206C547324B136F9F063 /* AFNetworking.framework */,
 				3E4C2EE4FDB3639BE4C9D0C97F761192 /* pop.framework */,
-				F18792BC1A04CEB6E775FF7DE504C4B2 /* iOS */,
+				F2C3000BC54A90A04E84805B203B73EC /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -560,19 +560,6 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		F18792BC1A04CEB6E775FF7DE504C4B2 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				2BA5A4883C1FBC945F0C431A3A595EE4 /* CoreGraphics.framework */,
-				1C8ADDAB7E28DD8D378F85E4B2328F42 /* Foundation.framework */,
-				23E28214DB6A93F0B72EBB44B4C0A7E1 /* MobileCoreServices.framework */,
-				928628CDD8A8F59D6EEAFEBDE94D1C6A /* Security.framework */,
-				BA936EBA93EA9C77BABF360A499291A6 /* SystemConfiguration.framework */,
-				9019ED6194E87722D603A4B29A32A91C /* UIKit.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
 		F29D12C8FCFFDB08EB2D76AEA281AC8E /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -585,6 +572,19 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/OpenWeatherMapAPI";
+			sourceTree = "<group>";
+		};
+		F2C3000BC54A90A04E84805B203B73EC /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				A7C6D0B15A8A682C6FF1A991135C6CC6 /* CoreGraphics.framework */,
+				F63735089B8E8731595A1322E7AE8E6F /* Foundation.framework */,
+				66FBAF6610C33EED30F85833E70F6FF6 /* MobileCoreServices.framework */,
+				B1AC4B996D384F740C3524B6F10D863A /* Security.framework */,
+				533627D382B12DED96071334993DDB4F /* SystemConfiguration.framework */,
+				47BC365CC749EB07F14BE67E0B8F9426 /* UIKit.framework */,
+			);
+			name = iOS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -774,7 +774,7 @@
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
@@ -915,251 +915,16 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		040FF9AD4A202C0BB8976770F2031939 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = ADE694A8350836B6DC97283D847CC51A /* Pods-nv-comms.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-nv-comms/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-nv-comms/Pods-nv-comms.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_nv_comms;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		134C53F3940B0DDD259C97B5EE61BE29 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 506E10FC35585848F83CFAA04C8E3733 /* OpenWeatherMapAPI.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/OpenWeatherMapAPI/OpenWeatherMapAPI-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/OpenWeatherMapAPI/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/OpenWeatherMapAPI/OpenWeatherMapAPI.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = OpenWeatherMapAPI;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		156284431C64CB05C59BDA0595A1E95A /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		1660868D99AA9A3C757F753156D8798B /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 298BB2985EA04ADAF9D71D3301D251C0 /* AFNetworking.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AFNetworking/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/AFNetworking/AFNetworking.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = AFNetworking;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		17D6D9361EEE9BF3EEF3B487DFCAE5B3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 28A1C9A695E2D35B5508A414E5FE9E93 /* pop.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/pop/pop-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/pop/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/pop/pop.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = pop;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		3A341CAF6B9017DB10B3CFB2CE0710A3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 298BB2985EA04ADAF9D71D3301D251C0 /* AFNetworking.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AFNetworking/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/AFNetworking/AFNetworking.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = AFNetworking;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		A2D97F1B5D281D9531BC2A4D342D00A8 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 28A1C9A695E2D35B5508A414E5FE9E93 /* pop.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/pop/pop-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/pop/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/pop/pop.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = pop;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		B320DDE4BDFA9FE79DBCC2CA8F55550E /* Release */ = {
+		094B76D1751349FBFD91DE254085C98C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F18894D9F8073A5CAF3DA9DDA9F419E8 /* Koloda.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1172,40 +937,43 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Koloda/Koloda.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = Koloda;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		C0A1631D661BF9759C5192BB3F54F4AD /* Release */ = {
+		0AF4F194DAFC39202D7C7902F3ACF9BF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 506E10FC35585848F83CFAA04C8E3733 /* OpenWeatherMapAPI.xcconfig */;
+			baseConfigurationReference = 298BB2985EA04ADAF9D71D3301D251C0 /* AFNetworking.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/OpenWeatherMapAPI/OpenWeatherMapAPI-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/OpenWeatherMapAPI/Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AFNetworking/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/OpenWeatherMapAPI/OpenWeatherMapAPI.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = OpenWeatherMapAPI;
+				MODULEMAP_FILE = "Target Support Files/AFNetworking/AFNetworking.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = AFNetworking;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -1213,13 +981,14 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		C382132BB6BF8CA1A911872A2062FD0D /* Debug */ = {
+		163D87BE96A63549B0EACF1CC31A2E90 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -1227,10 +996,13 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGNING_REQUIRED = NO;
@@ -1259,15 +1031,198 @@
 			};
 			name = Debug;
 		};
-		C5FB8E3677559AD74D21D9761F08460E /* Debug */ = {
+		33CF4F1ACC002D021D2139B6397886F5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F18894D9F8073A5CAF3DA9DDA9F419E8 /* Koloda.xcconfig */;
+			baseConfigurationReference = 298BB2985EA04ADAF9D71D3301D251C0 /* AFNetworking.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/AFNetworking/AFNetworking-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AFNetworking/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AFNetworking/AFNetworking.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = AFNetworking;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		5A19C734A2340115405417C3A941FB9A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADE694A8350836B6DC97283D847CC51A /* Pods-nv-comms.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-nv-comms/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-nv-comms/Pods-nv-comms.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_nv_comms;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		707B86CFB21B645E37109F39754D4051 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		92E516CDC6E531ADA9EF641C25335FA6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28A1C9A695E2D35B5508A414E5FE9E93 /* pop.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/pop/pop-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/pop/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/pop/pop.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = pop;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B04497F6426ABE67E6981C5101120D9E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 506E10FC35585848F83CFAA04C8E3733 /* OpenWeatherMapAPI.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/OpenWeatherMapAPI/OpenWeatherMapAPI-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/OpenWeatherMapAPI/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/OpenWeatherMapAPI/OpenWeatherMapAPI.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = OpenWeatherMapAPI;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		CD8B39C49F8CC817F6472F5164B5441B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F18894D9F8073A5CAF3DA9DDA9F419E8 /* Koloda.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1280,22 +1235,23 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/Koloda/Koloda.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = Koloda;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
-		F2FC96BF2F3C0A4356122F2D05922ECD /* Release */ = {
+		D295DAB616CA04705B311984A8E2E1C9 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CB25FB29A21D5E82D82077E7772BA4B9 /* Pods-nv-comms.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -1321,6 +1277,74 @@
 				PRODUCT_NAME = Pods_nv_comms;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E9DC05FD0586B48D74768B5316655E7E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 506E10FC35585848F83CFAA04C8E3733 /* OpenWeatherMapAPI.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/OpenWeatherMapAPI/OpenWeatherMapAPI-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/OpenWeatherMapAPI/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/OpenWeatherMapAPI/OpenWeatherMapAPI.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = OpenWeatherMapAPI;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F3022F709A8A520ADE957A3651212A5C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 28A1C9A695E2D35B5508A414E5FE9E93 /* pop.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/pop/pop-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/pop/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/pop/pop.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = pop;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1333,8 +1357,8 @@
 		05D8C828B8A5D8D504B2A41D7F5263CE /* Build configuration list for PBXNativeTarget "pop" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				17D6D9361EEE9BF3EEF3B487DFCAE5B3 /* Debug */,
-				A2D97F1B5D281D9531BC2A4D342D00A8 /* Release */,
+				92E516CDC6E531ADA9EF641C25335FA6 /* Debug */,
+				F3022F709A8A520ADE957A3651212A5C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1342,8 +1366,8 @@
 		1C87F24CAC0EABC5B551A2CFC5D6A2E8 /* Build configuration list for PBXNativeTarget "Pods-nv-comms" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				040FF9AD4A202C0BB8976770F2031939 /* Debug */,
-				F2FC96BF2F3C0A4356122F2D05922ECD /* Release */,
+				5A19C734A2340115405417C3A941FB9A /* Debug */,
+				D295DAB616CA04705B311984A8E2E1C9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1351,8 +1375,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C382132BB6BF8CA1A911872A2062FD0D /* Debug */,
-				156284431C64CB05C59BDA0595A1E95A /* Release */,
+				163D87BE96A63549B0EACF1CC31A2E90 /* Debug */,
+				707B86CFB21B645E37109F39754D4051 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1360,8 +1384,8 @@
 		3DF839D226A6EB8F227D4F4ED1721211 /* Build configuration list for PBXNativeTarget "AFNetworking" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				3A341CAF6B9017DB10B3CFB2CE0710A3 /* Debug */,
-				1660868D99AA9A3C757F753156D8798B /* Release */,
+				0AF4F194DAFC39202D7C7902F3ACF9BF /* Debug */,
+				33CF4F1ACC002D021D2139B6397886F5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1369,8 +1393,8 @@
 		435CDCEF1605E54A688E63FF35562B81 /* Build configuration list for PBXNativeTarget "Koloda" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C5FB8E3677559AD74D21D9761F08460E /* Debug */,
-				B320DDE4BDFA9FE79DBCC2CA8F55550E /* Release */,
+				094B76D1751349FBFD91DE254085C98C /* Debug */,
+				CD8B39C49F8CC817F6472F5164B5441B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1378,8 +1402,8 @@
 		B71C2FD64E709E3F0831884FFD5E6CFA /* Build configuration list for PBXNativeTarget "OpenWeatherMapAPI" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				134C53F3940B0DDD259C97B5EE61BE29 /* Debug */,
-				C0A1631D661BF9759C5192BB3F54F4AD /* Release */,
+				B04497F6426ABE67E6981C5101120D9E /* Debug */,
+				E9DC05FD0586B48D74768B5316655E7E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
