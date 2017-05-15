@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		7A10271A1E9BA2C0006F5EB5 /* Koloda.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A99720B1E9BA1540043FFE7 /* Koloda.framework */; };
 		7A10271C1E9BA373006F5EB5 /* pop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A10271B1E9BA373006F5EB5 /* pop.framework */; };
+		7A23CFFC1ECA05C40051AFBA /* ios in Resources */ = {isa = PBXBuildFile; fileRef = 7A23CFFB1ECA05C40051AFBA /* ios */; };
 		7A8C3F3A1E7804B900BA8936 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A8C3F391E7804B900BA8936 /* AppDelegate.swift */; };
 		7A8C3F3F1E7804B900BA8936 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A8C3F3D1E7804B900BA8936 /* Main.storyboard */; };
 		7A8C3F421E7804B900BA8936 /* nv_comms.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7A8C3F401E7804B900BA8936 /* nv_comms.xcdatamodeld */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		6BBB87C6422679316519577C /* Pods-nv-comms.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nv-comms.debug.xcconfig"; path = "Pods/Target Support Files/Pods-nv-comms/Pods-nv-comms.debug.xcconfig"; sourceTree = "<group>"; };
 		7A10271B1E9BA373006F5EB5 /* pop.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = pop.framework; path = "../../Library/Developer/Xcode/DerivedData/nv-comms-edyqljqymidzcmgcmipqueeqqjqo/Build/Products/Debug-iphonesimulator/pop/pop.framework"; sourceTree = "<group>"; };
+		7A23CFFB1ECA05C40051AFBA /* ios */ = {isa = PBXFileReference; lastKnownFileType = folder; path = ios; sourceTree = "<group>"; };
 		7A8C3F361E7804B900BA8936 /* nv-comms.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "nv-comms.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A8C3F391E7804B900BA8936 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7A8C3F3E1E7804B900BA8936 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -197,6 +199,7 @@
 		7A9CAB841EAE5C52001C82C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7A23CFFB1ECA05C40051AFBA /* ios */,
 				7A9CAB851EAE5C60001C82C2 /* Fonts */,
 			);
 			path = Resources;
@@ -279,6 +282,7 @@
 				7A9625C01EAE608D00E86F87 /* Kayak Sans Regular.otf in Resources */,
 				7A8C3F3F1E7804B900BA8936 /* Main.storyboard in Resources */,
 				7A9CAB731EA7CC02001C82C2 /* SettingsTableViewToggleCell.xib in Resources */,
+				7A23CFFC1ECA05C40051AFBA /* ios in Resources */,
 				7A9CAB691E9E474F001C82C2 /* SwipeCardView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
