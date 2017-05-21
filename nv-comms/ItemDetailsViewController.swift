@@ -13,18 +13,6 @@ import OpenWeatherMapAPI
 
 class ItemDetailsViewController: UIViewController {
     
-    enum weatherEnum: String
-    {
-        case fewClouds = "few clouds"
-        case scatteredClouds = "scattered clouds"
-        case brokenClouds = "broken clouds"
-        case showerRain = "shower rain"
-        case rain = "rain"
-        case thunderstorm = "thunderstorm"
-        case snow = "snow"
-        case mist = "mist"
-    }
-    
     var item: NSManagedObject?
     @IBOutlet weak var imageBackground: UIImageView!
     @IBOutlet weak var iconView: UIImageView!
@@ -73,24 +61,20 @@ class ItemDetailsViewController: UIViewController {
             
             // data from the API
             guard let resultDict = result as? [String: Any],
-                let forecastList = resultDict["list"] as? [[String: Any]],
-                let forecastForDay = forecastList[place] as? [String: Any],
-                let forecastDate = forecastForDay["dt_txt"] as? String,
+                let forecastList = resultDict["list"] as? [[String: Any]] else {
+                    return
+            }
+            let forecastForDay = forecastList[place]
+            guard  let forecastDate = forecastForDay["dt_txt"] as? String,
                 let weatherForDay = forecastForDay["weather"] as? [[String: Any]],
                 let conditionsForDay = weatherForDay[0]["main"] as? String else {
                     return
             }
             
-            
-            // get the date of this item
-            guard let eventDate = self.item?.value(forKeyPath: "date") as? Date else {
-                return
-            }
-            
-            let anEnum = weatherEnum(rawValue: conditionsForDay.lowercased())
-            
+            let imageName = conditionsForDay.lowercased().replacingOccurrences(of: " ", with: "-")
+            self.iconView.image = UIImage(named: imageName)
             self.weatherDisplayLabel.isHidden = false
-            self.weatherDisplayLabel.text = "\(conditionsForDay) for \(forecastDate)"
+            self.weatherDisplayLabel.text = conditionsForDay
             
         })
         
@@ -108,8 +92,6 @@ class ItemDetailsViewController: UIViewController {
         }
         
         self.date = date
-        self.dateLabel.text = date.stringForDate()
-        
         if let image = self.title?.loadImageFromPath() {
             self.imageBackground.image = image
             customNavigationController.setNavBar(theme: .light)

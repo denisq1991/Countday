@@ -14,6 +14,7 @@ class ItemFormView : UIView {
     
     @IBOutlet var titleTextField: UITextField?
     @IBOutlet var imageView: UIImageView?
+    @IBOutlet var selectImageButton: UIButton?
     @IBOutlet var datePickerExpandView: UIView?
     @IBOutlet var datePicker: UIDatePicker?
     @IBOutlet var datePickerViewHeight: NSLayoutConstraint?

@@ -58,7 +58,12 @@ class ItemFormViewController: UIViewController, ItemFormDelegate, UIImagePickerC
         let date = item?.value(forKeyPath: "date") as? Date
         let title = item?.value(forKeyPath: "title") as? String
         self.itemFormView?.titleTextField?.text = title ?? ""
-        self.itemFormView?.imageView?.image = title?.loadImageFromPath()
+        
+        let buttonBackground = title?.loadImageFromPath()
+        self.itemFormView?.imageView?.image = buttonBackground
+        let buttonColour = buttonBackground != nil ? UIColor.white : UIColor.black
+        self.itemFormView?.selectImageButton?.setTitleColor(buttonColour, for: .normal)
+        
         self.itemFormView?.datePicker?.date = date != nil ? date! : Date()
         // TODO: Roll the next two lines into a more sensisble structure
         self.itemFormView?.alertSwitcher?.isOn = item?.value(forKeyPath: "notificationActive") as? Bool ?? false
