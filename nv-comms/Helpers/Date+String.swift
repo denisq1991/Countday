@@ -19,7 +19,12 @@ extension Date {
         let calendar = Calendar.current
         let currentDate = Date()
         let components = calendar.dateComponents(Set(arrayLiteral: .day, .hour), from: currentDate, to: self)
-        return String(describing: components.day!)
+        return String(describing: components.day! + 1)
     }
     
+    func dayOfWeek() -> String? {
+        let dayOfTheWeekArray: [String] = ["", "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+        guard let index = Calendar.current.dateComponents([.weekday], from: self).weekday else { return nil }
+        return dayOfTheWeekArray[index]
+    }
 }

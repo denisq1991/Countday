@@ -22,6 +22,7 @@ class ItemDetailsViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var weatherDisplayLabel: UILabel!
     
+    @IBOutlet weak var dayOfTheWeekLabel: UILabel!
     @IBOutlet weak var weatherIconView: UIImageView!
     var date: Date?
     
@@ -43,41 +44,6 @@ class ItemDetailsViewController: UIViewController {
         }
         self.date = date
         self.weatherDisplayLabel.isHidden = true
-        
-        let weatherAPI = OWMWeatherAPI(apiKey: "37be4c8a6b11f53b9c0164b9ee1748b3")
-        weatherAPI?.setTemperatureFormat(kOWMTempCelcius)
-        
-        weatherAPI?.forecastWeather(byCityName: "London", withCallback: { (error: Error?, result: [AnyHashable : Any]?) in
-            if error != nil {
-                print("Error parsing weather, error \(error!.localizedDescription)")
-                return
-            }
-            
-            let daysAway = self.date!.daysFromToday()
-            let placeInArrayDict: [String: Int] = ["1" : 4,"2" : 12,"3" : 20,"4" : 28,"5" : 36]
-            guard let place = placeInArrayDict[daysAway] else {
-                return
-            }
-            
-            // data from the API
-            guard let resultDict = result as? [String: Any],
-                let forecastList = resultDict["list"] as? [[String: Any]] else {
-                    return
-            }
-            let forecastForDay = forecastList[place]
-            guard  let forecastDate = forecastForDay["dt_txt"] as? String,
-                let weatherForDay = forecastForDay["weather"] as? [[String: Any]],
-                let conditionsForDay = weatherForDay[0]["main"] as? String else {
-                    return
-            }
-            
-            let imageName = conditionsForDay.lowercased().replacingOccurrences(of: " ", with: "-")
-            self.iconView.image = UIImage(named: imageName)
-            self.weatherDisplayLabel.isHidden = false
-            self.weatherDisplayLabel.text = conditionsForDay
-            
-        })
-        
         self.title =  title
     }
     
@@ -101,11 +67,53 @@ class ItemDetailsViewController: UIViewController {
             customNavigationController.setNavBar(theme: .lightBlackText)
         }
         
+        guard let dayOfTheWeek = date.dayOfWeek() else {
+            print("Couldn't find day of the week for date \(String(describing: self.date?.stringForDate()))")
+            return
+        }
+        
         let alarmColour = alarmActive ? "-yellow" : "-white"
         self.alarmView.image = UIImage(named: "bell" + alarmColour)
         self.iconView.image = UIImage(named: iconName + "-white")
         self.daysToGoLabel.text = self.date?.daysFromToday().range(of:"-") != nil ? "days ago" : "days to go!"
         self.daysLeft.text = self.date?.daysFromToday().replacingOccurrences(of: "-", with: "", options: .literal, range: nil)
+        self.dayOfTheWeekLabel.text = "(" + dayOfTheWeek + ")"
+        self.configureWeatherIcon(forDate: date)
+    }
+    
+    private func configureWeatherIcon(forDate date: Date) {
+        
+        let weatherAPI = OWMWeatherAPI(apiKey: "37be4c8a6b11f53b9c0164b9ee1748b3")
+        weatherAPI?.setTemperatureFormat(kOWMTempCelcius)
+        
+        weatherAPI?.forecastWeather(byCityName: "London", withCallback: { (error: Error?, result: [AnyHashable : Any]?) in
+            if error != nil {
+                print("Error parsing weather, error \(error!.localizedDescription)")
+                return
+            }
+            
+            let daysAway = date.daysFromToday()
+            
+            // The API returns multiples of hours so we have to transform to days ourselves
+            let placeInArrayDict: [String: Int] = ["1" : 4,"2" : 12,"3" : 20,"4" : 28,"5" : 36]
+            if let place = placeInArrayDict[daysAway],
+                let resultDict = result as? [String: Any],
+                let forecastList = resultDict["list"] as? [[String: Any]] {
+                
+                let forecastForDay = forecastList[place]
+                guard let forecastDate = forecastForDay["dt_txt"] as? String,
+                    let weatherForDay = forecastForDay["weather"] as? [[String: Any]],
+                    let conditionsForDay = weatherForDay[0]["main"] as? String else {
+                        ("Error finding conditons for the day")
+                        return
+                }
+                
+                let imageName = conditionsForDay.lowercased().replacingOccurrences(of: " ", with: "-")
+                self.iconView.image = UIImage(named: imageName)
+                self.weatherDisplayLabel.isHidden = false
+                self.weatherDisplayLabel.text = conditionsForDay
+            }
+        })
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

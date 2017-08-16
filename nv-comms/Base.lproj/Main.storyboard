@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AnG-tL-7xK">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AnG-tL-7xK">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -67,7 +67,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fAS-sX-BJv">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rUq-OY-Ol1">
+                            <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rUq-OY-Ol1">
                                 <rect key="frame" x="37" y="154" width="300" height="360"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dmd-Xw-GZR">
@@ -134,14 +134,27 @@
                                     <constraint firstAttribute="width" constant="35" id="qXw-4a-tXW"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Wednesday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Z2-IY-kgh">
+                                <rect key="frame" x="56" y="467" width="263" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="r7R-3N-iO3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="KayakSans" family="Kayak Sans" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9Cz-BR-MSa" firstAttribute="top" secondItem="fAS-sX-BJv" secondAttribute="bottom" constant="-44" id="3hO-pC-eLh"/>
                             <constraint firstItem="fAS-sX-BJv" firstAttribute="top" secondItem="doJ-TU-PTq" secondAttribute="bottom" constant="-64" id="Bta-ro-FeL"/>
+                            <constraint firstItem="1Z2-IY-kgh" firstAttribute="leading" secondItem="Jek-pP-187" secondAttribute="leadingMargin" constant="40" id="Knv-ed-4dB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1Z2-IY-kgh" secondAttribute="trailing" constant="40" id="LPe-VQ-hzK"/>
+                            <constraint firstItem="1Z2-IY-kgh" firstAttribute="top" secondItem="98c-K0-mFQ" secondAttribute="bottom" constant="13" id="YNA-WG-1V5"/>
                             <constraint firstItem="rUq-OY-Ol1" firstAttribute="centerX" secondItem="Jek-pP-187" secondAttribute="centerX" id="ZwA-E6-TSp"/>
                             <constraint firstItem="8MP-mF-HLc" firstAttribute="leading" secondItem="Jek-pP-187" secondAttribute="leading" constant="6" id="a8Q-Uv-N4V"/>
                             <constraint firstItem="fAS-sX-BJv" firstAttribute="leading" secondItem="Jek-pP-187" secondAttribute="leadingMargin" constant="-16" id="ahq-39-y47"/>
+                            <constraint firstItem="1Z2-IY-kgh" firstAttribute="centerX" secondItem="98c-K0-mFQ" secondAttribute="centerX" id="cG6-xC-UNO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fAS-sX-BJv" secondAttribute="trailing" constant="-16" id="xGA-A7-y3O"/>
                             <constraint firstItem="rUq-OY-Ol1" firstAttribute="centerY" secondItem="Jek-pP-187" secondAttribute="centerY" id="xSq-Ag-ARB"/>
                             <constraint firstItem="9Cz-BR-MSa" firstAttribute="top" secondItem="8MP-mF-HLc" secondAttribute="bottom" constant="6" id="zVw-te-547"/>
@@ -159,6 +172,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="alarmView" destination="8MP-mF-HLc" id="0Ex-lm-l1J"/>
+                        <outlet property="dayOfTheWeekLabel" destination="1Z2-IY-kgh" id="TNH-cO-GAj"/>
                         <outlet property="daysLeft" destination="zgf-03-ss5" id="46M-3X-NPx"/>
                         <outlet property="daysToGoLabel" destination="98c-K0-mFQ" id="Sk4-W3-jCY"/>
                         <outlet property="iconView" destination="dmd-Xw-GZR" id="EA6-pc-NhM"/>
@@ -190,7 +204,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="InU-wK-rr7" id="SHs-7Y-IhL">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="55"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GsC-Sd-9PR">
@@ -255,7 +269,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="284"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get Started By Selecting The &quot;+&quot; Button!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEH-lJ-By2">
-                                        <rect key="frame" x="87" y="92" width="200" height="36"/>
+                                        <rect key="frame" x="87" y="92.5" width="200" height="35.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="27q-tt-c1u"/>
                                         </constraints>
@@ -319,7 +333,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ypj-PG-o74" userLabel="New Title Form View" customClass="ItemFormView" customModule="nv_comms" customModuleProvider="target">
-                                <rect key="frame" x="16" y="64" width="343" height="603"/>
+                                <rect key="frame" x="16" y="64" width="343" height="559"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Title" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="8HN-li-Uuf" userLabel="Title Text Field">
                                         <rect key="frame" x="0.0" y="12" width="343" height="32"/>
@@ -335,7 +349,7 @@
                                         <rect key="frame" x="0.0" y="348" width="343" height="32"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose an Icon" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cJM-0D-lWL">
-                                                <rect key="frame" x="8" y="0.0" width="106" height="32"/>
+                                                <rect key="frame" x="8" y="0.0" width="105.5" height="32"/>
                                                 <fontDescription key="fontDescription" name="KayakSans" family="Kayak Sans" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -549,7 +563,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Tf0-oU-86H">
-                                <rect key="frame" x="32" y="72" width="311" height="447"/>
+                                <rect key="frame" x="32" y="72" width="311" height="403"/>
                                 <color key="backgroundColor" red="0.8980392157" green="0.8980392157" blue="0.8980392157" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6PI-yb-lny">
                                     <size key="itemSize" width="87" height="79"/>
@@ -612,7 +626,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AnG-tL-7xK" customClass="CustomNavigationController" customModule="nv_comms" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MtG-BE-f0Z">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="MtG-BE-f0Z">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -630,7 +644,7 @@
         <image name="settings-white" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="jOB-cg-R6P"/>
+        <segue reference="FoP-13-l2Y"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
 </document>
