@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -39,15 +39,23 @@
                         <constraint firstAttribute="bottom" secondItem="3oI-1u-cFQ" secondAttribute="bottom" id="pxY-i6-3M5"/>
                     </constraints>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JuL-yE-Hbv">
-                    <rect key="frame" x="290" y="14" width="156" height="19"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jKB-Yk-zSB" userLabel="Time Label Container">
+                    <rect key="frame" x="290" y="0.0" width="156" height="27"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JuL-yE-Hbv">
+                            <rect key="frame" x="97" y="15" width="39" height="19"/>
+                            <fontDescription key="fontDescription" name="KayakSans" family="Kayak Sans" pointSize="18"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="156" id="v7e-7j-MnL"/>
+                        <constraint firstAttribute="height" constant="27" id="CH0-TJ-AsN"/>
+                        <constraint firstAttribute="trailing" secondItem="JuL-yE-Hbv" secondAttribute="trailing" constant="20" id="geV-W5-tdh"/>
+                        <constraint firstAttribute="width" constant="156" id="qMh-dW-V5E"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="KayakSans" family="Kayak Sans" pointSize="18"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Default  Alarm Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2ho-PL-bq8">
                     <rect key="frame" x="4" y="14" width="144.5" height="21"/>
                     <constraints>
@@ -61,12 +69,13 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="2ho-PL-bq8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="14" id="3re-Y7-cIn"/>
-                <constraint firstItem="DgR-qA-WvX" firstAttribute="trailing" secondItem="JuL-yE-Hbv" secondAttribute="trailing" id="DkW-IG-YLe"/>
-                <constraint firstItem="JuL-yE-Hbv" firstAttribute="top" secondItem="2ho-PL-bq8" secondAttribute="top" id="VKl-5X-7rI"/>
-                <constraint firstItem="DgR-qA-WvX" firstAttribute="leading" secondItem="JuL-yE-Hbv" secondAttribute="leading" id="cTm-Ap-vrb"/>
+                <constraint firstAttribute="trailing" secondItem="jKB-Yk-zSB" secondAttribute="trailing" id="5ra-4x-WC8"/>
+                <constraint firstItem="3oI-1u-cFQ" firstAttribute="top" secondItem="jKB-Yk-zSB" secondAttribute="bottom" constant="6" id="F4G-zt-Yd4"/>
+                <constraint firstItem="jKB-Yk-zSB" firstAttribute="leading" secondItem="DgR-qA-WvX" secondAttribute="leading" id="GFR-nw-Lkw"/>
+                <constraint firstItem="JuL-yE-Hbv" firstAttribute="centerY" secondItem="2ho-PL-bq8" secondAttribute="centerY" id="JJj-5F-w4c"/>
+                <constraint firstItem="jKB-Yk-zSB" firstAttribute="trailing" secondItem="DgR-qA-WvX" secondAttribute="trailing" id="NTw-P1-fey"/>
+                <constraint firstItem="jKB-Yk-zSB" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="VyV-D4-ZJr"/>
                 <constraint firstItem="2ho-PL-bq8" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="4" id="d4V-Dn-HZE"/>
-                <constraint firstAttribute="trailing" secondItem="JuL-yE-Hbv" secondAttribute="trailing" id="lkF-2z-126"/>
-                <constraint firstItem="DgR-qA-WvX" firstAttribute="top" secondItem="JuL-yE-Hbv" secondAttribute="bottom" id="qNt-KD-PWP"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>

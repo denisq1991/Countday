@@ -104,7 +104,7 @@ class ItemDetailsViewController: UIViewController {
                 guard let forecastDate = forecastForDay["dt_txt"] as? String,
                     let weatherForDay = forecastForDay["weather"] as? [[String: Any]],
                     let conditionsForDay = weatherForDay[0]["main"] as? String else {
-                        ("Error finding conditons for the day")
+                        print("Error finding conditons for the day")
                         return
                 }
                 

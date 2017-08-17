@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 import Koloda
 
-let sortByDateKey = "Sort By Date Ascending"
+let sortByDateKey = "sortByDate"
 
 protocol ItemViewCellDelegate {
     func deleteItemFromMemory(cell: UITableViewCell)

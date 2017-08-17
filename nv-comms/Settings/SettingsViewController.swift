@@ -10,7 +10,7 @@
 import Foundation
 import UIKit
 
-typealias SettingsCellItem = (title: String, type: SettingsItem)
+typealias SettingsCellItem = (key: String, title: String, type: SettingsItem)
 let defaultAlarmTimeKey = "defaultAlarmTime"
 
 enum SettingsItem {
@@ -18,13 +18,13 @@ enum SettingsItem {
     case options
 }
 
-
 class SettingsViewController: UIViewController {
     @IBOutlet weak var settingsTableView: UITableView!
     var currentlySelectedRow: Int?
-    let settingsItems: [(String, SettingsItem)] = [("Sort By Date Ascending", .toggle),
-                                                   ("Default Alarm Time", .options),
-                                                   ("Dynamic Events Table", .toggle)
+    let settingsItems: [(String, String, SettingsItem)] = [("sortByDate", "Sort By Date Ascending", .toggle),
+                                                   ("defaultAlarmTime", "Default Alarm Time", .options),
+                                                   ("dynamicEventsTable", "Dynamic Events Table", .toggle),
+                                                   ("showEventsForecast", "Show Event Forecast", .toggle)
     ]
     
     override func viewDidLoad() {
@@ -65,7 +65,8 @@ extension SettingsViewController: UITableViewDataSource {
             self.settingsTableView.register(UINib(nibName: "SettingsTableViewToggleCell", bundle: nil), forCellReuseIdentifier: "SettingsTableViewToggleCell")
             let cell = tableView.dequeueReusableCell(withIdentifier: "SettingsTableViewToggleCell", for: indexPath) as! SettingsTableViewToggleCell
             cell.titleLabel?.text = item.title
-            if let toggleState = UserDefaults.standard.value(forKey: item.title) as? Bool {
+            cell.key = item.key
+            if let toggleState = UserDefaults.standard.value(forKey: item.key) as? Bool {
                 cell.toggle?.isOn = toggleState
             }
             cell.selectionStyle = .none
@@ -103,69 +104,6 @@ extension SettingsViewController: UITableViewDataSource {
         }
     }
 }
-
-class SettingsTableViewToggleCell: UITableViewCell {
-    @IBOutlet weak var titleLabel: UILabel?
-    @IBOutlet weak var toggle: UISwitch?
-    
-    
-    @IBAction func didToggleOption(_ sender: Any) {
-        guard let title = titleLabel?.text else {
-            print("Cell needs a title to save to user defaults!")
-            return
-        }
-        UserDefaults.standard.set(self.toggle?.isOn, forKey: title)
-    }
-}
-
-class SettingsTableViewOptionsCell: UITableViewCell {
-    @IBOutlet weak var titleLabel: UILabel?
-    @IBOutlet weak var timeLabel: UILabel?
-    @IBOutlet weak var timeSelector: UIDatePicker?
-    @IBOutlet weak var timeSelectorContainerView: UIView?
-    @IBOutlet weak var timeSelectorViewHeight: NSLayoutConstraint!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "hh:mm a"
-
-        let defaultTime = UserDefaults.standard.value(forKey: defaultAlarmTimeKey) as? Date
-        self.timeLabel?.text = dateFormatter.string(from: defaultTime!)
-        self.timeSelectorViewHeight.constant = 0
-        self.timeSelector?.addTarget(self, action: #selector(timeSelectorChanged), for: .valueChanged)
-    }
-    
-    
-    @objc private func timeSelectorChanged() {
-        guard let selectedTime = self.timeSelector?.date else {
-            return
-        }
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "hh:mm a"
-        let timeComponents = NSCalendar.current.dateComponents([.hour, .minute, .second], from: selectedTime)
-        let isolatedTime = NSCalendar.current.date(from: timeComponents)
-        
-        UserDefaults.standard.set(isolatedTime, forKey: defaultAlarmTimeKey)
-        self.timeLabel?.text = dateFormatter.string(from: selectedTime)
-    }
-    
-    override func willRemoveSubview(_ subview: UIView) {
-        super.willRemoveSubview(subview)
-        
-        // if the time set for the defaultAlarmTime key is different to what it was when settings was opened 
-        
-        // get all the current "items" from the NSManagedObject
-        
-        // Loop through each of them
-        
-        // If the alarm is set on
-        
-        // change from the previous alarm time to this new time
-    }
-    
-}
-
 
 
 

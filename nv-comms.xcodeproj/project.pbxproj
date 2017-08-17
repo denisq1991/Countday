@@ -34,6 +34,8 @@
 		7A9CAB7F1EAA48D7001C82C2 /* KoladaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CAB7D1EAA48D7001C82C2 /* KoladaView.swift */; };
 		7A9CAB831EAE3B05001C82C2 /* CustomNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9CAB821EAE3B05001C82C2 /* CustomNavigationController.swift */; };
 		7AE141EB1EC609AE0038F272 /* OpenWeatherMapAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7AE141EA1EC609AE0038F272 /* OpenWeatherMapAPI.framework */; };
+		9D5B4B421F4586DD003CCEBE /* SettingsTableViewToggleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5B4B411F4586DD003CCEBE /* SettingsTableViewToggleCell.swift */; };
+		9D5B4B441F458711003CCEBE /* SettingsTableViewOptionsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5B4B431F458711003CCEBE /* SettingsTableViewOptionsCell.swift */; };
 		B4658DD02702B40DC390D4DE /* Pods_nv_comms.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F27976FAE446F9A1454B3B4A /* Pods_nv_comms.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +70,8 @@
 		7A9CAB7D1EAA48D7001C82C2 /* KoladaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = KoladaView.swift; path = Home/KoladaView.swift; sourceTree = "<group>"; };
 		7A9CAB821EAE3B05001C82C2 /* CustomNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomNavigationController.swift; sourceTree = "<group>"; };
 		7AE141EA1EC609AE0038F272 /* OpenWeatherMapAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenWeatherMapAPI.framework; path = "../../Library/Developer/Xcode/DerivedData/nv-comms-edyqljqymidzcmgcmipqueeqqjqo/Build/Products/Debug-iphonesimulator/OpenWeatherMapAPI/OpenWeatherMapAPI.framework"; sourceTree = "<group>"; };
+		9D5B4B411F4586DD003CCEBE /* SettingsTableViewToggleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewToggleCell.swift; sourceTree = "<group>"; };
+		9D5B4B431F458711003CCEBE /* SettingsTableViewOptionsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewOptionsCell.swift; sourceTree = "<group>"; };
 		D9F4081076B47C802CA80CC6 /* Pods-nv-comms.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-nv-comms.release.xcconfig"; path = "Pods/Target Support Files/Pods-nv-comms/Pods-nv-comms.release.xcconfig"; sourceTree = "<group>"; };
 		F27976FAE446F9A1454B3B4A /* Pods_nv_comms.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_nv_comms.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -189,6 +193,8 @@
 		7A9CAB6D1EA7C83B001C82C2 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				9D5B4B411F4586DD003CCEBE /* SettingsTableViewToggleCell.swift */,
+				9D5B4B431F458711003CCEBE /* SettingsTableViewOptionsCell.swift */,
 				7A9CAB701EA7C872001C82C2 /* SettingsViewController.swift */,
 				7A9CAB721EA7CC02001C82C2 /* SettingsTableViewToggleCell.xib */,
 				7A91E2B11EC3681500FB14F7 /* SettingsTableViewOptionsCell.xib */,
@@ -365,7 +371,9 @@
 				7A9CAB7F1EAA48D7001C82C2 /* KoladaView.swift in Sources */,
 				7A9CAB681E9E474F001C82C2 /* SwipeCardView.swift in Sources */,
 				7A9CAB5E1E9E4224001C82C2 /* ItemFormView.swift in Sources */,
+				9D5B4B441F458711003CCEBE /* SettingsTableViewOptionsCell.swift in Sources */,
 				7A9CAB621E9E422D001C82C2 /* Date+String.swift in Sources */,
+				9D5B4B421F4586DD003CCEBE /* SettingsTableViewToggleCell.swift in Sources */,
 				7A94DA271EB10C9D00723DC3 /* LocalNotificationService.swift in Sources */,
 				7A9CAB5F1E9E4224001C82C2 /* ItemFormViewController.swift in Sources */,
 				7A9CAB7B1EAA46E8001C82C2 /* TableViewDataSource.swift in Sources */,
